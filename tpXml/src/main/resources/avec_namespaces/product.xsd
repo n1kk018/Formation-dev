@@ -1,0 +1,19 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://www.afcepf.fr/2016/product"
+			targetNamespace="http://www.afcepf.fr/2016/product"
+			elementFormDefault="qualified"
+			attributeFormDefault="unqualified">
+	<xsd:element name="product" type="tns:productType"/>
+	<xsd:complexType name="productType">
+		<xsd:sequence>
+			<xsd:element name="description" type="xsd:string"/>
+			<xsd:element name="price" type="tns:myPositiveDecimal"/>
+		</xsd:sequence>
+		<xsd:attribute name="num" type="xsd:positiveInteger" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="myPositiveDecimal">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

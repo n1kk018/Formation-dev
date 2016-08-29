@@ -1,0 +1,31 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test panel et layout</ui:define>
+<ui:define name="pageMainContent">
+   <p:layout style="min-width:400px;min-height:200px;height:300px;width:700px" id="layout" >
+      <p:layoutUnit position="west" resizable="true" size="100" minSize="5" maxSize="300"
+                   header="west" collapsible="true" closable="false">
+         ... <br/>
+         ... <br/>
+         ... <br/>
+      </p:layoutUnit>
+      
+       <p:layoutUnit position="center">
+          <p:panel header="panel A" toggleable="true">
+           contenu panel A <br/>
+           ...
+         </p:panel>
+          <p:panel id="panelB" header="panel B" toggleable="true">
+           contenu panel B (resizable , draggable)<br/>
+           ...
+         </p:panel>
+         <p:resizable for="panelB" handles="e,w,n,se,sw,ne,nw" />
+         <p:draggable for="panelB" handle=".ui-panel-titlebar" />  
+      </p:layoutUnit>
+   </p:layout>
+</ui:define>
+</ui:composition>

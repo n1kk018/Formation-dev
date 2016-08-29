@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+			template="/templates/common.xhtml">
+			<ui:define name="pageTitle">operations</ui:define>
+			<ui:define name="pageHeader">** Liste des opérations **</ui:define>
+			<ui:define name="pageMetaData">
+				<f:metadata>
+					<f:viewParam name="numCpt" value="#{operationMBean.numCptSel}"	/>
+					<f:event type="preRenderView" listener="#{operationMBean.initOperations}" />
+				</f:metadata>
+			</ui:define>
+			<ui:define name="body">
+				<h:dataTable value="#{operationMBean.listeOperations}" var="rowVar" border="1"
+					headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty operationMBean.listeOperations}">
+					<h:column>
+						<f:facet name="header">
+							<f:verbatim>Label</f:verbatim>
+						</f:facet>
+						<h:outputText value="#{rowVar.label}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<f:verbatim>Montant</f:verbatim>
+						</f:facet>
+						<h:outputText value="#{rowVar.montant}"/>
+					</h:column>
+				</h:dataTable>
+				<h:outputLink value="espaceClient.jsf" >
+					<h:outputText value="Retour espace client"/>
+				</h:outputLink>
+			</ui:define>
+	</ui:composition>

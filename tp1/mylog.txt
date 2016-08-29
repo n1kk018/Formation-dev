@@ -1,0 +1,355 @@
+2016-07-21 14:36:07,386 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 14:36:07,392 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employ�s: 2
+2016-07-21 14:36:07,711 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 14:36:07,711 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employ�s: 0
+2016-07-21 14:36:07,712 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carr� de 81: 9.0
+2016-07-21 14:57:11,522 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 14:57:11,528 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employ�s: 2
+2016-07-21 14:57:11,850 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 14:57:11,850 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employ�s: 0
+2016-07-21 14:57:11,851 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carr� de 81: 9.0
+2016-07-21 14:57:34,857 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 14:57:34,862 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 14:57:35,181 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 14:57:35,181 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 14:57:35,181 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:16:59,764 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion 10000
+2016-07-21 15:16:59,769 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:16:59,769 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:17:00,088 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 15:17:00,088 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 15:17:00,089 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:17:18,694 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion en m : 10000
+2016-07-21 15:17:18,699 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:17:18,700 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:17:19,018 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 15:17:19,018 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 15:17:19,019 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:19:23,696 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : null
+2016-07-21 15:19:23,701 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion en m : 10000
+2016-07-21 15:19:23,701 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:19:23,701 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:19:24,020 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 15:19:24,020 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 15:19:24,021 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:20:06,546 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 15:20:06,551 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion en m : 10000
+2016-07-21 15:20:06,551 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:20:06,552 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:20:06,870 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 15:20:06,870 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 15:20:06,871 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:20:27,458 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 15:20:27,463 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion en m : 10000
+2016-07-21 15:20:27,464 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:20:27,464 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:20:27,782 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 0
+2016-07-21 15:20:27,782 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 0
+2016-07-21 15:20:27,783 INFO main fr.afcepf.al28.tp.ConsoleApp - Racine carré de 81: 9.0
+2016-07-21 15:30:24,737 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:30:24,742 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:30:25,063 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 15:30:25,063 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 15:30:25,063 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 15:30:25,064 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond avion en m : 10000
+2016-07-21 16:13:54,448 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 16:13:54,465 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:13:54,792 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 6
+2016-07-21 16:13:54,792 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:13:54,792 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 16:13:54,792 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 10000
+2016-07-21 16:25:48,439 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:25:48,444 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:25:48,763 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:25:48,763 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:25:48,764 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 16:25:48,764 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-21 16:26:18,527 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:26:18,533 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:26:19,153 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:26:19,153 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:26:19,153 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 16:26:19,154 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-21 16:29:01,555 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:29:01,559 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:29:02,178 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personne: 5
+2016-07-21 16:29:02,178 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:29:02,179 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 16:29:02,179 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-21 16:31:22,935 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-21 16:31:22,940 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:31:22,940 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'avion : blanc
+2016-07-21 16:31:22,941 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-21 16:31:43,279 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-21 16:31:43,284 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 16:31:43,284 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : blanc
+2016-07-21 16:31:43,285 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-21 17:02:02,760 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-21 17:02:02,765 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-21 17:02:02,765 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : blanc
+2016-07-21 17:02:02,766 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-22 09:57:06,097 INFO main fr.afcepf.al28.tp.ConsoleApp - Argument manquant
+2016-07-22 09:57:17,001 ERROR main fr.afcepf.al28.tp.ConsoleApp - Argument manquant
+2016-07-22 09:58:15,231 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument manquant
+2016-07-22 10:00:00,765 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument manquant
+2016-07-22 10:04:20,152 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument manquant
+2016-07-22 10:04:20,343 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument manquant
+2016-07-22 10:04:49,814 INFO main fr.afcepf.al28.tp8.sqrtCalc - 9.0
+2016-07-22 10:06:15,945 INFO main fr.afcepf.al28.tp8.sqrtCalc - Racine carrée de 81 est égale à 9.0
+2016-07-22 10:06:45,079 INFO main fr.afcepf.al28.tp8.sqrtCalc - Racine carrée de 81.0 est égale à 9.0
+2016-07-22 10:08:38,003 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument manquant
+2016-07-22 10:08:59,087 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument non numérique
+2016-07-22 10:22:39,409 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Argument inférieur à 0
+2016-07-22 10:40:31,100 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Imppossible de calculer la racine carrée d'un nombre négatif.
+2016-07-22 10:42:40,767 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Imppossible de calculer la racine carrée d'un nombre négatif.
+2016-07-22 10:43:26,487 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Imppossible de calculer la racine carrée d'un nombre négatif.
+2016-07-22 10:44:16,982 ERROR main fr.afcepf.al28.tp8.sqrtCalc - Imppossible de calculer la racine carrée d'un nombre négatif.
+2016-07-22 11:42:05,897 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-22 11:42:05,903 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-22 11:42:05,904 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : blanc
+2016-07-22 11:42:05,904 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 22000
+2016-07-22 11:45:42,049 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-22 11:45:42,055 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-22 11:45:42,055 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : rouge
+2016-07-22 11:45:42,055 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 25000
+2016-07-22 11:54:15,968 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-22 11:54:15,974 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-22 11:54:15,974 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : rouge
+2016-07-22 11:54:15,974 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 25000
+2016-07-22 13:30:35,367 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre de personnes: 5
+2016-07-22 13:30:35,372 INFO main fr.afcepf.al28.tp.ConsoleApp - nombre d'employés: 2
+2016-07-22 13:30:35,373 INFO main fr.afcepf.al28.tp.ConsoleApp - Couleur de l'objet volant : rouge
+2016-07-22 13:30:35,373 INFO main fr.afcepf.al28.tp.ConsoleApp - Plafond objet volant en m : 25000
+2016-07-25 09:05:36,805 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p1, poids=75.0, age=42]
+2016-07-25 09:05:36,810 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p4, poids=61.0, age=28]
+2016-07-25 09:42:31,668 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=bb, poids=78.0, age=5]
+2016-07-25 09:42:31,672 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:42:31,672 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:42:31,673 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 09:45:48,053 INFO main fr.afcepf.al28.tp.ConsoleApp - Tri par age
+2016-07-25 09:45:48,132 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=bb, poids=78.0, age=5]
+2016-07-25 09:45:48,133 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:45:48,133 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:45:48,133 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 09:45:48,133 INFO main fr.afcepf.al28.tp.ConsoleApp - Tri par poids
+2016-07-25 09:45:48,134 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:45:48,134 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:45:48,135 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=bb, poids=78.0, age=5]
+2016-07-25 09:45:48,135 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 09:49:40,946 INFO main fr.afcepf.al28.tp.ConsoleApp - Tri par age
+2016-07-25 09:49:41,031 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=bb, poids=78.0, age=5]
+2016-07-25 09:49:41,031 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:49:41,031 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:49:41,031 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 09:49:41,031 INFO main fr.afcepf.al28.tp.ConsoleApp - Tri par poids
+2016-07-25 09:49:41,032 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:49:41,033 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:49:41,033 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=bb, poids=78.0, age=5]
+2016-07-25 09:49:41,033 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 09:49:41,033 INFO main fr.afcepf.al28.tp.ConsoleApp - Filtrage des personnes majeures
+2016-07-25 09:49:41,085 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=aa, poids=72.0, age=25]
+2016-07-25 09:49:41,086 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=zz, poids=74.0, age=35]
+2016-07-25 09:49:41,086 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=dd, poids=96.0, age=45]
+2016-07-25 10:42:48,931 INFO main fr.afcepf.al28.tp.ConsoleApp - Ile de France
+2016-07-25 10:42:48,937 INFO main fr.afcepf.al28.tp.ConsoleApp - Hauts de France
+2016-07-25 10:42:48,937 INFO main fr.afcepf.al28.tp.ConsoleApp - Normandie
+2016-07-25 10:42:48,937 INFO main fr.afcepf.al28.tp.ConsoleApp - ...
+2016-07-25 11:22:21,888 INFO main fr.afcepf.al28.tp.ConsoleApp - ...
+2016-07-25 11:22:37,109 INFO main fr.afcepf.al28.tp.ConsoleApp - ILE DE FRANCE
+2016-07-25 11:22:37,113 INFO main fr.afcepf.al28.tp.ConsoleApp - HAUTS DE FRANCE
+2016-07-25 11:22:37,113 INFO main fr.afcepf.al28.tp.ConsoleApp - NORMANDIE
+2016-07-25 12:37:49,213 INFO main fr.afcepf.al28.reflection.ConsoleApp - [Ljava.lang.reflect.Field;@42f30e0a
+2016-07-25 12:39:04,357 INFO main fr.afcepf.al28.reflection.ConsoleApp - 5
+2016-07-25 12:41:38,231 INFO main fr.afcepf.al28.reflection.ConsoleApp - protected void fr.afcepf.al28.tp.Personne.finalize()
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public boolean fr.afcepf.al28.tp.Personne.equals(java.lang.Object)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public java.lang.String fr.afcepf.al28.tp.Personne.toString()
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public int fr.afcepf.al28.tp.Personne.hashCode()
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public int fr.afcepf.al28.tp.Personne.compareTo(java.lang.Object)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public int fr.afcepf.al28.tp.Personne.compareTo(fr.afcepf.al28.tp.Personne)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public void fr.afcepf.al28.tp.Personne.setPoids(java.lang.Float)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public void fr.afcepf.al28.tp.Personne.setAge(java.lang.Integer)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public void fr.afcepf.al28.tp.Personne.setNom(java.lang.String)
+2016-07-25 12:41:38,237 INFO main fr.afcepf.al28.reflection.ConsoleApp - public java.lang.Integer fr.afcepf.al28.tp.Personne.getAge()
+2016-07-25 12:41:38,238 INFO main fr.afcepf.al28.reflection.ConsoleApp - public java.lang.Float fr.afcepf.al28.tp.Personne.getPoids()
+2016-07-25 12:41:38,238 INFO main fr.afcepf.al28.reflection.ConsoleApp - public java.lang.String fr.afcepf.al28.tp.Personne.getDesignation()
+2016-07-25 12:41:38,238 INFO main fr.afcepf.al28.reflection.ConsoleApp - public static int fr.afcepf.al28.tp.Personne.getNbInstances()
+2016-07-25 12:41:38,238 INFO main fr.afcepf.al28.reflection.ConsoleApp - public java.lang.String fr.afcepf.al28.tp.Personne.getNom()
+2016-07-25 12:44:24,462 INFO main fr.afcepf.al28.reflection.ConsoleApp - finalize
+2016-07-25 12:44:24,467 INFO main fr.afcepf.al28.reflection.ConsoleApp - equals
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - toString
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - hashCode
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - setAge
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNom
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - setPoids
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - setNom
+2016-07-25 12:44:24,468 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNbInstances
+2016-07-25 12:44:24,469 INFO main fr.afcepf.al28.reflection.ConsoleApp - getAge
+2016-07-25 12:44:24,469 INFO main fr.afcepf.al28.reflection.ConsoleApp - getDesignation
+2016-07-25 12:44:24,469 INFO main fr.afcepf.al28.reflection.ConsoleApp - getPoids
+2016-07-25 12:45:37,584 INFO main fr.afcepf.al28.reflection.ConsoleApp - equals
+2016-07-25 12:45:37,589 INFO main fr.afcepf.al28.reflection.ConsoleApp - toString
+2016-07-25 12:45:37,589 INFO main fr.afcepf.al28.reflection.ConsoleApp - hashCode
+2016-07-25 12:45:37,589 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:45:37,589 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:45:37,589 INFO main fr.afcepf.al28.reflection.ConsoleApp - setNom
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNom
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - getAge
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - getDesignation
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - setPoids
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - getPoids
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNbInstances
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - setAge
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - wait
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - wait
+2016-07-25 12:45:37,590 INFO main fr.afcepf.al28.reflection.ConsoleApp - wait
+2016-07-25 12:45:37,591 INFO main fr.afcepf.al28.reflection.ConsoleApp - getClass
+2016-07-25 12:45:37,591 INFO main fr.afcepf.al28.reflection.ConsoleApp - notify
+2016-07-25 12:45:37,591 INFO main fr.afcepf.al28.reflection.ConsoleApp - notifyAll
+2016-07-25 12:46:07,292 INFO main fr.afcepf.al28.reflection.ConsoleApp - finalize
+2016-07-25 12:46:07,297 INFO main fr.afcepf.al28.reflection.ConsoleApp - equals
+2016-07-25 12:46:07,297 INFO main fr.afcepf.al28.reflection.ConsoleApp - toString
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - hashCode
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - compareTo
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - getAge
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - setNom
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNbInstances
+2016-07-25 12:46:07,298 INFO main fr.afcepf.al28.reflection.ConsoleApp - getNom
+2016-07-25 12:46:07,299 INFO main fr.afcepf.al28.reflection.ConsoleApp - setPoids
+2016-07-25 12:46:07,299 INFO main fr.afcepf.al28.reflection.ConsoleApp - getDesignation
+2016-07-25 12:46:07,299 INFO main fr.afcepf.al28.reflection.ConsoleApp - getPoids
+2016-07-25 12:46:07,299 INFO main fr.afcepf.al28.reflection.ConsoleApp - setAge
+2016-07-25 14:25:27,734 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID :long
+2016-07-25 14:25:27,740 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom :String
+2016-07-25 14:25:27,740 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids :Float
+2016-07-25 14:25:27,740 INFO main fr.afcepf.al28.reflection.ConsoleApp - age :Integer
+2016-07-25 14:25:27,740 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances :int
+2016-07-25 14:26:36,570 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID :long
+2016-07-25 14:26:36,576 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom :String
+2016-07-25 14:26:36,576 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids :Float
+2016-07-25 14:26:36,576 INFO main fr.afcepf.al28.reflection.ConsoleApp - age :Integer
+2016-07-25 14:26:36,576 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances :int
+2016-07-25 14:26:36,577 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID :long
+2016-07-25 14:26:36,577 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids :Float
+2016-07-25 14:26:36,577 INFO main fr.afcepf.al28.reflection.ConsoleApp - label :String
+2016-07-25 14:26:36,577 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume :Integer
+2016-07-25 14:30:49,897 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:30:49,950 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice
+2016-07-25 14:30:49,956 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 14:30:49,957 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 14:30:49,970 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 14:30:49,973 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:30:49,973 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 14:30:49,973 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 14:30:49,974 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 14:58:05,701 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:58:05,708 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice
+2016-07-25 14:58:05,800 INFO main fr.afcepf.al28.reflection.ConsoleApp - 	nom (id/pk)
+2016-07-25 14:58:05,806 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 14:58:05,807 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 14:58:05,809 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 14:58:05,811 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:58:05,811 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 14:58:05,812 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 14:58:05,812 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 14:59:39,138 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:59:39,154 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice	nom (id/pk)
+2016-07-25 14:59:39,156 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 14:59:39,156 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 14:59:39,157 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 14:59:39,158 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:59:39,158 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 14:59:39,159 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 14:59:39,159 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 14:59:58,070 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:59:58,087 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice	(id/pk)
+2016-07-25 14:59:58,089 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 14:59:58,089 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 14:59:58,090 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 14:59:58,091 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 14:59:58,091 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 14:59:58,092 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 14:59:58,092 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 15:05:08,617 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 15:05:08,633 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice	(id/pk)
+2016-07-25 15:05:08,636 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 15:05:08,636 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 15:05:08,637 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 15:05:08,638 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 15:05:08,638 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 15:05:08,638 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 15:05:08,638 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 15:05:52,756 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 15:05:52,772 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice	(id/pk)
+2016-07-25 15:05:52,775 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 15:05:52,775 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 15:05:52,775 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 15:06:27,089 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 15:06:27,104 INFO main fr.afcepf.al28.reflection.ConsoleApp - nom : String : Alice	(id/pk)
+2016-07-25 15:06:27,107 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 50.0
+2016-07-25 15:06:27,107 INFO main fr.afcepf.al28.reflection.ConsoleApp - age : Integer : 50
+2016-07-25 15:06:27,107 INFO main fr.afcepf.al28.reflection.ConsoleApp - nbInstances : int : 1
+2016-07-25 15:06:27,108 INFO main fr.afcepf.al28.reflection.ConsoleApp - null
+2016-07-25 15:07:07,203 INFO main fr.afcepf.al28.reflection.ConsoleApp - Alice
+2016-07-25 15:07:07,209 INFO main fr.afcepf.al28.reflection.ConsoleApp - serialVersionUID : long : 1
+2016-07-25 15:07:07,213 INFO main fr.afcepf.al28.reflection.ConsoleApp - poids : Float : 15.6
+2016-07-25 15:07:07,213 INFO main fr.afcepf.al28.reflection.ConsoleApp - label : String : Valise-Michael
+2016-07-25 15:07:07,213 INFO main fr.afcepf.al28.reflection.ConsoleApp - volume : Integer : 45
+2016-07-25 15:24:18,228 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p1, poids=75.0, age=42]
+2016-07-25 15:24:18,233 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p4, poids=61.0, age=28]
+2016-07-25 15:26:41,763 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p1, poids=75.0, age=42]
+2016-07-25 15:26:41,767 INFO main fr.afcepf.al28.tp.ConsoleApp - Personne [nom=p4, poids=61.0, age=30]
+2016-07-25 16:44:48,659 INFO main fr.afcepf.al28.reflection.ConsoleApp - Ile de France
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Alsace
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Aquitaine
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Auvergne
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Bourgogne
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Bretagne
+2016-07-25 16:44:48,676 INFO main fr.afcepf.al28.reflection.ConsoleApp - Centre
+2016-07-25 16:44:48,677 INFO main fr.afcepf.al28.reflection.ConsoleApp - Champagne Ardennes
+2016-07-25 16:44:48,677 INFO main fr.afcepf.al28.reflection.ConsoleApp - Franche Comté
+2016-07-25 16:44:48,677 INFO main fr.afcepf.al28.reflection.ConsoleApp - Languedoc Roussillon
+2016-07-25 16:44:48,677 INFO main fr.afcepf.al28.reflection.ConsoleApp - Limousin
+2016-07-25 16:44:48,677 INFO main fr.afcepf.al28.reflection.ConsoleApp - Lorraine
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Midi Pyrénées
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Nord Pas de Calais
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Basse Normandie
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Haute Normandie
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Pays de Loire
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Picardie
+2016-07-25 16:44:48,678 INFO main fr.afcepf.al28.reflection.ConsoleApp - Poitou Charentes
+2016-07-25 16:44:48,679 INFO main fr.afcepf.al28.reflection.ConsoleApp - Provence Côte d'Azur
+2016-07-25 16:44:48,679 INFO main fr.afcepf.al28.reflection.ConsoleApp - Rhone Alpes
+2016-07-25 16:44:48,679 INFO main fr.afcepf.al28.reflection.ConsoleApp - Corse
+2016-07-25 17:06:58,776 INFO main fr.afcepf.al28.reflection.ConsoleApp - Ile de France
+2016-07-25 17:06:58,781 INFO main fr.afcepf.al28.reflection.ConsoleApp - Alsace
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Aquitaine
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Auvergne
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Bourgogne
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Bretagne
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Centre
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Champagne Ardennes
+2016-07-25 17:06:58,782 INFO main fr.afcepf.al28.reflection.ConsoleApp - Franche Comté
+2016-07-25 17:06:58,783 INFO main fr.afcepf.al28.reflection.ConsoleApp - Languedoc Roussillon
+2016-07-25 17:06:58,783 INFO main fr.afcepf.al28.reflection.ConsoleApp - Limousin
+2016-07-25 17:06:58,783 INFO main fr.afcepf.al28.reflection.ConsoleApp - Lorraine
+2016-07-25 17:06:58,783 INFO main fr.afcepf.al28.reflection.ConsoleApp - Midi Pyrénées
+2016-07-25 17:06:58,783 INFO main fr.afcepf.al28.reflection.ConsoleApp - Nord Pas de Calais
+2016-07-25 17:06:58,784 INFO main fr.afcepf.al28.reflection.ConsoleApp - Basse Normandie
+2016-07-25 17:06:58,784 INFO main fr.afcepf.al28.reflection.ConsoleApp - Haute Normandie
+2016-07-25 17:06:58,784 INFO main fr.afcepf.al28.reflection.ConsoleApp - Pays de Loire
+2016-07-25 17:06:58,784 INFO main fr.afcepf.al28.reflection.ConsoleApp - Picardie
+2016-07-25 17:06:58,784 INFO main fr.afcepf.al28.reflection.ConsoleApp - Poitou Charentes
+2016-07-25 17:06:58,785 INFO main fr.afcepf.al28.reflection.ConsoleApp - Provence Côte d'Azur
+2016-07-25 17:06:58,785 INFO main fr.afcepf.al28.reflection.ConsoleApp - Rhone Alpes
+2016-07-25 17:06:58,785 INFO main fr.afcepf.al28.reflection.ConsoleApp - Corse
+2016-07-25 17:10:17,843 INFO main fr.afcepf.al28.reflection.ConsoleApp - Basse Normandie
+2016-07-25 17:10:17,851 INFO main fr.afcepf.al28.reflection.ConsoleApp - Haute Normandie
+2016-07-25 17:10:17,852 INFO main fr.afcepf.al28.reflection.ConsoleApp - Pays de Loire
+2016-07-25 17:10:17,852 INFO main fr.afcepf.al28.reflection.ConsoleApp - Picardie
+2016-07-25 17:10:17,853 INFO main fr.afcepf.al28.reflection.ConsoleApp - Poitou Charentes
+2016-07-25 17:10:17,853 INFO main fr.afcepf.al28.reflection.ConsoleApp - Provence Côte d'Azur
+2016-07-25 17:10:17,854 INFO main fr.afcepf.al28.reflection.ConsoleApp - Rhone Alpes
+2016-07-25 17:10:17,855 INFO main fr.afcepf.al28.reflection.ConsoleApp - Corse

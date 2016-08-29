@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="fr.afcepf.al28.hibernate.entity">
+  <class name="Personne" table="personne">
+  	<id name="id" type="integer">
+  		<column name="id" 
+  		sql-type="int(10)" 
+  		not-null="true"/>
+  		<generator class="native"/>
+  	</id>
+  	<property name="nom">
+      <column name="nom" length="45" 
+      not-null="true"/> 
+    </property>
+    <property name="prenom" column="prenom" length="45" not-null="true"/>
+    <property name="adresse">
+      <column name="adresse" length="255" 
+      not-null="true"/> 
+    </property>
+    <property name="naissance">
+      <column name="naissance" not-null="true"/> 
+    </property>
+    <set name="comptes">
+    	<key column="id_personne" />
+    	<one-to-many class="Compte" />
+    </set>
+  </class>
+</hibernate-mapping>

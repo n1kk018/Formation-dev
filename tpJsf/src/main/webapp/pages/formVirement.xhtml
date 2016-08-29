@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html" template="/templates/common.xhtml">
+		<ui:define name="pageTitle">Effectuer Virement</ui:define>
+		<ui:define name="pageHeader">** Effectuer Virement **</ui:define>
+		<ui:define name="body">
+			<h:messages showDetail="true"/>
+			<form jsfc="h:form" id="Form">
+				<h:panelGrid id="subPanel_form_virementContext" columns="2">
+					<h:outputLabel for="numCptDeb" value="Compte à débiter:" />
+					<h:selectOneMenu id="numCptDeb" value="#{virementMBean.numCptDeb}">
+						<f:selectItems value="#{clientMBean.comptes}" var="c" itemValue="#{c.numero}" itemLabel="#{c.label}"/>
+					</h:selectOneMenu>
+					<h:outputLabel for="numCptCred" value="Compte à débiter:" />
+					<h:selectOneMenu id="numCptCred" value="#{virementMBean.numCptCred}">
+						<f:selectItems value="#{clientMBean.comptes}" var="c" itemValue="#{c.numero}" itemLabel="#{c.label}"/>
+					</h:selectOneMenu>
+					<h:outputLabel for="montant" value="Montant:" />
+					<h:inputText id="montant" value="#{virementMBean.montant}"/>
+					<h:outputLabel value="" />
+					<h:commandButton value="Effectuer le virement" action="#{virementMBean.effectuerVirement()}"/>
+				</h:panelGrid>
+			</form>
+			<h:outputLink value="../index.jsp" >
+				<h:outputText value="Retour accueil"/>
+			</h:outputLink>
+		</ui:define>
+</ui:composition>

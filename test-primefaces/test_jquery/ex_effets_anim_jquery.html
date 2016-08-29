@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>effets et animations jquery</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <script src="lib/jquery-2.2.1.js"></script>
+	<style>
+	   #divA{ border-color:blue; border-style:solid; background-color: yellow; display:none;}
+	</style>
+    <script>
+      $(function() {
+	    $('#btnHide').prop('disabled',true);//au debut
+	  
+		$('#btnShow').on('click',function(){
+		        $('#btnHide').prop('disabled',false);
+				$('#btnShow').prop('disabled',true);
+				var effet = $('#sEffet').val();
+		       if(effet == 'fade')
+		             $('#divA').fadeIn();
+			    else if(effet == 'slide')
+		             $('#divA').slideDown();
+				else  $('#divA').show();
+		});
+		
+		$('#btnHide').on('click',function(){
+				$('#btnHide').prop('disabled',true);
+				$('#btnShow').prop('disabled',false);
+				var effet = $('#sEffet').val();
+				if(effet == 'fade')
+		             $('#divA').fadeOut();
+			    else if(effet == 'slide')
+		             $('#divA').slideUp();
+				else  $('#divA').hide();
+		});
+      }); 
+   </script>
+  </head>
+  <body>
+    effet : <select id="sEffet"><option>none</option><option>fade</option><option>slide</option></select> <br/>	
+   <input type="button" value="faire apparaître (avec effet)" id="btnShow" /> 
+   <input type="button" value="faire disparaître (avec effet)" id="btnHide" /> <br/>
+   <hr/>
+   <div id="divA">
+	   <p id="p1"> texte du paragraphe1 de divA </p>
+	   <p id="p2"> texte du paragraphe2 de divA </p>
+   </div>
+   <hr/>
+   ... suite ... suite ... suite ...
+   
+  </body>
+</html>

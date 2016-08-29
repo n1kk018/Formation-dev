@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>test custom jquery plugin</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <script src="lib/jquery-2.2.1.js"></script>
+	<script src="js/my-jquery-plugin.js"></script>
+    <script>
+      $(function() {
+        //$('#divA').withBorder().css('background','yellow');
+		$('#divA').withBorder('blue').css('background','yellow');
+      }); 
+   </script>
+  </head>
+  <body>
+    <div id="divA">
+      <p id="p1"> texte du paragraphe1 </p>
+      <p id="p2"> texte du paragraphe2 </p>
+   </div>
+  </body>
+</html>

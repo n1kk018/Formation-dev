@@ -1,0 +1,55 @@
+@import "global.css" ;
+
+#page { 
+	    display : block;
+	    margin:1px;
+	    padding : 0%;
+	    border-style:solid;
+        border-width:2px;
+        border-color: #0000aa;
+	    }
+
+#pageHeader,
+#pageContent,
+#pageFooter {
+        display:block;
+      }
+#pageHeader,
+#pageFooter {
+        width:100%;
+        background-color:#eeeeee;
+      }
+#pageHeader {
+        margin-bottom:0%;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        text-align: center;
+		font-size: 14px;
+      }
+#pageFooter {
+        margin-top:0%;
+        padding-top:0%;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+		 font-size: 14px;
+		 text-align: center;
+		 vertical-align: middle;
+		 color: #8E969D;
+      }
+#pageContent {
+	    padding : 0%;
+	    margin : 0%;
+        width:100%;
+         font-family: Verdana, Arial, Helvetica, sans-serif;
+	   font-size: 14px;
+      }
+      
+      
+#topMenu {
+	
+	
+}
+
+#mainHeader{
+	
+}
+    
+

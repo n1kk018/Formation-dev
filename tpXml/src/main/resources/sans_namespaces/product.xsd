@@ -1,0 +1,15 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="product" type="productType"/>
+	<xsd:complexType name="productType">
+		<xsd:all>
+			<xsd:element name="description" type="xsd:string"/>
+			<xsd:element name="price" type="myPositiveDecimal"/>
+		</xsd:all>
+		<xsd:attribute name="num" type="xsd:positiveInteger" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="myPositiveDecimal">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

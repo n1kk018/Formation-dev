@@ -1,0 +1,28 @@
+<table border="0" align="center" cellpadding="0" cellspacing="10"
+    xmlns="http://www.w3.org/1999/xhtml"     
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+ <tr>
+ <td><p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">  
+    				<f:facet name="start">  
+       					 <h:graphicImage value="images/ajaxloading.gif" />  <!-- ou bien  images/ajaxloadingbar.gif -->
+    				</f:facet>        
+    				<f:facet name="complete">  
+        				<h:outputText value="" />  
+    				</f:facet>
+    		 </p:ajaxStatus>
+   </td>
+ <td><img src="images/logo.jpg" /></td><td> [Appli XY] </td>
+ <td>
+	<h:form style="display:inline;">
+			mot clef: <h:inputText id="motclef" value="#{searchBean.motClef}" /> 
+			<h:commandButton value="rechercher" action="#{searchBean.doRecherche}"/>
+	</h:form>
+	...
+</td>
+<!-- eventuel p:breadCrumb pour localiser la page courante dans hierarchie 
+              et pour naviguer rapidement vers les parents-->
+</tr>
+</table>

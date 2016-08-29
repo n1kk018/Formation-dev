@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      template="templates/classic.xhtml"
+      xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">options / preferences</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewOptions">
+   <p:tab  title="theme">
+    <h:form id="frmTheme">
+     <p:themeSwitcher style="width:165px" id="defaultSwitcher" value="#{preferencesBean.theme}">  
+        <f:selectItem itemLabel="Choose Theme" itemValue="" />
+        <f:selectItem itemLabel="Aristo" itemValue="aristo" />  
+        <f:selectItem itemLabel="Black-Tie" itemValue="black-tie" />  
+        <f:selectItem itemLabel="Blitzer" itemValue="blitzer" /> 
+        <f:selectItem itemLabel="Bluesky" itemValue="bluesky" />  
+        <f:selectItem itemLabel="Casablanca" itemValue="casablanca"/>
+        <f:selectItem  itemLabel="Cupertino" itemValue="cupertino" />
+        <f:selectItem  itemLabel="Dark-Hive" itemValue="dark-hive"/>  
+        <f:selectItem  itemLabel="Dot-Luv" itemValue="dot-luv"/>  
+        <f:selectItem  itemLabel="Eggplant" itemValue="eggplant"/>  
+        <f:selectItem  itemLabel="Excite-Bike" itemValue="excite-bike"/>  
+        <f:selectItem  itemLabel="Flick" itemValue="flick"/>  
+        <f:selectItem  itemLabel="Glass-X" itemValue="glass-x"/>  
+        <f:selectItem  itemLabel="Hot-Sneaks" itemValue="hot-sneaks"/>  
+        <f:selectItem  itemLabel="Humanity" itemValue="humanity"/>  
+        <f:selectItem  itemLabel="Le-Frog" itemValue="le-frog"/>  
+        <f:selectItem  itemLabel="Midnight" itemValue="midnight"/>  
+        <f:selectItem  itemLabel="Mint-Choc" itemValue="mint-choc"/>  
+        <f:selectItem  itemLabel="Overcast" itemValue="overcast"/>  
+        <f:selectItem  itemLabel="Pepper-Grinder" itemValue="pepper-grinder"/>  
+        <f:selectItem  itemLabel="Redmond" itemValue="redmond"/>  
+        <f:selectItem  itemLabel="Rocket" itemValue="rocket"/>  
+        <f:selectItem  itemLabel="Sam" itemValue="sam"/>  
+        <f:selectItem  itemLabel="Smoothness" itemValue="smoothness"/>  
+        <f:selectItem  itemLabel="South-Street" itemValue="south-street"/>  
+        <f:selectItem  itemLabel="Sunny" itemValue="sunny" />
+        <f:selectItem  itemLabel="Start" itemValue="start" />
+        <f:selectItem  itemLabel="Swanky-Purse" itemValue="swanky-purse"/>  
+        <f:selectItem  itemLabel="Trontastic" itemValue="trontastic"/>  
+        <f:selectItem  itemLabel="UI-Darkness" itemValue="ui-darkness"/>  
+        <f:selectItem  itemLabel="UI-Lightness" itemValue="ui-lightness"/>  
+        <f:selectItem  itemLabel="Vader" itemValue="vader"/>  
+        <p:ajax  listener="#{preferencesBean.saveTheme}" />  
+     </p:themeSwitcher> 
+    </h:form>
+   </p:tab> 
+</p:tabView>
+</ui:define>
+</ui:composition>
+

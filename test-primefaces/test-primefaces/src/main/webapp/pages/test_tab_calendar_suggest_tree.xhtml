@@ -1,0 +1,90 @@
+<ui:composition template="templates/classic.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test calendar</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewXy">
+   <p:tab  title="calendar"> 
+    <h4>selection date date via p:calendar</h4> 
+   <h:form>   
+      <h:panelGrid  columns="2">
+       <h:outputLabel for="date" value="date:" /><p:calendar id="date" value="#{withDateBean.date}" />
+       <h:outputLabel for="commentaire" value="commentaire:" /><h:inputText id="commentaire" value="#{withDateBean.commentaire}" />
+       <h:outputLabel  value="" /><h:commandButton value="submit" action="#{withDateBean.doAction}"/>
+       </h:panelGrid>    
+    </h:form>
+      date selectionnee: <h:outputText  value="#{withDateBean.date}"> </h:outputText>
+	 </p:tab>	
+	 
+	<p:tab title="ajax suggestion"> 
+	<h4>suggestion (with ajax)</h4>
+	<h:form>
+	 pays: <p:autoComplete completeMethod="#{generalBean.completePays}" 
+	                       value="#{generalBean.pays}"  /> <br/>
+     texte: <p:autoComplete completeMethod="#{generalBean.completeTextDemo}" 
+	                       value="#{generalBean.txt1}"/> <br/>	                       
+	</h:form>
+	 </p:tab>
+	 
+	 <p:tab title="arbre (tree)" >
+	      <h4>regions et departements de la France</h4>
+	      <h:form id="formTree">
+	       <h:panelGrid  columns="3">
+	      <p:tree  value="#{generalBean.franceRoot}" var="node" style="width:220px;height:220px"
+	               selectionMode="single" selection="#{generalBean.selectedNode}">
+	          <p:ajax event="select" update=":tabViewXy:formTree:selectionOutput" listener="#{generalBean.onSelectedNodeChange}"/>     
+	         <p:treeNode>
+	              <h:outputText value="#{node}" />
+	          </p:treeNode>
+	      </p:tree>
+	       <h:outputLabel for="selectionOutput" value="selection:"/><h:outputText id="selectionOutput" value="#{generalBean.message}"/>
+	       </h:panelGrid>
+	      </h:form>
+	 </p:tab>
+	 
+	  <p:tab title="divers">
+	      <h:form id="formDivers">
+	       choix code de couleur (#rrggbb) : <p:colorPicker id="colorPick" value="#{generalBean.codeCouleur}" />
+	       <br/> <br/>
+	       clock (client) : <p:clock pattern="HH:mm:ss dd/MM/yyyy" id="idClock" /> 
+	       <!-- h:outputText value="p:clock pattern='HH:mm:ss dd/MM/yyyy' since pf v3.5" id="idClock" -->
+	       <p:tooltip for="idClock" value="This tooltip uses clip effects for the animation" showEffect="clip" hideEffect="clip" /> 
+	       </h:form>
+	  </p:tab>
+	  
+	 <p:tab title="accordion">
+	    <h4>se parametre comme p:tabView (avec sous p:tab), autre look</h4>
+	      <p:accordionPanel>
+	          <p:tab title="printemps">
+	              fleurs
+	          </p:tab>
+	          <p:tab title="ete">
+	              mer , soleil
+	          </p:tab>
+	          <p:tab title="automne">
+	              feuilles
+	          </p:tab>
+	           <p:tab title="hiver">
+	              neige
+	          </p:tab>
+	      </p:accordionPanel>
+	  </p:tab>
+	  
+	  <p:tab title="dynamic list of tab (dataModel)">
+	    <p:panel>
+	      <p:tabView id="subTabView" value="#{generalBean.listeContinents}" var="cont">
+	          <p:tab title="#{cont.nom}" >	          
+	               <p:graphicImage value="/pages/images/#{cont.imageName}" width="180" height="150"/>  <br/> 
+	               <i> <h:outputText value="#{cont.superficie} km2" /> </i> 
+	          </p:tab>
+	      </p:tabView>
+	     </p:panel>
+	  </p:tab>
+	 
+</p:tabView>
+
+</ui:define>
+</ui:composition>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>draggable , resizable with jquery-ui</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"  /> 
+    <script src="lib/jquery-2.2.1.js"></script>
+	 <script src="lib/jquery-ui.min.js"></script>
+	   <style>
+		#divA { width: 150px; height: 150px; padding: 0.5em; }
+		</style>
+    <script>
+      $(function() {
+	    $('#spanXx').css('border-width', '3px').css('border-style','solid');
+        $('#spanXx').draggable();
+		
+        $('#divA').resizable();
+      }); 
+   </script>
+  </head>
+  <body>
+   <span id="spanXx"> texte dans div or spanXx (draggable)</span> 
+   <br/><br/>
+   <div id="divA" class="ui-widget-content"> texte dans divA (resizable)</div>
+   
+  </body>
+</html>

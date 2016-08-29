@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>display events / jquery</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <script src="lib/jquery-2.2.1.js"></script>
+    <script>
+	  function add_message_in_listboxEvents(msg){
+				 var new_option = "<option>" + msg + "</option>" ;
+				 $("#listboxEvents").append(new_option) ;
+	  }
+	  
+	  function  specific_evt_details(evt){
+			var details ="";
+			if(evt.type == 'keypress'){
+				    var c = String.fromCharCode(evt.which);
+					details += (" char="+c);
+				 }
+			if(evt.type == 'change' ){
+				    var newValue = $(evt.target).val();
+				     details += (" newValue="+newValue);
+				 }
+			return details;
+	  }
+	  
+	  function  my_generic_event_handler(evt){
+		         var rapport_evt = "evt.type=" + evt.type 
+				    + " and evt.which=" + evt.which+" on #" + evt.target.id + specific_evt_details(evt);
+				 // source of event : evt.target or sometimes this (js) or $(this) (jquery) 	
+				 add_message_in_listboxEvents(rapport_evt);
+				 $('#spanPositionClient').html('x='+ evt.clientX+' y='+ evt.clientY);
+				 $('#spanPositionPage').html('x='+ evt.pageX+' y='+ evt.pageY);
+				 $('#spanPositionRelativeElt').html('x='+ (evt.pageX - this.offsetLeft) +' y='+ (evt.pageY - this.offsetTop));
+	    }
+	  
+      $(function() {
+	    $('#btnReset').on('focus blur click',my_generic_event_handler);
+	    $('#btnReset').on('click',function(){
+		         $("#listboxEvents").html("") ;
+				 $("#txt1").val("") ; $('#spanPositionClient').html("");
+				 $('#spanPositionPage').html(""); $('#spanPositionRelativeElt').html("");
+		});
+		
+		$('#txt1').on('keydown keyup keypress focus blur change',function(evt){
+		         var rapport_evt = "evt.type=" + evt.type + " and evt.which=" + evt.which+" on #" + evt.target.id + specific_evt_details(evt);
+				 add_message_in_listboxEvents(rapport_evt);
+		});
+		$('#cbMouseMove').on('change focus blur click',my_generic_event_handler);
+		$('#cbMouseMove').on('click',function(evt){
+		         if(this.checked)
+		           $('#txt1').on('mousemove',my_generic_event_handler);
+				 else
+				   $('#txt1').off('mousemove');				   
+		});
+		
+		$('#cbOtherMouseEvts').on('change focus blur click',my_generic_event_handler);
+		$('#cbOtherMouseEvts').on('click',function(evt){
+		         if(this.checked)
+		           $('#txt1').on('click dblclick mousedown mouseup mouseover mouseout scroll',my_generic_event_handler);
+				 else
+				   $('#txt1').off('click dblclick mousedown mouseup mouseover mouseout scroll');				 
+		});
+		
+		 $('#select1').on('click change focus blur',my_generic_event_handler);
+		 $('#radioCelibataire,#radioEnCouple').on('click change focus blur',my_generic_event_handler);
+		
+        
+      }); 
+   </script>
+  </head>
+  <body>
+   <h3>display events - jQuery</h3>
+   <hr/>
+   <form>
+       <input type="checkbox" id="cbMouseMove">mousemove event (filter)</input> &nbsp;&nbsp;
+	   <input type="checkbox" id="cbOtherMouseEvts">other mouse events (filter)</input> <br/>
+       <hr>
+	   txt1 (source of events): <input type="text" id="txt1" /> <br/>
+	   select1 (other source of events): <select id="select1" /> 
+	      <option>mineur</option>
+		  <option>majeur</option>
+	   </select>
+	   <br/>
+	   radioGroup1 (other source of events): 
+	   <input type="radio" name="radioGroup1" id="radioEnCouple">en_couple</input>
+	   <input type="radio" name="radioGroup1" id="radioCelibataire">celibataire</input>
+	   <br/>
+	   <input type="button" value="reset / clear list of events" id="btnReset" /> 
+	   <hr/>
+	   <table border="1">
+	   <tr>
+		   <th>position relative à zone cliente du navigateur 
+		  (partie page affichée selon ascenceurs)(evt.clientX,evt.clientY) </th>
+		   <td><span id="spanPositionClient"></span></td>
+	   </tr>
+	   <tr>
+		   <th>position absolue % Page (evt.pageX,evt.pageY)</th>
+		   <td><span id="spanPositionPage"></span></td>
+	   </tr>
+	   <tr>
+	       <th>position relative à l'élément (evt.pageX - this.offsetLeft , evt.pageY - this.offsetTop) </th>
+		   <td><span id="spanPositionRelativeElt"></span></td>
+	   </tr>
+	   </table>
+	   <u>derniers événements déclenchés et filtrés</u>: <br/>
+	   <select id="listboxEvents" size='15'> </select>
+   </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      
+<f:view contentType="text/html">
+<ui:insert name="pageMetaData"></ui:insert> <!-- eventuelles metadata jsf2 -->
+    <h:head>
+        <title><ui:insert name="pageTitle">default page title</ui:insert></title>
+        <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+        <ui:insert name="pageStyles"></ui:insert> <!-- eventuels styles css specifiques -->
+    </h:head>
+    <h:body>
+       <div id="page">
+        <div id="pageHeader"><ui:insert name="pageHeader">Default page header</ui:insert></div>
+        <div id="pageContent"><p:panel  style="width:99%;margin:0%">
+               <ui:insert name="pageMainContent">Default content</ui:insert>
+           </p:panel> 
+        </div>
+        <div id="pageFooter">
+            <ui:insert name="pageFooter">default footer</ui:insert>
+         </div>
+       </div>
+    </h:body>
+</f:view>
+</html>

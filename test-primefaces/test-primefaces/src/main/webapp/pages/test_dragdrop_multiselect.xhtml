@@ -1,0 +1,170 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test drag/drop and multiSelect</ui:define>
+<ui:define name="pageStyles">
+<style type="text/css">				
+			.slot {
+				background:#333333; 
+				width:200px; 
+				height:150px;
+				display:block;
+			}
+
+            .slotActive {
+				background: #FFCC00;
+			}
+		</style>
+		<script type="text/javascript">
+			function handleDrop(event, ui) {
+				ui.draggable.fadeOut(function() {$(this).fadeIn();});
+
+				$(this).droppable('disable');
+			}
+		</script>
+</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewDragDropMultiSelect">
+   <p:tab  title="drag and drop of images (selection)"> 
+     <h:form id="frmDd">
+      <p:growl id="growl" showDetail="true"/>  
+   <!-- deux categories de continents : type="exist" type="notExist" , scope 
+       tolerance="fit" ou "intersect" ou "pointer" -->
+      <h:panelGrid columns="3">  
+        <p:panel header="disponibles (to drag)">  
+            <p:dataGrid id="availableXxx" value="#{generalBean.listeContinents}" var="cont" columns="2">  
+                <p:column>  
+                    <p:graphicImage id="imageCont" value="/pages/images/#{cont.imageName}" 
+                             width="50" height="35"/>  
+                    <p:draggable for="imageCont" revert="true"  scope="#{cont.type}"/>  
+                </p:column>  
+            </p:dataGrid>  
+        </p:panel> 
+         <p:panel header="new selection (to drop)">  
+           <h:panelGrid columns="1" style="margin-left:40px;">  
+                <p:outputPanel id="bigSlot" styleClass="slot"   >                  
+                </p:outputPanel> 
+                <p:droppable  tolerance="fit" for="bigSlot" scope="exist" activeStyleClass="slotActive" onDrop="handleDrop" datasource="availableXxx">  
+                        <p:ajax listener="#{generalBean.onDrop}" update="growl,dataListSelectedContinents,availableXxx" />  
+                 </p:droppable>  
+          </h:panelGrid> 
+       </p:panel>
+        <p:panel id="panelSelectedContinents" header="elements selectionnes">  
+        <p:dataList value="#{generalBean.selectedContinents}" var="sc" id="dataListSelectedContinents">  
+            #{sc.nom} - #{sc.type}  
+        </p:dataList>  
+    </p:panel>  
+       </h:panelGrid>
+       <br/>
+       
+      <h:commandButton value="reset" action="#{generalBean.reInitContinents}" />
+      
+      </h:form>
+      
+    </p:tab>
+    <p:tab  title="drag and drop with table "> 
+         
+      <h:form id="FrmDropTable">
+
+		<p:fieldset legend="Available Continents">
+        <p:dataTable id="availableCont" var="cont" value="#{generalBean.listeContinents}">
+            <p:column style="width:20px">
+                <h:outputText id="dragIcon"
+                    styleClass="ui-icon ui-icon-arrow-4" />
+                <p:draggable for="dragIcon" revert="true" />
+            </p:column>
+            <p:column headerText="nom">
+               <h:outputText id="name" value="#{cont.nom}"/>
+            </p:column>
+
+            <p:column headerText="superficie">
+               <h:outputText id="superficie" value="#{cont.superficie}"/>
+            </p:column>
+         </p:dataTable>
+       </p:fieldset>
+            
+       <p:fieldset id="selectedCont" legend="Selected Continents" style="margin-top:20px">
+        <p:outputPanel id="dropArea">
+            <h:outputText value="!!!Drop here!!!"
+                    rendered="#{empty generalBean.selectedContinents}"
+                    style="font-size:24px;" />
+
+            <p:dataTable var="cont" value="#{generalBean.selectedContinents}" 
+                    rendered="#{not empty generalBean.selectedContinents}">
+
+            <p:column headerText="nom">
+               <h:outputText id="name2" value="#{cont.nom}"/>
+            </p:column>
+
+            <p:column headerText="superficie">
+               <h:outputText id="superficie2" value="#{cont.superficie}"/>
+            </p:column>
+            <p:column style="width:32px">
+                    <p:commandButton update=":tabViewDragDropMultiSelect:FrmDropTable:display"
+                            oncomplete="contDetailDialog.show()"
+                            icon="ui-icon-search">
+                        <f:setPropertyActionListener value="#{cont}"
+                            target="#{generalBean.currentSelectedCont}" />
+                    </p:commandButton>
+                </p:column>
+          </p:dataTable>
+          </p:outputPanel>
+          </p:fieldset>
+          
+          <p:droppable for="selectedCont" tolerance="touch" activeStyleClass="ui-state-highlight" 
+                   datasource="availableCont" onDrop="handleDrop">
+             <p:ajax listener="#{generalBean.onDrop}" update="dropArea availableCont" />
+           </p:droppable>
+
+		    <p:dialog header="Cont Detail" widgetVar="contDetailDialog" resizable="false" draggable="false"
+		              width="200" showEffect="fade" hideEffect="fade" modal="true">
+		
+		        <h:panelGrid id="display" columns="2" cellpadding="4">
+		
+		            <f:facet name="header">
+		                <p:graphicImage value="/pages/images/#{generalBean.currentSelectedCont.imageName}"
+		                                width="160" height="120"/>
+		            </f:facet>
+		
+		            <h:outputText value="Nom:" />
+		            <h:outputText value="#{generalBean.currentSelectedCont.nom}"/>
+		
+		            <h:outputText value="Superficie:" />
+		            <h:outputText value="#{generalBean.currentSelectedCont.superficie}"/>
+		
+		         </h:panelGrid>
+		    </p:dialog>
+          <br/>
+          <h:commandButton value="reinitialiser" action="#{generalBean.reInitContinents}" /> 
+         
+       </h:form>  
+    </p:tab>
+    <p:tab title="multi select">
+	      <h:form>
+		         <p:pickList id="pickList"  widgetVar="widgetPickList" value="#{pickListBean.cities}" var="city"   
+		                itemLabel="#{city}" itemValue="#{city}" />  
+		  
+		    <p:commandButton id="citySubmit"  type="button" value="Submit" update="displayCities" oncomplete="PF('widgetPickList').show()" style="margin-top:5px"/> 
+		     
+		     <p:dialog modal="true" showEffect="fade" hideEffect="fade" widgetVar="cityDialog">  
+		        <h:panelGrid id="displayCities" columns="2">  
+		            <h:outputText value="Source: " style="font-weight:bold"/>  
+		                <ui:repeat value="#{pickListBean.cities.source}" var="item">  
+		                <h:outputText value="#{item}" style="margin-right:5px" />  
+		            </ui:repeat>  
+		  
+		            <h:outputText value="Target: " style="font-weight:bold"/>  
+		            <ui:repeat value="#{pickListBean.cities.target}" var="item">  
+		                <h:outputText value="#{item}" style="margin-right:5px" />  
+		            </ui:repeat>  
+		        </h:panelGrid>  
+		    </p:dialog> 
+		    
+	     </h:form> 
+	</p:tab>	
+</p:tabView>
+</ui:define>
+</ui:composition>

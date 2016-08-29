@@ -1,0 +1,143 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test data , tables et export (pdf,...)</ui:define>
+<ui:define name="pageStyles">
+<style type="text/css">
+			.contItem {
+				width:200px;
+				height:260px;
+				text-align:center;
+			}
+		</style>
+</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewTable">
+   <p:tab  title="table with export"> 
+     <h:form>
+      <p:dataTable id="tbl" var="cont" value="#{generalBean.listeContinents}" paginator="true" rows="4">  
+	    <p:column>  
+	        <f:facet name="header">  
+	            <h:outputText value="continent" />  
+	        </f:facet>  
+	        <h:outputText value="#{cont.nom}" />  
+	    </p:column>  
+        <p:column>  
+	        <f:facet name="header">  
+	            <h:outputText value="superficie" />  
+	        </f:facet>  
+	        <h:outputText value="#{cont.superficie}" />  
+	    </p:column>  
+      </p:dataTable>
+       <p:panel header="Export All Data">  
+        <h:commandLink>  
+            <p:graphicImage value="/pages/images/excel.png" />  
+            <p:dataExporter type="xls" target="tbl" fileName="continents" />  
+            <!-- si pageOnly="true" exporte que la page courante du tableau -->
+        </h:commandLink>  
+  
+        <h:commandLink>  
+            <p:graphicImage value="/pages/images/pdf.png" />  
+            <p:dataExporter type="pdf" target="tbl" fileName="continents"/>  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/pages/images/csv.png" />  
+            <p:dataExporter type="csv" target="tbl" fileName="continents" />  
+        </h:commandLink>  
+          
+        <h:commandLink>  
+            <p:graphicImage value="/pages/images/xml.png" />  
+            <p:dataExporter type="xml" target="tbl" fileName="continents" />  
+        </h:commandLink>  
+    </p:panel>  
+    </h:form>
+    </p:tab>
+    
+    <p:tab  title="table with sorting"> 
+    <p:dataTable id="tblSort" var="cont" sortMode="multiple" value="#{generalBean.listeContinents}" paginator="false" rows="8">  
+	    <p:column sortBy="#{cont.nom}" headerText="continent">  
+	             <h:outputText value="#{cont.nom}" />  
+	    </p:column>  
+        <p:column sortBy="#{cont.superficie}" headerText="superficie">  
+	        <h:outputText value="#{cont.superficie}" />  
+	    </p:column>  
+      </p:dataTable>
+    </p:tab>
+    
+     <p:tab  title="carousel">  
+		<p:carousel id="basicCarousel" value="#{generalBean.listeContinents}" var="cont" itemStyleClass="contItem" >  
+		    <f:facet name="header">  
+		            Continents  
+		    </f:facet>  
+		    <h:panelGrid columns="1" style="width:100%" cellpadding="5">  
+		        <p:graphicImage value="/pages/images/#{cont.imageName}" width="180" height="150"/>   
+		          
+		        <h:outputText value="nom: #{cont.nom}" />  
+		        <h:outputText value="superficie: #{cont.superficie}" />
+		        <h:outputText value="type: #{cont.type}" />  
+		          
+		    </h:panelGrid>  
+		    <f:facet name="footer">  
+		            In total there are 6+1 continents.  
+		    </f:facet>  
+		</p:carousel>  
+    </p:tab>
+   
+    
+     
+    <p:tab  title="dataGrid"> 
+	    <p:dataGrid var="cont" value="#{generalBean.listeContinents}" columns="2"  
+	        rows="2" paginator="true"  
+	        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+	        rowsPerPageTemplate="2,4">  
+	  
+	        <p:panel header="#{cont.nom}" style="text-align:center">  
+	            <h:panelGrid columns="1" style="width:100%">  
+	                <p:graphicImage value="/pages/images/#{cont.imageName}" width="180" height="150"/>   
+	  
+	                <h:outputText value="#{cont.superficie} km2" />      
+	            </h:panelGrid>  
+	        </p:panel>  
+	  
+	    </p:dataGrid>  
+    </p:tab>
+    
+     
+    <p:tab  title="dataList in fieldset"> 
+	    <p:fieldset legend="contients"> 
+		    <p:dataList value="#{generalBean.listeContinents}" var="cont" itemType="disc">  
+		        #{cont.nom}, #{cont.superficie} km2  
+		    </p:dataList> 
+		</p:fieldset>
+		<br/>
+		<p:fieldset legend="pays"> 
+		     <p:dataList value="#{generalBean.listePays}" var="pays" itemType="square">  
+		        #{pays} 
+		    </p:dataList>
+		</p:fieldset>
+    </p:tab>
+    
+     
+    <p:tab  title="orderList"> 
+    <h:form>
+	    <p:orderList value="#{generalBean.listePays}" var="pays" controlsLocation="none"  
+	                 itemLabel="#{pays}" itemValue="#{pays}" id="basicList"/>  
+	  
+	    drag and drop list elements to re-order <p:commandButton value="Submit" update="displayPays" oncomplete="paysDialog.show()" style="margin-top:5px" id="btnPaysSubmit"/>
+	    
+	    <p:dialog modal="true" showEffect="fade" hideEffect="fade" widgetVar="paysDialog" header="pays" width="200" id="idPaysDialog">  
+        <p:dataList id="displayPays" value="#{generalBean.listePays}" var="pays">  
+            <h:outputText value="#{pays}"  />  
+        </p:dataList>  
+    </p:dialog>    
+    </h:form>
+    
+    
+    </p:tab>
+</p:tabView>  
+</ui:define>
+</ui:composition>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>exemples jquery</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <script src="lib/jquery-2.2.1.js"></script>
+    <script>
+      $(function() {
+        $('#p1').css('border-width', '3px').css('border-style','solid');
+        $("#p2").html("nouveau contenu html du paragraphe p2"); 
+        $('p').css('color', 'blue'); // tous les elements de type p en bleu
+		$('#btnEuroToFranc').on('click',function(){
+		         $("#txtFranc").html( 6.55957 * Number( $("#txtEuro").val()) ) ;
+		});
+      }); 
+   </script>
+  </head>
+  <body>
+   <p id="p1"> texte du paragraphe1 </p>
+   <p id="p2"> texte du paragraphe2 </p>
+   <form>
+	   somme en euro : <input type="text" id="txtEuro" /> <br/>
+	   <input type="button" value="euroToFranc" id="btnEuroToFranc" /> <br/>
+	   montant equivalent en franc : <span id="txtFranc"/> 
+   </form>
+  </body>
+</html>

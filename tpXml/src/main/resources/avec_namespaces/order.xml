@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='order.xslt' ?>
+<o:order xmlns:o="http://www.afcepf.fr/2016/order" 
+		 xmlns:p="http://www.afcepf.fr/2016/product"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://www.afcepf.fr/2016/product product.xsd
+						http://www.afcepf.fr/2016/order order.xsd">
+	<o:num>1</o:num>
+	<o:date>2016-08-24</o:date>
+	<o:products num="92">
+		<p:description>Bean Can</p:description>
+		<p:price>2.5</p:price>
+		<o:quantity>5</o:quantity>
+	</o:products>
+	<o:products num="33">
+		<p:description>Red Wine</p:description>
+		<p:price>4.25</p:price>
+		<o:quantity>52</o:quantity>
+	</o:products>
+</o:order>

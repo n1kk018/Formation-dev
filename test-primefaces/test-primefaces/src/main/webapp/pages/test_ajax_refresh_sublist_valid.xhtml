@@ -1,0 +1,73 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test ajax (refresh , validation, ...)</ui:define>
+<ui:define name="pageMainContent">
+  <p:tabView id="tabViewAjax" >
+
+<p:tab title="validation (ajax)" >
+    <h:form id="frmUserValid">
+	 <p:messages id="msgFrmUserValid" closable="true"/>
+     <h:panelGrid  columns="3" >
+       <h:outputLabel for="nom" value="nom:" />
+           <h:inputText id="nom" label="nom" value="#{generalBean.user.name}" >
+              <p:ajax event="keyup" update="msgNom" />
+           </h:inputText> 
+              <p:message for="nom" id="msgNom" display="icon" />
+      <h:outputLabel for="address" value="adresse:" />
+            <h:inputText id="address" label="adresse" value="#{generalBean.user.address}">
+                <p:ajax event="keyup" update="msgAddress" />
+            </h:inputText>
+               <p:message for="address" id="msgAddress" display="icon"/>
+       <h:outputLabel for="telephone" value="telephone:" />
+            <h:inputText id="telephone" label="telephone"  value="#{generalBean.user.telephone}" >
+                <p:ajax event="keyup" update="msgTelephone" />
+            </h:inputText> 
+                <p:message for="telephone"  id="msgTelephone" display="icon" />
+       <h:outputLabel for="email" value="email:" />
+            <h:inputText id="email" label="email"  value="#{generalBean.user.email}" >
+                <p:ajax event="keyup" update="msgEmail"  />
+            </h:inputText>
+                <p:message for="email"  id="msgEmail" display="icon"/>
+        <h:commandButton value="enregistrer (ici non ajax)" action="#{generalBean.saveUser}"/>
+        <!-- IMPORTANT : apres un submit et un refresh global de la page , on se retrouve sur le premier des onglets -->
+      </h:panelGrid>
+	</h:form>
+    </p:tab>
+
+     <p:tab title="actualisation liste detail via ajax" >
+       <h:form>   
+      <h:panelGrid  columns="3">
+       <h:outputLabel for="categorieList" value="categories" />
+       <h:outputLabel for="productList" value="  produits  " />
+       <h:outputLabel for="panelDetails" value="  details du produit" />
+       <h:selectOneListbox id="categorieList" size="5"
+            valueChangeListener="#{productBean.onCategorieChange}" value="#{productBean.selectedCatNum}" >
+           <f:selectItems value="#{productBean.categories}" var="c" itemValue="#{c.number}" itemLabel="#{c.label}" />
+           <p:ajax event="click" update="productList,panelDetails"/>
+       </h:selectOneListbox>
+       <h:selectOneListbox id="productList" size="5"
+             valueChangeListener="#{productBean.onProductChange}" value="#{productBean.selectedProdNum}" >
+           <f:selectItems value="#{productBean.products}" var="p" itemValue="#{p.number}" itemLabel="#{p.label}"/>
+           <p:ajax event="click" update="panelDetails"/>
+       </h:selectOneListbox>
+       <p:panel id="panelDetails">
+       numero/reference :  <h:outputText  value="#{productBean.selectedProd.number}" /> <br/>
+       label: <h:outputText  value="#{productBean.selectedProd.label}" /> <br/>
+       prix: <h:outputText  value="#{productBean.selectedProd.prix}" /> <br/>
+       caracteristiques: <h:outputText  value="#{productBean.selectedProd.caracteristiques}" /> <br/>
+       </p:panel>
+       <h:outputLabel  value="selection -->" /><p:commandButton value=" ** submit **" action="#{productBean.doSelection}"
+                                                 ajax="true" update="outputChooseProd" />
+       </h:panelGrid>    
+    
+      produit selectionne (cote serveur): <h:outputText  id="outputChooseProd" value="#{productBean.chooseProd.label}"> </h:outputText> 
+      </h:form>
+    </p:tab>
+    
+   </p:tabView>
+</ui:define>
+</ui:composition>

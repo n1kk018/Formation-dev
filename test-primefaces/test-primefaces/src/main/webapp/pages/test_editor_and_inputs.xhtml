@@ -1,0 +1,43 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test editor and inputs</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewEditorInput">
+   <p:tab  title="editor"> 
+    <h:form id="formEditor">  
+     <p:editor id="editor"   widgetVar="widgetEditor" value="#{generalBean.htmlText}" width="600"/>  
+  
+    <h:panelGrid columns="2" style="margin-top:10px">  
+        <p:commandButton id="submitButton" value="Submit" update="display" oncomplete="PF('dlgTxtDisplay').show()"  
+                        icon="ui-icon-disk" />  
+        <p:commandButton id="clearButton" type="button" value="Clear" onclick="PF('widgetEditor').clear()"  
+                        icon="ui-icon-close" /> 
+    </h:panelGrid>  
+  
+    <p:dialog header="Content" widgetVar="dlgTxtDisplay" showEffect="fade" hideEffect="fade" modal="true">  
+        <h:outputText id="display" value="#{generalBean.htmlText}" escape="false" />  
+    </p:dialog>  
+    </h:form>
+    </p:tab>
+    <p:tab  title="inputs"> 
+    ...
+    </p:tab>
+     <p:tab  title="upload"> 
+        exemple a peaufiner
+        <h:form enctype="multipart/form-data">         
+          <p:growl id="msgGrowl" showDetail="true"/>   
+	      <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}"  
+	            mode="advanced"   
+	            update="msgGrowl"  
+	            sizeLimit="100000"   
+	            allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/> 
+
+       </h:form> 
+    </p:tab>
+</p:tabView>  
+</ui:define>
+</ui:composition>

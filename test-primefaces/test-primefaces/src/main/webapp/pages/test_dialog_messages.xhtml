@@ -1,0 +1,118 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test dialog box and messages</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewDialog">
+   <p:tab  title="dialogBox"> 
+       <h:panelGrid columns="1" cellpadding="5">  
+            <p:commandButton id="basicDialogButton" value="Basic" onclick="PF('dlg1').show()" type="button" />  
+  
+            <p:commandButton id="modalDialogButton" value="Modal" onclick="PF('dlg2').show()" type="button"/>  
+  
+            <p:commandButton id="effectsDialogButton" value="Effects" onclick="PF('dlg3').show()" type="button" />  
+       </h:panelGrid>  
+  
+		<p:dialog id="basicDialog" header="Basic Dialog" widgetVar="dlg1">  
+		    <h:outputText value="PrimeFaces is a good JSF2 extension!" />  
+		</p:dialog>  
+		  
+		<p:dialog id="modalDialog" header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">  
+		    <h:outputText value="This is a Modal Dialog (mode bloquant)." />  
+		</p:dialog>  
+		  
+		<p:dialog header="Effects" widgetVar="dlg3" showEffect="clip" hideEffect="clip" height="100">  
+		    <h:outputText value="This dialog has nice clip showEffect and hideEffect." />  
+		</p:dialog>  
+    </p:tab>
+    <p:tab  title="overlay panel"> 
+       <h:form id="formOverlay">  
+	                  
+	    <p:commandButton id="chartBtn" value="basic/default (click here to show , click anywhere to hide)" type="button" />  <br/>
+	  
+	    <p:overlayPanel id="chartPanel" for="chartBtn" hideEffect="fade">  
+	        <p:chart type="pie" id="chart" model="#{chartBean.pieModel}" style="width:300px;height:200px" />  
+	    </p:overlayPanel>  
+	     
+	  
+	     <p:graphicImage id="img" value="images/images.png" style="cursor:pointer" title="imageSwitch , mouseover event , clip effect"/>  
+	  
+	    <p:overlayPanel id="imgPanel" for="img" showEffect="clip" hideEffect="clip" showEvent="mouseover" hideEvent="mousedown"  
+	                dismissable="false" showCloseIcon="true">  
+	        <p:imageSwitch id="imgSwitch" effect="fade" style="width:200px;height:120px;">  
+	            <ui:repeat value="#{generalBean.listImageName}" var="image">  
+	                <p:graphicImage value="/pages/images/#{image}" width="200" height="120"/>  
+	            </ui:repeat>  
+	        </p:imageSwitch>  
+	    </p:overlayPanel>  
+	   </h:form>  
+    </p:tab>
+    <p:tab  title="lightBox">
+       <h4>images p:lightBox</h4>  
+		<p:lightBox >  
+		    <h:outputLink value="images/nature1.jpg" title="nature 1">  
+		        <h:graphicImage value="/pages/images/nature1.jpg" witdth="50" height="40"/> <!-- xxx_small.jpg without width/height --> 
+		    </h:outputLink>  
+		  
+		    <h:outputLink value="images/nature2.jpg" title="nature 2">  
+		        <h:graphicImage value="/pages/images/nature2.jpg" witdth="50" height="40" />  <!-- xxx_small.jpg without width/height --> 
+		    </h:outputLink>  
+		  
+		    <h:outputLink value="images/nature3.jpg" title="nature 3">  
+		        <h:graphicImage value="/pages/images/nature3.jpg" witdth="50" height="40"/>  <!-- xxx_small.jpg without width/height --> 
+		    </h:outputLink>  
+		  
+		    <h:outputLink value="images/nature4.jpg" title="nature 4">  
+		        <h:graphicImage value="/pages/images/nature4.jpg" witdth="50" height="40"/>  <!-- xxx_small.jpg without width/height --> 
+		    </h:outputLink>  
+		</p:lightBox>  
+  
+		<h4>default/inline p:lightBox</h4>  
+		<p:lightBox>  
+		    <h:outputLink value="#">  
+		        <h:outputText value="Video Content in lightBox"/>  
+		    </h:outputLink>  
+		  
+		    <f:facet name="inline">  
+		        <p:media value="http://vimeo.com/moogaloop.swf?clip_id=18079550"  width="400" height="225" player="flash"/>  
+		    </f:facet>  
+		</p:lightBox>  
+		
+		  <h4>iframe lightBox</h4>  
+		<p:lightBox iframe="true">  
+		    <h:outputLink value="http://www.primefaces.org" title="PrimeFaces HomePage in lightBox">  
+		        <h:outputText value="PrimeFaces HomePage"/>  
+		    </h:outputLink>  
+		</p:lightBox>  
+    </p:tab>
+    <p:tab title="messages (info,warn,error)">
+        <h:form id="formGenerateMsg">  
+    		<p:messages id="messagesDemo" showDetail="true" autoUpdate="true" closable="true" />  
+    		 
+    		<p:commandButton  value="generate messages action" actionListener="#{generalBean.generateInfoWarnErrorFatal}"/>                 
+    		                  
+    	</h:form>
+    </p:tab>
+    
+    <p:tab title="growl messages">
+        <h:form id="formGenerateMsgGrowl">  
+    		
+    		<p:growl id="growl" showDetail="true"  />
+    		<p:growl id="stickyGrowl" showDetail="true" sticky="true" /> 
+    		
+    		<p:commandButton  value="generate messages [with growl update (6s)]" 
+    		                  actionListener="#{generalBean.generateInfoWarnErrorFatal}"
+    		                  update="growl" />  <br/>   
+    		<p:commandButton  value="generate messages [with stickyGrowl update (to close)]" 
+    		                  actionListener="#{generalBean.generateInfoWarnErrorFatal}"
+    		                  update="stickyGrowl" />                                     
+    		                  
+    	</h:form>
+    </p:tab>
+
+</p:tabView>  
+</ui:define>
+</ui:composition>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:product num="92" 
+	xmlns:p="http://www.afcepf.fr/2016/product" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.afcepf.fr/2016/product product.xsd">
+	<p:description>Bean Can</p:description>
+	<p:price>2.5</p:price>
+</p:product>

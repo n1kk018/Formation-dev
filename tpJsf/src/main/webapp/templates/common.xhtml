@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:view>
+	<!-- <f:loadBundle basename="resources" var="msg" /> -->
+	<ui:insert name="pageMetaData"></ui:insert>
+	<h:head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="../assets/css/main.css" rel="stylesheet" type="text/css" media="all" />
+	</h:head>
+	<h:body>
+		<header class="row">
+			<section class="col-xs-10">
+				<ui:insert name="pageHeader">
+					<ui:include src="/pages/header.xhtml" />
+				</ui:insert>
+			</section>
+			<section class="col-xs-2">AFCEPF</section>
+		</header>
+		<nav class="row col-xs-12">
+			<ui:insert name="pageMenu">
+				<ui:include src="/pages/menu.xhtml" />
+			</ui:insert>
+		</nav>					
+		<main class="row">
+			<aside class="col-xs-4">
+			</aside>
+			<section class="col-xs-8">
+				<ui:insert name="body"></ui:insert>
+			</section>
+		</main>
+		<footer class="row col-xs-12">
+			<ui:insert name="pageFooter">
+				<ui:include src="/pages/footer.xhtml" />
+			</ui:insert>
+		</footer>
+	</h:body>
+</f:view>
+</html>

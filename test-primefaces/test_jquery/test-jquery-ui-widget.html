@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>  <meta charset="UTF-8">   <title>jquery-ui widget</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css"  /> 
+	<!--
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css"  />  
+   <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css"  />
+    -->	
+    <script src="lib/jquery-2.2.1.js"></script>
+	 <script src="lib/jquery-ui.min.js"></script>
+	   <style>
+		    #myDialog { display: none;}
+		</style>
+    <script>
+      $(function() {
+	        $.datepicker.regional['fr'] = {
+				closeText: 'Fermer',  prevText: 'Pr&eacute;c&eacute;dent',  nextText: 'Suivant',  currentText: 'Aujourd\'hui',
+				monthNames: ['Janvier','F&eacute;vrier','Mars','Avril','Mai','Juin','Juillet','Ao&ucirc;t','Septembre','Octobre','Novembre','D&eacute;cembre'],
+				monthNamesShort: ['Janv.','F&eacute;vr.','Mars','Avril','Mai','Juin','Juil.','Ao&ucirc;t','Sept.','Oct.','Nov.','D&eacute;c.'],
+				dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+				dayNamesShort: ['Dim.','Lun.','Mar.','Mer.','Jeu.','Ven.','Sam.'],
+				dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+				weekHeader: 'Sem.',  dateFormat: 'dd/mm/yy',  firstDay: 1,  isRTL: false,
+				showMonthAfterYear: false,  yearSuffix: ''
+				};
+			$.datepicker.setDefaults($.datepicker.regional['fr']);
+			$( "#datepicker1").datepicker();
+		
+		   $('#btnOpenDlg').on('click', function(){
+			 $("#myDialog" ).dialog( {modal: true,
+									  buttons: { "Oui": function() {
+										  $('body').css('background', $('#sBackColor').val());
+										  $( this ).dialog( "close" );
+										},"Non": function() {
+										  $( this ).dialog( "close" );
+										}
+									  }
+									});
+              }	//end of evt function								
+			);//end of on_click
+			 
+			  $('#serieOnglets').tabs(); //look et comportement sous forme d'onglets
+			 
+			 });
+   </script>
+  </head>
+  <body>
+  Date: <input type="text" id="datepicker1" /> <br/>
+  
+  <input type='button' id="btnOpenDlg" value="open myDialog" /> <br/>
+  <div id="myDialog" title="Simple Dialog">
+      Cette boîte de dialogue peut être redimensionnée, déplacée et fermée.
+	  <hr/>
+	  backColor : <select id="sBackColor">
+	           <option  checked='true' >white</option>
+			   <option   value='#eeee00'>yellow</option>
+			   <option   value='#cc0000'>red</option>
+			   <option   value='#00cc00'>green</option>
+			   <option   value='#0000cc'>blue</option>
+	  </select>
+	  Voulez vous cette couleur de fond ?
+  </div>
+  
+  <div id="serieOnglets">
+  <ul>
+    <li><a href="#onglet-1">Titre onglet 1</a></li>
+    <li><a href="#onglet-2">Titre onglet 2</a></li>
+    <!-- <li><a href="....">recup contenu via ajax</a></li> -->
+  </ul>
+  <div id="onglet-1">
+    <p>contenu onglet1</p>
+  </div>
+  <div id="onglet-2">
+    <p>contenu de l' onglet 2</p>
+  </div>
+</div>
+
+  </body>
+</html>

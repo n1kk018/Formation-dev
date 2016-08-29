@@ -1,0 +1,139 @@
+2016-08-25 14:20:37,341 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:31:19,152 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:31:19,161 INFO main fr.afcepf.al28.dom.DomXmlParser - description : Bean Can
+2016-08-25 14:31:19,162 INFO main fr.afcepf.al28.dom.DomXmlParser - price : 2.5
+2016-08-25 14:32:14,805 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:32:14,813 INFO main fr.afcepf.al28.dom.DomXmlParser - p:description : Bean Can
+2016-08-25 14:32:14,813 INFO main fr.afcepf.al28.dom.DomXmlParser - p:price : 2.5
+2016-08-25 14:32:25,374 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:32:25,383 INFO main fr.afcepf.al28.dom.DomXmlParser - description : Bean Can
+2016-08-25 14:32:25,384 INFO main fr.afcepf.al28.dom.DomXmlParser - price : 2.5
+2016-08-25 14:39:24,519 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:39:24,527 INFO main fr.afcepf.al28.dom.DomXmlParser - description : Bean Can
+2016-08-25 14:39:24,528 INFO main fr.afcepf.al28.dom.DomXmlParser - price : 2.5
+2016-08-25 14:39:24,528 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> description : Bean Can
+2016-08-25 14:39:24,530 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> price : 2.5
+2016-08-25 14:46:37,112 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:46:37,120 INFO main fr.afcepf.al28.dom.DomXmlParser - description : Bean Can
+2016-08-25 14:46:37,120 INFO main fr.afcepf.al28.dom.DomXmlParser - price : 2.5
+2016-08-25 14:46:37,121 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> description : Bean Can
+2016-08-25 14:46:37,121 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> price : 2.5
+2016-08-25 14:47:25,821 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:47:25,830 INFO main fr.afcepf.al28.dom.DomXmlParser - p:description : Bean Can
+2016-08-25 14:47:25,830 INFO main fr.afcepf.al28.dom.DomXmlParser - p:price : 2.5
+2016-08-25 14:51:06,790 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:51:06,797 INFO main fr.afcepf.al28.dom.DomXmlParser - p:description : Bean Can
+2016-08-25 14:51:06,797 INFO main fr.afcepf.al28.dom.DomXmlParser - p:price : 2.5
+2016-08-25 14:52:24,415 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:52:24,425 INFO main fr.afcepf.al28.dom.DomXmlParser - p:description : Bean Can
+2016-08-25 14:52:24,426 INFO main fr.afcepf.al28.dom.DomXmlParser - p:price : 2.5
+2016-08-25 14:53:18,957 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:53:18,966 INFO main fr.afcepf.al28.dom.DomXmlParser - description : Bean Can
+2016-08-25 14:53:18,966 INFO main fr.afcepf.al28.dom.DomXmlParser - price : 2.5
+2016-08-25 14:54:28,619 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:54:28,626 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product : description : Bean Can
+2016-08-25 14:54:28,627 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product : price : 2.5
+2016-08-25 14:54:48,066 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:54:48,074 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 14:54:48,075 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 14:59:05,892 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:59:05,900 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 14:59:05,900 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 14:59:05,900 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 14:59:17,304 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 14:59:17,312 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 14:59:17,313 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 14:59:17,313 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 14:59:17,313 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:11:28,021 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:11:28,028 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:11:28,028 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:11:28,029 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:11:28,029 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:28:08,022 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:28:08,027 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:28:08,028 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:28:08,029 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:28:08,030 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:31:42,267 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:31:42,273 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:31:42,273 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:31:42,274 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:31:42,274 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:33:38,045 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:33:38,051 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:33:38,051 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:33:38,052 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:33:38,052 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:33:54,868 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:33:54,876 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:33:54,877 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:33:54,877 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:33:54,878 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:34:10,284 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:34:10,292 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:34:10,292 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:34:10,293 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:34:10,293 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:34:33,029 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:34:33,036 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:34:33,036 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:34:33,037 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:34:33,037 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:36:00,754 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:36:00,762 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:36:00,763 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:36:00,763 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:36:00,763 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:36:31,953 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:36:31,961 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:36:31,961 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:36:31,962 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:36:31,962 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:37:05,287 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:37:05,295 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:37:05,296 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:37:05,296 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:37:05,296 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:37:27,454 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:37:27,462 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:37:27,462 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:37:27,463 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:37:27,463 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:49:51,537 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:49:51,543 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:49:51,543 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:49:51,543 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:49:51,544 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:50:00,212 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:50:00,218 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:50:00,218 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:50:00,219 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:50:00,219 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:52:19,826 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:52:19,831 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:52:19,831 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:52:19,832 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:52:19,832 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 15:53:08,748 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:53:08,754 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:53:08,754 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : -2.5
+2016-08-25 15:53:08,755 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:53:08,755 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : -2.5
+2016-08-25 15:53:40,178 INFO main fr.afcepf.al28.dom.DomXmlParser - num=92
+2016-08-25 15:53:40,183 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:description : Bean Can
+2016-08-25 15:53:40,184 INFO main fr.afcepf.al28.dom.DomXmlParser - http://www.afcepf.fr/2016/product:price : 2.5
+2016-08-25 15:53:40,185 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:description : Bean Can
+2016-08-25 15:53:40,185 INFO main fr.afcepf.al28.dom.DomXmlParser - V2 --> p:price : 2.5
+2016-08-25 16:37:19,302 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - prix : 2.5
+2016-08-25 16:37:19,332 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - numero : 92
+2016-08-25 16:37:19,332 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - description : Bean Can
+2016-08-25 16:44:15,235 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - prix : 2.5
+2016-08-25 16:44:15,241 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - numero : 92
+2016-08-25 16:44:15,241 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - description : Bean Can
+2016-08-25 16:46:43,600 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - prix : 2.5
+2016-08-25 16:46:43,606 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - numero : 92
+2016-08-25 16:46:43,606 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - description : Bean Can
+2016-08-25 16:56:38,421 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - prix : 2.5
+2016-08-25 16:56:38,427 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - numero : 92
+2016-08-25 16:56:38,427 INFO main fr.afcepf.al28.jaxb.JaxbXmlParser - description : Bean Can

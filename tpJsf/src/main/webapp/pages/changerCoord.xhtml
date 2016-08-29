@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+	<ui:composition template="/templates/common.xhtml">
+			<ui:define name="pageTitle">changerCoord</ui:define>
+			<ui:define name="pageHeader">Changer les coordonnées</ui:define>
+			<ui:define name="body">
+				<form jsfc="h:form" id="Form">
+					<h:panelGrid columns="3">
+						<h:outputLabel value="age: " for="age" />
+						<h:inputText id="age" value="#{clientMBean.client.age}">
+							<p:ajax event="blur" update="msgAge" />
+						</h:inputText>
+						<p:message id="msgAge" for="age" display="icon" />
+						
+						<h:outputLabel value="adresse: " for="adresse" />
+						<h:inputText id="adresse" value="#{clientMBean.client.adresse}">
+							<p:ajax event="blur" update="msgAdresse" />
+						</h:inputText>
+						<p:message id="msgAdresse" for="adresse" display="icon" />
+						
+						<h:outputLabel value="" />
+						<h:commandButton action="#{clientMBean.majCoord}" value="Mettre à jour les coordonnées" />
+					</h:panelGrid>
+				</form>
+			</ui:define>
+	</ui:composition>
+
+</html>

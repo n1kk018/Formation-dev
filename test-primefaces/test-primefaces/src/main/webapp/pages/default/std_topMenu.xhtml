@@ -1,0 +1,37 @@
+  <p:menubar  xmlns:h="http://java.sun.com/jsf/html"    
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:p="http://primefaces.org/ui" >
+      <p:submenu label="navigations" >
+         <p:menuitem value="welcome / accueil" url="std_welcome.jsf" />
+         <p:menuitem url="test_tab_calendar_suggest_tree.jsf" value="calendar, suggest, arbre"/>
+     	 <p:menuitem url="test_ajax_refresh_sublist_valid.jsf" value="ajax (refresh, validation)"/>
+         <p:menuitem url="test_dialog_messages.jsf" value="dialogBox, messages"/>
+         <p:menuitem url="test_layout_panel_toggling.jsf"  value="layout et panel"/>
+         <p:menuitem url="test_dragdrop_multiselect.jsf" value="drag/drop et multiselect"/>
+         <p:menuitem url="test_wizard.jsf" value="etapes (wizard)"/>
+         <p:menuitem url="test_editor_and_inputs.jsf" value="editeur et inputs"/>
+         <p:menuitem url="test_charts.jsf" value="graphiques (charts)"/>
+         <p:menuitem url="test_gallerie_et_divers.jsf" value="galleries et divers"/>
+         <p:menuitem url="test_data_tables_and_export.jsf" value="data tables et export"/>
+      </p:submenu>
+      <p:submenu label="options" >
+          <p:menuitem value="preferences" url="std_options.jsf" />
+      </p:submenu>
+      <p:submenu label="divers" >
+         <p:menuitem value="a definir ...." url="#" />
+      </p:submenu>
+      <p:submenu label="liens externes" >
+        <p:submenu label="JSF2">
+          <p:menuitem value="myfaces" url="http://myfaces.apache.org/" />
+          <p:menuitem value="primefaces showcase" url="http://www.primefaces.org/showcase/ui/home.jsf" />
+        </p:submenu>  
+        <p:submenu label="divers">
+          <p:menuitem value="google (recherche)" url="http://www.google.fr/" />
+        </p:submenu>
+      </p:submenu>
+      <p:submenu label="aide" >
+          <p:menuitem value="aide utilisation" url="std_userHelp.jsf" />
+          <p:menuitem value="a propos" url="std_about.jsf" />
+      </p:submenu>
+  </p:menubar>

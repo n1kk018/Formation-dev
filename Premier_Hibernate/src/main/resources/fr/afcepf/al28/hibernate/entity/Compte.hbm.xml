@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="fr.afcepf.al28.hibernate.entity">
+  <class name="Compte" table="compte">
+  	<id name="numero" type="integer">
+  		<column name="numero" 
+  		sql-type="int(10)" 
+  		not-null="true"/>
+  		<generator class="native"/>
+  	</id>
+  	<property name="libelle">
+      <column name="libelle" length="45" 
+      not-null="true"/> 
+    </property>
+    <many-to-one name="pers" column="id_personne" not-null="true" class="Personne" />
+    <set name="operations">
+    	<key column="numero_compte" />
+    	<one-to-many class="Operation" />
+    </set>
+  </class>
+</hibernate-mapping>

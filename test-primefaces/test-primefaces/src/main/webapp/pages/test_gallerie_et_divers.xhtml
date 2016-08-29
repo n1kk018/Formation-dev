@@ -1,0 +1,138 @@
+<ui:composition template="templates/classic.xhtml"
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:define name="pageTitle">test galleries et divers</ui:define>
+<ui:define name="pageStyles">
+	<script src="http://maps.google.com/maps/api/js?sensor=false"
+	type="text/javascript">
+	</script>
+</ui:define>
+<ui:define name="pageMainContent">
+<p:tabView id="tabViewDivers">
+   <p:tab  title="gallerie images"> 
+     <p:galleria value="#{generalBean.listPhotoName}" var="image" panelWidth="500" panelHeight="313" showCaption="true">  
+       <p:graphicImage value="/pages/images/galleria/#{image}" alt="Image Description for #{image}" title="#{image}"/>  
+    </p:galleria>  
+    </p:tab>
+    
+    <p:tab  title="gallerie objets"> 
+     <p:galleria id="contentGalleria" value="#{generalBean.listeContinents}" var="cont" panelWidth="250" panelHeight="200"  
+            frameWidth="50" frameHeight="35" effect="clip">  
+  
+    <p:graphicImage id="contImage" value="/pages/images/#{cont.imageName}" alt="#{cont.nom}" title="#{cont.nom}"/>  
+    <f:facet name="content">  
+        <h:panelGrid  columns="2" cellpadding="5">  
+            <f:facet name="header">  
+                <p:graphicImage value="/pages/images/#{cont.imageName}" width="160" height="120" />  
+            </f:facet>  
+  
+            <h:outputText value="Name: " />  
+            <h:outputText id="name" value="#{cont.nom}"/>  
+  
+            <h:outputText value="type " />  
+            <h:outputText id="type" value="#{cont.type}"/>  
+  
+        </h:panelGrid>  
+     </f:facet>  
+     </p:galleria>
+    </p:tab>
+    
+    <p:tab title="image switch">
+       <p:tabView id="selonEffets">
+       		<p:tab title="manual/wipe effect">
+       		   <p:commandButton type="button" onclick="switcher.previous();"  
+                icon="ui-icon-circle-triangle-w"/>  
+				<p:commandButton type="button" onclick="switcher.next();"  
+	                icon="ui-icon-circle-triangle-e"/>  
+	  
+				<p:imageSwitch effect="wipe" widgetVar="switcher" slideshowAuto="false">  
+	    			<ui:repeat value="#{generalBean.listPhotoName}" var="image">  
+	        			<p:graphicImage value="/pages/images/galleria/#{image}" />  
+	    			</ui:repeat>  
+				</p:imageSwitch> 
+       		</p:tab>
+       		<p:tab title="fade effect and contextMenu">
+	       		<p:imageSwitch id="imagesFadeEffect" widgetVar="gallery" effect="fade" >  
+	    			<ui:repeat value="#{generalBean.listPhotoName}" var="image">  
+	        			<p:graphicImage value="/pages/images/galleria/#{image}" />  
+	    			</ui:repeat>  
+				</p:imageSwitch> 
+				
+				<p:contextMenu for="imagesFadeEffect">
+					<p:menuitem value="Previous" url="#" onclick="gallery.previous()" />
+					<p:menuitem value="Next" url="#" onclick="gallery.next()" />
+				</p:contextMenu>
+       		</p:tab>
+       		<p:tab title="zoom effect">
+       		     <p:imageSwitch effect="zoom" >  
+	    			<ui:repeat value="#{generalBean.listPhotoName}" var="image">  
+	        			<p:graphicImage value="/pages/images/galleria/#{image}" />  
+	    			</ui:repeat>  
+				</p:imageSwitch> 
+       		</p:tab>
+       		<p:tab title="turnDown effect">
+       			<p:imageSwitch effect="turnDown" >  
+	    			<ui:repeat value="#{generalBean.listPhotoName}" var="image">  
+	        			<p:graphicImage value="/pages/images/galleria/#{image}" />  
+	    			</ui:repeat>  
+				</p:imageSwitch> 
+       		</p:tab>
+       		<p:tab title="shuffle effect">
+       			<p:imageSwitch effect="shuffle" >  
+	    			<ui:repeat value="#{generalBean.listPhotoName}" var="image">  
+	        			<p:graphicImage value="/pages/images/galleria/#{image}" />  
+	    			</ui:repeat>  
+				</p:imageSwitch> 
+       		</p:tab>
+       </p:tabView>
+    </p:tab>
+    
+    <p:tab title="media">
+      <h:form>     
+       <h4> exemple p:media (video ,mp3 , ...) </h4>
+       ode_a_la_joie.mp3 (to listen)<br/>  
+		<p:media value="/pages/resources/ode_a_la_joie.mp3 " width="200" height="20" player="quicktime">  
+		    <f:param name="autoPlay" value="true" />  
+		</p:media> <br/>
+         (footbal) flash video<br/> 
+       <p:media value="http://www.youtube.com/v/KZnUr8lcqjo" width="420" height="315" player="flash"/> 
+       </h:form>
+    </p:tab>
+    
+      <p:tab title="contextMenu">
+       <h4>exemple de menu contextuel (click droit)</h4>
+	       <h:form>  
+	                  
+           <p:messages  />	    
+ 
+		   <p:panel id="panelXy"  header="right click inside this panel ">
+		   ... <br/> ... <br/> ... <br/>
+		   </p:panel>
+		    <p:contextMenu for="panelXy">  
+		        <p:menuitem value="Save"
+		            actionListener="#{generalBean.save}" icon="ui-icon-disk"/>  
+		        <p:menuitem value="Update" 
+		            actionListener="#{generalBean.update}"  
+		            icon="ui-icon-arrowrefresh-1-w"/>  
+		        <p:menuitem value="Homepage" url="http://www.primefaces.org"  
+		            icon="ui-icon-extlink"/>  
+		    </p:contextMenu>  
+	  
+	    </h:form>
+    </p:tab>
+    
+    <p:tab title="Google Map"> <!-- paris -->
+       <h4> Paris , Notre-Dame (48.853, 2.35)</h4>
+       <p:gmap center="48.853, 2.35" zoom="15" type="hybrid"  style="width:400px;height:300px" /> 
+    </p:tab>
+    
+   
+</p:tabView> 
+
+      
+    
+</ui:define>
+</ui:composition>

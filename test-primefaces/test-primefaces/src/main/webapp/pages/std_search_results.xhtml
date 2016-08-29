@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      template="templates/classic.xhtml">
+<ui:define name="pageTitle">resultats de la recherche</ui:define>
+<ui:define name="pageMainContent">
+<br/>    
+<h3>resultats de la recherche</h3>
+
+<p>mot clef: <b><h:outputText value="#{searchBean.motClef}"/></b></p>
+
+<h:dataTable border="1" var="ligne" value="#{searchBean.elementsTrouves}">
+        	        
+        	            <h:column>
+        	               <f:facet name="header"><h:outputText  value="texte"/></f:facet>
+                           <h:outputText value="#{ligne.texte}"/>
+        	            </h:column>
+        	            <h:column>
+        	               <f:facet name="header"><h:outputText  value="lien(s)"/></f:facet>
+                           <h:outputLink value="#{ligne.link}" ><h:outputText value="#{ligne.link}" /></h:outputLink>
+        	            </h:column>
+        	           
+</h:dataTable>
+<br/>
+
+  
+</ui:define>
+</ui:composition>
+
