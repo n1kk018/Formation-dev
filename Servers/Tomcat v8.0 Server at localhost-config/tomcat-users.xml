@@ -36,7 +36,5 @@
   <user username="tomcat" password="<must-be-changed>" roles="tomcat"/>
   <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
   <user username="role1" password="<must-be-changed>" roles="role1"/>
-  <user name="toto" password="xxx" roles="employe" />
 -->
-
 </tomcat-users>

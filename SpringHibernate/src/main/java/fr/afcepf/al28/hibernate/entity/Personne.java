@@ -1,11 +1,13 @@
 package fr.afcepf.al28.hibernate.entity;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,6 +28,8 @@ public class Personne {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="naissance", nullable=false)
 	private Date naissance;
+	@OneToMany(mappedBy="pers")
+	private Set<Compte> comptes;
 	
 	public Personne(Integer id, String nom, String prenom, String adresse, Date naissance) {
 		super();
@@ -39,6 +43,13 @@ public class Personne {
 	public Personne() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Set<Compte> getComptes() {
+		return comptes;
+	}
+	public void setComptes(Set<Compte> comptes) {
+		this.comptes = comptes;
 	}
 		
 	public Integer getId() {

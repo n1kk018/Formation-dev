@@ -13,7 +13,7 @@ import org.hibernate.Transaction;
 
 import fr.afcepf.al28.hibernate.entity.Personne;
 
-@Service
+//@Service
 public class DaoPersonne implements IDaoPersonne{
 	private SessionFactory sessionFactory;
 		

@@ -7,13 +7,6 @@
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="fr.afcepf.al28.hibernate.entity.Personne"/>
+        <mapping class="fr.afcepf.al28.hibernate.entity.Compte"/>
     </session-factory>
 </hibernate-configuration>
-       <!--         <mapping class="fr.afcepf.al28.hibernate.entity.Operation"/>
-        <mapping class="fr.afcepf.al28.hibernate.entity.Personne"/>
-        <mapping class="fr.afcepf.al28.hibernate.heritage.Personne"/>
-        <mapping class="fr.afcepf.al28.hibernate.heritage.Etudiant"/>
-        <mapping class="fr.afcepf.al28.hibernate.heritage.Formateur"/>
-        <mapping resource="fr/afcepf/al28/hibernate/entity/Compte.hbm.xml"/>
-        <mapping resource="fr/afcepf/al28/hibernate/entity/Operation.hbm.xml"/>
-        <mapping resource="fr/afcepf/al28/hibernate/entity/Personne.hbm.xml"/>-->

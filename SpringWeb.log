@@ -1,0 +1,27 @@
+2016-08-30_16:48:32.893 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization started
+2016-08-30_16:48:33.183 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.w.c.s.XmlWebApplicationContext - Refreshing Root WebApplicationContext: startup date [Tue Aug 30 16:48:33 CEST 2016]; root of context hierarchy
+2016-08-30_16:48:33.317 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springweb.xml]
+2016-08-30_16:48:33.630 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-08-30_16:48:34.883 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-08-30_16:48:34.908 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-08-30_16:48:34.913 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-08-30_16:48:34.917 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-08-30_16:48:35.003 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: jar:file:/C:/Users/stagiaire/Desktop/WORKSPACE/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/SpringWeb/WEB-INF/lib/SpringHibernate-1.0.jar!/hib.cfg.xml
+2016-08-30_16:48:35.138 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-08-30_16:48:36.225 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-08-30_16:48:36.835 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-30_16:48:36.856 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-30_16:48:37.764 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-08-30_16:48:37.765 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-08-30_16:48:37.769 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-08-30_16:48:37.823 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bdd_hibernate.compte
+2016-08-30_16:48:37.823 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, libelle, id_personne]
+2016-08-30_16:48:37.824 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_gubjy829xkx7rsx8vxcexpbwj]
+2016-08-30_16:48:37.824 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_gubjy829xkx7rsx8vxcexpbwj, primary]
+2016-08-30_16:48:37.836 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bdd_hibernate.personne
+2016-08-30_16:48:37.836 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [naissance, adresse, id, nom, prenom]
+2016-08-30_16:48:37.836 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
+2016-08-30_16:48:37.837 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
+2016-08-30_16:48:37.839 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-08-30_16:48:38.007 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@359211e2] of Hibernate SessionFactory for HibernateTransactionManager
+2016-08-30_16:48:38.023 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5121 ms

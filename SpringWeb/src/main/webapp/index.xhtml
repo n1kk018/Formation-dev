@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title></title>
+</h:head>
+<h:body>
+	<h:form>
+		<fieldset>
+			<legend>Gestion des personnes:</legend>
+			<span>Nom:</span>
+			<h:inputText value="#{mbSpring.persInsert.nom}" />
+			<br /> <span>Prenom:</span>
+			<h:inputText value="#{mbSpring.persInsert.prenom}" />
+			<br /> <span>Adresse:</span>
+			<h:inputTextarea value="#{mbSpring.persInsert.adresse}" cols="5"></h:inputTextarea>
+			<br /> <span>date naissance:</span>
+			<h:inputText value="#{mbSpring.persInsert.naissance}">
+				<f:convertDateTime pattern="dd/MM/yy" timeZone="Europe/Paris" />
+			</h:inputText>
+			<br />
+			<h:commandButton value="Ajouter" action="#{mbSpring.ajouter()}">
+			</h:commandButton>
+			<h:commandButton value="Rechercher" action="#{mbSpring.rechercher()}">
+			</h:commandButton>
+		</fieldset>
+	</h:form>
+	<h:panelGroup layout="block" rendered="#{not empty mbSpring.personnes}">
+		<fieldset>
+			<legend>Résultat de la recherche</legend>
+			<h:dataTable id="tabPers" value="#{mbSpring.personnes}" var="rowVar"
+				border="1" headerClass="tab_heading" rowClasses="odd,even">
+				<h:column>
+					<f:facet name="header">
+						<f:verbatim>Id</f:verbatim>
+					</f:facet>
+					<h:outputText value="#{rowVar.id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<f:verbatim>Nom</f:verbatim>
+					</f:facet>
+					<h:outputText value="#{rowVar.nom}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<f:verbatim>Prenom</f:verbatim>
+					</f:facet>
+					<h:outputText value="#{rowVar.prenom}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<f:verbatim>Adressse</f:verbatim>
+					</f:facet>
+					<h:outputText value="#{rowVar.adresse}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<f:verbatim>Date de naissance</f:verbatim>
+					</f:facet>
+					<h:outputText value="#{rowVar.naissance}">
+						<f:convertDateTime pattern="dd/MM/yy" timeZone="Europe/Paris" />
+					</h:outputText>
+				</h:column>
+			</h:dataTable>
+		</fieldset>
+	</h:panelGroup>
+
+</h:body>
+</html>

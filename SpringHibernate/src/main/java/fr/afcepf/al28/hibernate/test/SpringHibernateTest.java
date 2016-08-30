@@ -12,6 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import fr.afcepf.al28.hibernate.dao.IDaoPersonne;
 import fr.afcepf.al28.hibernate.entity.Personne;
+import fr.afcepf.al28.hibernate.entity.Compte;
 
 public class SpringHibernateTest {
 	private static Logger logger = LoggerFactory.getLogger(SpringHibernateTest.class);
@@ -20,10 +21,18 @@ public class SpringHibernateTest {
 	public static void main(String[] args) {
 		BeanFactory bf = new ClassPathXmlApplicationContext("classpath:spring.xml");
 		IDaoPersonne dao = bf.getBean(IDaoPersonne.class);
-		logger.info("Objet Personne ajouté -->"+dao.ajouter(new Personne(null, "Storero", "Nicolas", "73 avenue de la république", new Date())));
-		List<Personne> liste = dao.rechercheParNom("Storero");
-		logger.info(liste.toString());
-		logger.info("Id objet Personne supprimé -->"+dao.supprimer(liste.get(0)));
+		//logger.info("Objet Personne ajouté -->"+dao.ajouter(new Personne(null, "Storero", "Nicolas", "73 avenue de la république", new Date())));
+		List<Personne> liste = dao.rechercheParNom("");
+		for (Personne personne : liste) {
+			logger.info("id:"+personne.getId()+"\tnom:"+personne.getNom());
+			if(personne.getComptes()!=null) {
+				for (Compte compte : personne.getComptes()) {
+					logger.info("\t\t"+compte.getLibelle());
+				}
+			}
+		}
+		
+		//logger.info("Id objet Personne supprimé -->"+dao.supprimer(liste.get(0)));
 	}
 
 }

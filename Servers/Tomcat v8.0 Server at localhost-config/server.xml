@@ -124,11 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      	<!-- <Context docBase="tpweb" path="/tpweb" reloadable="true" source="org.eclipse.jst.jee.server:tpweb"/>
-      	<Context docBase="tpWebMaven" path="/tpWebMaven" reloadable="true" source="org.eclipse.jst.jee.server:tpWebMaven">
-      		<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/geodb" password="afcepf" type="javax.sql.DataSource" url="jdbc:mysql://localhost/geodb" username="root"/>
-      	</Context>-->
-      <Context docBase="tpJsf" path="/tpJsf" reloadable="true" source="org.eclipse.jst.jee.server:tpJsf"/></Host>
+      <Context docBase="SpringWeb" path="/SpringWeb" reloadable="true" source="org.eclipse.jst.jee.server:SpringWeb"/></Host>
     </Engine>
   </Service>
 </Server>
