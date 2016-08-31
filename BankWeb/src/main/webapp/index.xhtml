@@ -11,9 +11,11 @@
 				<form jsfc="h:form" id="Form">
 					<h:panelGrid id="subPanel_form_clientContext" columns="2">
 						<h:outputLabel for="sNumClient" value="Numéro:" />
-						<h:inputText id="sNumClient" value="#{clientMBean.numero}"/>
+						<h:inputText id="sNumClient" value="#{mbBankWeb.user.email}"/>
+						<h:outputLabel for="sMpdClient" value="Numéro:" />
+						<h:inputText id="sMpdClient" value="#{mbBankWeb.user.mdp}"/>
 						<h:outputLabel value="" />
-						<h:commandButton value="Indentification" action="#{clientMBean.identification()}"/>
+						<h:commandButton value="Indentification" action="#{mbBankWeb.identification()}"/>
 					</h:panelGrid>
 					
 				</form>
