@@ -1,4 +1,4 @@
-package fr.afcepf.al28.bank.dao;
+package fr.afcepf.al28.bank.dao.api;
 
 import java.util.Date;
 
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.afcepf.al28.bank.dao.impl.IDaoOperation;
 import fr.afcepf.al28.bank.entity.Compte;
 import fr.afcepf.al28.bank.entity.Credit;
 import fr.afcepf.al28.bank.entity.Debit;

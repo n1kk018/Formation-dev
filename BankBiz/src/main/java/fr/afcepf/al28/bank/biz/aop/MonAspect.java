@@ -25,10 +25,10 @@ public class MonAspect {
 	public Object aroundLoginClient(ProceedingJoinPoint jp) throws Throwable {
 		logger.info("debut aspect");
 		Client c  = (Client)jp.proceed(jp.getArgs());
-		if(c!=null && c.getIsFirstConnect()==true) {
+		/*if(c!=null && c.getIsFirstConnect()==true) {
 			logger.info("redirection");
 			throw new Exception("redirection");
-		}
+		}*/
 		logger.info("pas de redirection");
 		return c;
 	}

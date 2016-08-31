@@ -10,9 +10,9 @@ import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import fr.afcepf.al28.bank.dao.IDaoCompte;
-import fr.afcepf.al28.bank.dao.IDaoUtilisateur;
-import fr.afcepf.al28.bank.dao.IDaoOperation;
+import fr.afcepf.al28.bank.dao.impl.IDaoCompte;
+import fr.afcepf.al28.bank.dao.impl.IDaoOperation;
+import fr.afcepf.al28.bank.dao.impl.IDaoUtilisateur;
 import fr.afcepf.al28.bank.entity.Client;
 import fr.afcepf.al28.bank.entity.Compte;
 import fr.afcepf.al28.bank.entity.Credit;

@@ -1,4 +1,4 @@
-package fr.afcepf.al28.bank.dao;
+package fr.afcepf.al28.bank.dao.impl;
 
 import fr.afcepf.al28.bank.entity.Compte;
 

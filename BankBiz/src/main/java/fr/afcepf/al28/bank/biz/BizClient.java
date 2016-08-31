@@ -3,7 +3,7 @@ package fr.afcepf.al28.bank.biz;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import fr.afcepf.al28.bank.dao.IDaoUtilisateur;
+import fr.afcepf.al28.bank.dao.impl.IDaoUtilisateur;
 import fr.afcepf.al28.bank.entity.Utilisateur;
 
 @Service

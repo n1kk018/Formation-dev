@@ -1,4 +1,4 @@
-package fr.afcepf.al28.bank.dao;
+package fr.afcepf.al28.bank.dao.api;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.afcepf.al28.bank.dao.impl.IDaoCompte;
 import fr.afcepf.al28.bank.entity.Compte;
 
 @Service
