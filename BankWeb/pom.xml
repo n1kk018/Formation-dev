@@ -12,6 +12,8 @@
   	<spring.hibernate.version>1.0</spring.hibernate.version>
   	<jcloverslf4j.version>1.7.21</jcloverslf4j.version>
   	<logback.version>1.1.7</logback.version>
+  	<BankEntities.version>1.0</BankEntities.version>
+  	<BankBiz.version>1.0</BankBiz.version>
   </properties>
   <dependencies>
   	<dependency>                                    
