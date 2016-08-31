@@ -39,6 +39,12 @@ Desktop.ini
 .Spotlight-V100
 .Trashes
  
+#######################
+# LINUX
+######################
+
+# Dolphin
+.directory
  
 ######################
 # Eclipse
