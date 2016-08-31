@@ -8,13 +8,13 @@
  </appender>
  <appender name="FILE"
 	class="ch.qos.logback.core.rolling.RollingFileAppender">
-	<file>C:\Users\stagiaire\Desktop\WORKSPACE\PremierHibernate.log</file>
+	<file>/home/nikko/dev/workspace/BankProject.log</file>
 	<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 	   <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
            </Pattern>
 	</encoder>
 	<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-		<FileNamePattern>C:\Users\stagiaire\Desktop\WORKSPACE\PremierHibernate.%i.log.zip</FileNamePattern>
+		<FileNamePattern>/home/nikko/dev/workspace/BankProject.%i.log.zip</FileNamePattern>
 		<MinIndex>1</MinIndex>
 		<MaxIndex>10</MaxIndex>
 	</rollingPolicy>
@@ -23,7 +23,7 @@
 		<MaxFileSize>2MB</MaxFileSize>
 	</triggeringPolicy>
   </appender>
-  <root level="ERROR">
+  <root level="DEBUG">
 	<appender-ref ref="FILE" />
 	<appender-ref ref="STDOUT" />
   </root>

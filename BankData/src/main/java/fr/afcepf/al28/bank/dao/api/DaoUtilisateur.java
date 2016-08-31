@@ -54,7 +54,9 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 		Utilisateur u = null;
 		try {
 			List<Utilisateur> list = this.sessionFactory.getCurrentSession()
-			.createQuery("SELECT u FROM Utilisateur u WHERE u.email = :login AND u.mdp = :mdp")
+			.createQuery("SELECT u FROM Utilisateur u "
+					+ "LEFT JOIN FETCH u.comptes "
+					+ "WHERE u.email = :login AND u.mdp = :mdp")
 			.setParameter("login", login)
 			.setParameter("mdp", mdp).list();
 			if(list.size()>0){

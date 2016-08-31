@@ -2,58 +2,35 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html" template="/templates/common.xhtml">
-			<ui:define name="pageTitle">identification Client</ui:define>
-			<ui:define name="pageHeader">** identification Client **</ui:define>
+			<ui:define name="pageTitle">espace Client</ui:define>
+			<ui:define name="pageHeader"><h3><h:outputText value="#{myJsfProperties.welcome}" /></h3></ui:define>
 			<ui:define name="body">
-				<h3><h:outputText value="#{myJsfProperties.welcome}" /></h3>
-				Numéro :<h:outputText value="#{clientMBean.client.num}" /><br />
-				Nom :<h:outputText value="#{clientMBean.client.nom}" /><br />
-				Prénom :<h:outputText value="#{clientMBean.client.prenom}"/><br />
-				Adresse :<h:outputText value="#{clientMBean.client.adresse}"/><br />
-				Age :<h:outputText value="#{clientMBean.client.age}"/><br />
-				<a href="changerCoord.jsf">changer Coordonnées</a>
+				Nom :<h:outputText value="#{user.nom}" /><br />
+				Prénom :<h:outputText value="#{user.prenom}"/><br />
+				Adresse :<h:outputText value="#{user.adresse}"/><br />
 				<form jsfc="h:form" id="Form1">
-					<h:commandButton action="#{clientMBean.recupererComptes()}" value="récupérer comptes" />
-					<h:dataTable value="#{clientMBean.comptes}" var="rowVar" border="1"
-						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty clientMBean.comptes}">
-						<h:column>
-							<f:facet name="header">
-								<f:verbatim>Numéro</f:verbatim>
-							</f:facet>
-							<a href="operations.jsf?numCpt=#{rowVar.numero}">
-								<h:outputText value="#{rowVar.numero}" />
-							</a>
-							<!-- <h:commandLink action="#{operationMBean.recupererOperations()}" value="#{rowVar.numero}">
-							<f:setPropertyActionListener value="#{rowVar.numero}" target="#{operationMBean.numCptSel}" />
-						</h:commandLink>-->
-					</h:column>							
+					<!--<h:commandButton action="" value="afficher les  comptes" />-->
+					<h:dataTable value="#{user.comptes}" var="rowVar" border="1"
+						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty mbBankWeb.user.comptes}">						
 					<h:column>
 						<f:facet name="header">
 							<f:verbatim>Nom</f:verbatim>
 						</f:facet>
-						<h:outputText value="#{rowVar.label}"/>
+						<h:outputText value="#{rowVar.libelle}"/>
 					</h:column>
 					<h:column>
-						<f:facet name="header">
-							<f:verbatim>Solde</f:verbatim>
-						</f:facet>
-						<h:outputText value="#{rowVar.solde}"/>
-					</h:column>
+							<f:facet name="header">
+								<f:verbatim></f:verbatim>
+							</f:facet>
+							<h:commandLink  action="#{mbBankWeb.chargerOperations}" value="Voir opérations">
+								<f:param value="#{rowVar}"></f:param>
+								<f:ajax event="click" render="tabOpWrapper"   />
+							</h:commandLink>
+					</h:column>	
 				</h:dataTable>
-			
-				<h:outputLink value="formVirement.jsf" rendered="#{not empty clientMBean.comptes}" >
-					<h:outputText value="Effectuer un Virement"/>
-				</h:outputLink>
-				<hr />
-				<h3>Listener JSF</h3>
-				<h:outputLabel for="numCpt" value="Détails du compte:" />
-				<h:selectOneMenu value="#{operationMBean.numCptSel}" id="numCpt" valueChangeListener="#{operationMBean.onNumCptChange}"> <!-- onchange="javascript:submit()" -->
-					<f:selectItems value="#{clientMBean.comptes}" var="c" itemValue="#{c.numero}" itemLabel="#{c.label}"/>
-					<f:ajax event="change" render="tabOpWrapper" />
-				</h:selectOneMenu> <br />
 				<h:panelGrid id="tabOpWrapper" columns="1">
-					<h:dataTable id="tabOp" value="#{operationMBean.listeOperations}" var="rowVar" border="1"
-						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty operationMBean.listeOperations}"> 
+					<h:dataTable id="tabOp" value="#{listeOp}" var="rowVar" border="1"
+						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty listeOp}"> 
 						<h:column>
 							<f:facet name="header">
 								<f:verbatim>Label</f:verbatim>

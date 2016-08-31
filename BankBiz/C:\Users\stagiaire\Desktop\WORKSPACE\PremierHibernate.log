@@ -1,0 +1,64 @@
+2016-08-31_22:33:37.477 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@67b6d4ae: startup date [Wed Aug 31 22:33:37 CEST 2016]; root of context hierarchy
+2016-08-31_22:33:37.502 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springBiz.xml]
+2016-08-31_22:33:37.583 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-08-31_22:33:38.035 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-08-31_22:33:38.039 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-08-31_22:33:38.041 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-08-31_22:33:38.042 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-08-31_22:33:38.054 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/home/nikko/dev/workspace/BankData/target/classes/hib.cfg.xml
+2016-08-31_22:33:38.085 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-08-31_22:33:38.433 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-08-31_22:33:38.533 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-31_22:33:38.536 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-31_22:33:38.741 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-08-31_22:33:38.741 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-08-31_22:33:38.742 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-08-31_22:33:38.754 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.compte
+2016-08-31_22:33:38.755 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, id_client, libelle]
+2016-08-31_22:33:38.755 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_nhtf6th4jg4q67noifff5puk4]
+2016-08-31_22:33:38.755 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_nhtf6th4jg4q67noifff5puk4, primary]
+2016-08-31_22:33:38.763 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.operation
+2016-08-31_22:33:38.763 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero_compte, libelle, numero_compte_crediter, montant, id, type, dateop]
+2016-08-31_22:33:38.763 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rqyq0497n2u56fw4ldp0bbh81, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-08-31_22:33:38.764 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rqyq0497n2u56fw4ldp0bbh81, primary, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-08-31_22:33:38.771 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.utilisateur
+2016-08-31_22:33:38.772 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [isfirstconnect, id_conseiller, adresse, mdp, id, type, nom, prenom, email]
+2016-08-31_22:33:38.772 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_log8bsbt0x80nqnawg67gw59e]
+2016-08-31_22:33:38.772 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_log8bsbt0x80nqnawg67gw59e, primary]
+2016-08-31_22:33:38.772 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-08-31_22:33:38.844 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@7ea4d397] of Hibernate SessionFactory for HibernateTransactionManager
+2016-08-31_22:33:38.857 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - debut aspect
+2016-08-31_22:33:39.042 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - pas de redirection
+2016-08-31_22:33:39.042 [main] INFO  f.a.al28.bank.biz.test.BankBizTest - Loggé
+2016-08-31_23:05:48.453 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@16aa0a0a: startup date [Wed Aug 31 23:05:48 CEST 2016]; root of context hierarchy
+2016-08-31_23:05:48.523 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springBiz.xml]
+2016-08-31_23:05:48.620 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-08-31_23:05:49.330 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-08-31_23:05:49.346 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-08-31_23:05:49.347 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-08-31_23:05:49.349 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-08-31_23:05:49.376 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/home/nikko/dev/workspace/BankData/target/classes/hib.cfg.xml
+2016-08-31_23:05:49.417 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-08-31_23:05:49.846 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-08-31_23:05:49.981 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-31_23:05:49.997 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-31_23:05:50.295 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-08-31_23:05:50.296 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-08-31_23:05:50.297 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-08-31_23:05:50.311 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.compte
+2016-08-31_23:05:50.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, id_client, libelle]
+2016-08-31_23:05:50.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_nhtf6th4jg4q67noifff5puk4]
+2016-08-31_23:05:50.312 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_nhtf6th4jg4q67noifff5puk4, primary]
+2016-08-31_23:05:50.317 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.operation
+2016-08-31_23:05:50.317 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero_compte, libelle, numero_compte_crediter, montant, id, type, dateop]
+2016-08-31_23:05:50.317 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rqyq0497n2u56fw4ldp0bbh81, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-08-31_23:05:50.317 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rqyq0497n2u56fw4ldp0bbh81, primary, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-08-31_23:05:50.321 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.utilisateur
+2016-08-31_23:05:50.321 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [isfirstconnect, id_conseiller, adresse, mdp, id, type, nom, prenom, email]
+2016-08-31_23:05:50.321 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_log8bsbt0x80nqnawg67gw59e]
+2016-08-31_23:05:50.321 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_log8bsbt0x80nqnawg67gw59e, primary]
+2016-08-31_23:05:50.322 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-08-31_23:05:50.422 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@44065156] of Hibernate SessionFactory for HibernateTransactionManager
+2016-08-31_23:05:50.446 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - debut aspect
+2016-08-31_23:05:50.712 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - pas de redirection
+2016-08-31_23:05:50.713 [main] INFO  f.a.al28.bank.biz.test.BankBizTest - Loggé
