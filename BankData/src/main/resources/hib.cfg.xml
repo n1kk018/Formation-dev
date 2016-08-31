@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="fr.afcepf.al28.bank.entity.Utilisateur"/>
         <mapping class="fr.afcepf.al28.bank.entity.Client"/>
         <mapping class="fr.afcepf.al28.bank.entity.Conseiller"/>

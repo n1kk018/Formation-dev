@@ -4,12 +4,10 @@ import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue(value="CREDIT")
 public class Credit extends Operation {
-
 	public Credit() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -18,7 +18,7 @@ public class DaoCompte implements IDaoCompte {
 		this.sessionFactory = sf;
 	}
 	@Override
-	public Compte ajouter(Compte cp) {
+	public Compte insert(Compte cp) {
 		try {
 			this.sessionFactory.getCurrentSession().save(cp);
 		} catch (HibernateException e) {

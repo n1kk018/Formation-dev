@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 @Entity
 @DiscriminatorValue(value="CLIENT")
 public class Client extends Utilisateur {
-	@Column(name="isFirstConnect")
+	@Column(name="isFirstConnect",columnDefinition="tinyInt(1)")
 	private Boolean isFirstConnect=true;
 	@OneToMany(mappedBy="client")
 	private Set<Compte> comptes;
@@ -29,10 +29,10 @@ public class Client extends Utilisateur {
 	public Client(Integer id, String nom, String prenom, String adresse, String email, String mdp) {
 		super(id, nom, prenom, adresse, email, mdp);
 	}
-	public Client(Integer id, String nom, String prenom, String adresse, String email, String mdp,
-			Boolean isFirstConnect) {
+	
+	public Client(Integer id, String nom, String prenom, String adresse, String email, String mdp, Conseiller conseiller) {
 		super(id, nom, prenom, adresse, email, mdp);
-		this.isFirstConnect = isFirstConnect;
+		this.conseiller = conseiller;
 	}
 	public Set<Compte> getComptes() {
 		return comptes;
@@ -40,4 +40,18 @@ public class Client extends Utilisateur {
 	public void setComptes(Set<Compte> comptes) {
 		this.comptes = comptes;
 	}
+	public Boolean getIsFirstConnect() {
+		return isFirstConnect;
+	}
+	public void setIsFirstConnect(Boolean isFirstConnect) {
+		this.isFirstConnect = isFirstConnect;
+	}
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
+	}
+	
+	
 }

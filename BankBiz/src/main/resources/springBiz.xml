@@ -12,5 +12,5 @@
 	<import resource="springData.xml" />
 	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="fr.afcepf.al28.bank"/>
-	<!-- ><bean class="fr.afcepf.al28.spring.aop.MonAspect"></bean>-->
+	<bean class="fr.afcepf.al28.bank.biz.aop.MonAspect" />
 </beans>

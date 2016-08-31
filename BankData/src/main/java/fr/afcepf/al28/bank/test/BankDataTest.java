@@ -26,25 +26,17 @@ public class BankDataTest {
 	public static void main(String[] args) {
 		BeanFactory bf = new ClassPathXmlApplicationContext("classpath:springData.xml");
 		IDaoUtilisateur dao = bf.getBean(IDaoUtilisateur.class);
-		Utilisateur u = dao.ajouter(new Client(null,"Sto","nikko","test","nicolastorero@gmail.com","test"));
+		Utilisateur u = dao.insert(new Client(null,"Sto","nikko","test","nicolastorero@gmail.com","test"));
 		logger.info("*Client ajouté -->"+u);
 		IDaoCompte daoc = bf.getBean(IDaoCompte.class);
-		Compte cp = daoc.ajouter(new Compte(null,"Compte1",u));
-		logger.info("*Compte ajouté -->"+cp);
+		Compte cp1 = daoc.insert(new Compte(null,"Compte1",u));
+		Compte cp2 = daoc.insert(new Compte(null,"Compte2",u));
+		logger.info("*Compte ajouté -->"+cp1);
+		logger.info("*Compte ajouté -->"+cp2);
 		IDaoOperation daoop = bf.getBean(IDaoOperation.class);
-		logger.info("*Credit ajouté -->"+daoop.ajouter(new Credit(null,new Date(),300.0,"Credit1",cp)));
-		logger.info("*Debit ajouté -->"+daoop.ajouter(new Debit(null,new Date(),100.0,"Debit1",cp)));
-		/*List<Personne> liste = dao.rechercheParNom("");
-		for (Personne personne : liste) {
-			logger.info("id:"+personne.getId()+"\tnom:"+personne.getNom());
-			if(personne.getComptes()!=null) {
-				for (Compte compte : personne.getComptes()) {
-					logger.info("\t\t"+compte.getLibelle());
-				}
-			}
-		}*/
-		
-		//logger.info("Id objet Personne supprimé -->"+dao.supprimer(liste.get(0)));
+		logger.info("*Credit ajouté -->"+daoop.insert(new Credit(null,new Date(),300.0,"Credit1",cp1)));
+		logger.info("*Debit ajouté -->"+daoop.insert(new Debit(null,new Date(),100.0,"Debit1",cp1)));
+		logger.info("Virement -->"+daoop.doTransfer(cp1, 100.0, cp2));
 	}
 
 }

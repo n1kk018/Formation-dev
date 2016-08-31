@@ -1,5 +1,7 @@
 package fr.afcepf.al28.bank.dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,44 @@ public class DaoUtilisateur implements IDaoUtilisateur {
 	}
 	
 	@Override
-	public Utilisateur ajouter(Utilisateur u) {
+	public Utilisateur insert(Utilisateur u) {
 		try {
 			this.sessionFactory.getCurrentSession().save(u);
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return u;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Utilisateur getByLogin(String login) {
+		Utilisateur u = null;
+		try {
+			List<Utilisateur> list = this.sessionFactory.getCurrentSession()
+			.createQuery("SELECT u FROM Utilisateur u WHERE u.email = :login")
+			.setParameter("login", login).list();
+			if(list.size()>0){
+				u = list.get(0);
+			}
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return u;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Utilisateur getByLoginAndMdp(String login, String mdp) {
+		Utilisateur u = null;
+		try {
+			List<Utilisateur> list = this.sessionFactory.getCurrentSession()
+			.createQuery("SELECT u FROM Utilisateur u WHERE u.email = :login AND u.mdp = :mdp")
+			.setParameter("login", login)
+			.setParameter("mdp", mdp).list();
+			if(list.size()>0){
+				u = list.get(0);
+			}
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
