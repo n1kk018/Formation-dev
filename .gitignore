@@ -13,6 +13,7 @@ target/
 *.war
 *.ear
 *.db
+
  
 ######################
 # Windows
@@ -46,6 +47,7 @@ Desktop.ini
 *.pydevproject
 .project
 .metadata
+.recommenders
 bin/**
 tmp/**
 tmp/**/*
