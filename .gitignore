@@ -60,6 +60,7 @@ local.properties
 .settings/
 .loadpath
 /src/main/resources/rebel.xml
+Servers/
 # External tool builders
 .externalToolBuilders/
  
