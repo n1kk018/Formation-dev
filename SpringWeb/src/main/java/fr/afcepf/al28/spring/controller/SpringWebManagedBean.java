@@ -15,7 +15,7 @@ import fr.afcepf.al28.hibernate.entity.Personne;
 public class SpringWebManagedBean {
 	private Personne persInsert = new Personne();
 	private List<Personne> personnes;
-	private List<Compte> comptesselected;
+	private List<Compte> comptesSelected;
 	private Personne persSelected;
 	//Ici nom de l'instance (couplage fort)
 	//en meme tps pas le choix
@@ -45,12 +45,15 @@ public class SpringWebManagedBean {
 	public void setPersonnes(List<Personne> personnes) {
 		this.personnes = personnes;
 	}
-	public List<Compte> getComptesselected() {
-		return comptesselected;
+	
+	public List<Compte> getComptesSelected() {
+		return comptesSelected;
 	}
-	public void setComptesselected(List<Compte> comptesselected) {
-		this.comptesselected = comptesselected;
+
+	public void setComptesSelected(List<Compte> comptesSelected) {
+		this.comptesSelected = comptesSelected;
 	}
+
 	public Personne getPersSelected() {
 		return persSelected;
 	}

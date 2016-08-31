@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <mapping class="fr.afcepf.al28.bank.entity.Utilisateur"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Client"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Conseiller"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Credit"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Operation"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Debit"/>
+        <mapping class="fr.afcepf.al28.bank.entity.Compte"/>
+    </session-factory>
+</hibernate-configuration>
