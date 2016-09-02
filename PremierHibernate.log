@@ -1,0 +1,122 @@
+2016-09-01_11:16:31.760 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6fb554cc: startup date [Thu Sep 01 11:16:31 CEST 2016]; root of context hierarchy
+2016-09-01_11:16:31.818 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springBiz.xml]
+2016-09-01_11:16:32.101 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-09-01_11:16:35.248 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-01_11:16:35.474 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-01_11:16:35.478 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-09-01_11:16:35.480 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-09-01_11:16:35.568 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/C:/Users/stagiaire/Desktop/WORKSPACE/BankData/target/classes/hib.cfg.xml
+2016-09-01_11:16:36.552 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-09-01_11:16:37.631 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-09-01_11:16:38.071 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-09-01_11:16:38.081 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-01_11:16:39.122 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-09-01_11:16:39.123 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-09-01_11:16:39.127 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-09-01_11:16:39.179 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.compte
+2016-09-01_11:16:39.180 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, id_client, libelle]
+2016-09-01_11:16:39.181 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_nhtf6th4jg4q67noifff5puk4]
+2016-09-01_11:16:39.182 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_nhtf6th4jg4q67noifff5puk4, primary]
+2016-09-01_11:16:39.202 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.operation
+2016-09-01_11:16:39.203 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero_compte, libelle, numero_compte_crediter, montant, id, type, dateop]
+2016-09-01_11:16:39.203 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rqyq0497n2u56fw4ldp0bbh81, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:16:39.203 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rqyq0497n2u56fw4ldp0bbh81, primary, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:16:39.222 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.utilisateur
+2016-09-01_11:16:39.223 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [isfirstconnect, id_conseiller, adresse, mdp, id, type, nom, prenom, email]
+2016-09-01_11:16:39.223 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_log8bsbt0x80nqnawg67gw59e]
+2016-09-01_11:16:39.223 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_log8bsbt0x80nqnawg67gw59e, primary]
+2016-09-01_11:16:39.225 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-09-01_11:16:39.430 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@437ebf59] of Hibernate SessionFactory for HibernateTransactionManager
+2016-09-01_11:16:39.477 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - debut aspect
+2016-09-01_11:16:40.130 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - pas de redirection
+2016-09-01_11:16:40.131 [main] INFO  f.a.al28.bank.biz.test.BankBizTest - Loggé
+2016-09-01_11:25:46.941 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@62043840: startup date [Thu Sep 01 11:25:46 CEST 2016]; root of context hierarchy
+2016-09-01_11:25:47.003 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-09-01_11:25:47.831 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-01_11:25:47.840 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-01_11:25:47.844 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-09-01_11:25:47.847 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-09-01_11:25:47.877 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/C:/Users/stagiaire/Desktop/WORKSPACE/BankData/target/classes/hib.cfg.xml
+2016-09-01_11:25:47.966 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-09-01_11:25:48.729 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-09-01_11:25:49.183 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-09-01_11:25:49.196 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-01_11:25:50.108 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-09-01_11:25:50.109 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-09-01_11:25:50.114 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-09-01_11:25:50.160 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.compte
+2016-09-01_11:25:50.161 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, id_client, libelle]
+2016-09-01_11:25:50.162 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_nhtf6th4jg4q67noifff5puk4]
+2016-09-01_11:25:50.163 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_nhtf6th4jg4q67noifff5puk4, primary]
+2016-09-01_11:25:50.181 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.operation
+2016-09-01_11:25:50.182 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero_compte, libelle, numero_compte_crediter, montant, id, type, dateop]
+2016-09-01_11:25:50.182 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rqyq0497n2u56fw4ldp0bbh81, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:25:50.182 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rqyq0497n2u56fw4ldp0bbh81, primary, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:25:50.201 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.utilisateur
+2016-09-01_11:25:50.202 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [isfirstconnect, id_conseiller, adresse, mdp, id, type, nom, prenom, email]
+2016-09-01_11:25:50.202 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_log8bsbt0x80nqnawg67gw59e]
+2016-09-01_11:25:50.203 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_log8bsbt0x80nqnawg67gw59e, primary]
+2016-09-01_11:25:50.204 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-09-01_11:25:50.598 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@10027fc9] of Hibernate SessionFactory for HibernateTransactionManager
+2016-09-01_11:25:50.964 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Client ajouté -->Personne [id=2, nom=Sto, prenom=nikko, adresse=test, email=nicolastorero@gmail.com]
+2016-09-01_11:25:51.023 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Compte ajouté -->Compte [numero=3, libelle=Compte1]
+2016-09-01_11:25:51.023 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Compte ajouté -->Compte [numero=4, libelle=Compte2]
+2016-09-01_11:25:51.059 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Credit ajouté -->Operation [id=5, montant=300.0, libelle=Credit1, date=Thu Sep 01 11:25:51 CEST 2016]
+2016-09-01_11:25:51.089 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Debit ajouté -->Operation [id=6, montant=100.0, libelle=Debit1, date=Thu Sep 01 11:25:51 CEST 2016]
+2016-09-01_11:25:51.122 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - Virement -->Operation [id=8, montant=100.0, libelle=Virement vers Compte2, date=Thu Sep 01 11:25:51 CEST 2016]
+2016-09-01_11:27:44.442 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@62043840: startup date [Thu Sep 01 11:27:44 CEST 2016]; root of context hierarchy
+2016-09-01_11:27:44.502 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-09-01_11:27:45.374 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-01_11:27:45.385 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-01_11:27:45.388 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-09-01_11:27:45.390 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-09-01_11:27:45.424 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/C:/Users/stagiaire/Desktop/WORKSPACE/BankData/target/classes/hib.cfg.xml
+2016-09-01_11:27:45.531 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-09-01_11:27:46.363 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-09-01_11:27:46.807 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-09-01_11:27:46.817 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-01_11:27:47.770 [main] INFO  o.h.tool.hbm2ddl.SchemaExport - HHH000227: Running hbm2ddl schema export
+2016-09-01_11:27:48.388 [main] ERROR o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table compte drop foreign key FK_nhtf6th4jg4q67noifff5puk4
+2016-09-01_11:27:48.388 [main] ERROR o.h.tool.hbm2ddl.SchemaExport - Error on rename of '.\bank\compte' to '.\bank\#sql2-eec-12a' (errno: 152)
+2016-09-01_11:27:49.526 [main] ERROR o.h.tool.hbm2ddl.SchemaExport - HHH000389: Unsuccessful: alter table compte add constraint FK_nhtf6th4jg4q67noifff5puk4 foreign key (id_client) references utilisateur (id)
+2016-09-01_11:27:49.526 [main] ERROR o.h.tool.hbm2ddl.SchemaExport - Can't create table 'bank.#sql-eec_12a' (errno: 121)
+2016-09-01_11:27:50.145 [main] INFO  o.h.tool.hbm2ddl.SchemaExport - HHH000230: Schema export complete
+2016-09-01_11:27:50.238 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@4c4d362a] of Hibernate SessionFactory for HibernateTransactionManager
+2016-09-01_11:27:50.450 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Client ajouté -->Personne [id=1, nom=Sto, prenom=nikko, adresse=test, email=nicolastorero@gmail.com]
+2016-09-01_11:27:50.504 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Compte ajouté -->Compte [numero=1, libelle=Compte1]
+2016-09-01_11:27:50.504 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Compte ajouté -->Compte [numero=2, libelle=Compte2]
+2016-09-01_11:27:50.544 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Credit ajouté -->Operation [id=1, montant=300.0, libelle=Credit1, date=Thu Sep 01 11:27:50 CEST 2016]
+2016-09-01_11:27:50.570 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - *Debit ajouté -->Operation [id=2, montant=100.0, libelle=Debit1, date=Thu Sep 01 11:27:50 CEST 2016]
+2016-09-01_11:27:50.621 [main] INFO  f.afcepf.al28.bank.test.BankDataTest - Virement -->Operation [id=4, montant=100.0, libelle=Virement vers Compte2, date=Thu Sep 01 11:27:50 CEST 2016]
+2016-09-01_11:29:17.693 [main] INFO  o.s.c.s.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6fb554cc: startup date [Thu Sep 01 11:29:17 CEST 2016]; root of context hierarchy
+2016-09-01_11:29:17.773 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springBiz.xml]
+2016-09-01_11:29:17.975 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [springData.xml]
+2016-09-01_11:29:19.147 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-01_11:29:19.160 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-01_11:29:19.164 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2016-09-01_11:29:19.167 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2016-09-01_11:29:19.209 [main] INFO  org.hibernate.cfg.Configuration - HHH000044: Configuring from URL: file:/C:/Users/stagiaire/Desktop/WORKSPACE/BankData/target/classes/hib.cfg.xml
+2016-09-01_11:29:19.305 [main] INFO  org.hibernate.cfg.Configuration - HHH000041: Configured SessionFactory: null
+2016-09-01_11:29:20.121 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-09-01_11:29:20.541 [main] INFO  o.h.e.t.i.TransactionFactoryInitiator - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-09-01_11:29:20.551 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-01_11:29:21.589 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2016-09-01_11:29:21.591 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
+2016-09-01_11:29:21.597 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
+2016-09-01_11:29:21.652 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.compte
+2016-09-01_11:29:21.653 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero, id_client, libelle]
+2016-09-01_11:29:21.653 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_nhtf6th4jg4q67noifff5puk4]
+2016-09-01_11:29:21.654 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_nhtf6th4jg4q67noifff5puk4, primary]
+2016-09-01_11:29:21.674 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.operation
+2016-09-01_11:29:21.675 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [numero_compte, libelle, numero_compte_crediter, montant, id, type, dateop]
+2016-09-01_11:29:21.676 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_rqyq0497n2u56fw4ldp0bbh81, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:29:21.676 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_rqyq0497n2u56fw4ldp0bbh81, primary, fk_rhhv3gaeaf4gqbom0trp8ofgi]
+2016-09-01_11:29:21.695 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000261: Table found: bank.utilisateur
+2016-09-01_11:29:21.695 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [isfirstconnect, id_conseiller, adresse, mdp, id, type, nom, prenom, email]
+2016-09-01_11:29:21.696 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_log8bsbt0x80nqnawg67gw59e]
+2016-09-01_11:29:21.696 [main] INFO  o.h.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_log8bsbt0x80nqnawg67gw59e, primary]
+2016-09-01_11:29:21.698 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
+2016-09-01_11:29:21.950 [main] INFO  o.s.o.h.HibernateTransactionManager - Using DataSource [org.apache.commons.dbcp2.BasicDataSource@437ebf59] of Hibernate SessionFactory for HibernateTransactionManager
+2016-09-01_11:29:21.980 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - debut aspect
+2016-09-01_11:29:22.574 [main] INFO  f.afcepf.al28.bank.biz.aop.MonAspect - pas de redirection
+2016-09-01_11:29:22.574 [main] INFO  f.a.al28.bank.biz.test.BankBizTest - Loggé

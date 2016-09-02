@@ -25,8 +25,8 @@ public class BizClient implements IBizClient {
 		return this.dao.getByLoginAndMdp(u.getEmail(),u.getMdp());
 	}
 	@Override
-	public List<Operation> getOperationsByCompte(Compte c) {
-		return this.daoCpt.getOperations(c);
+	public List<Operation> getOperationsByIdCompte(Integer id) {
+		return this.daoCpt.getOperationsByIdCompte(id);
 	}
 
 }

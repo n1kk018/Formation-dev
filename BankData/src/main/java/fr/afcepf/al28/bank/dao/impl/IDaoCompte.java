@@ -7,5 +7,5 @@ import fr.afcepf.al28.bank.entity.Operation;
 
 public interface IDaoCompte {
 	public Compte insert(Compte cp);
-	public List<Operation> getOperations(Compte cp);
+	public List<Operation> getOperationsByIdCompte(Integer id);
 }

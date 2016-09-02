@@ -32,12 +32,12 @@ public class DaoCompte implements IDaoCompte {
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Operation> getOperations(Compte cp) {
+	public List<Operation> getOperationsByIdCompte(Integer id) {
 		List<Operation> list = null;
 		try {
 			list = this.sessionFactory.getCurrentSession().createQuery("SELECT o FROM Operation o "
-					+ "WHERE compte=:cpt")
-			.setParameter("cpt", cp)
+					+ "WHERE numero_compte=:cpt")
+			.setParameter("cpt", id)
 			.list();
 		} catch (HibernateException e) {
 			e.printStackTrace();

@@ -5,13 +5,12 @@
 			<ui:define name="pageTitle">espace Client</ui:define>
 			<ui:define name="pageHeader"><h3><h:outputText value="#{myJsfProperties.welcome}" /></h3></ui:define>
 			<ui:define name="body">
-				Nom :<h:outputText value="#{user.nom}" /><br />
-				Prénom :<h:outputText value="#{user.prenom}"/><br />
-				Adresse :<h:outputText value="#{user.adresse}"/><br />
+				Nom :<h:outputText value="#{mbBankWeb.user.nom}" /><br />
+				Prénom :<h:outputText value="#{mbBankWeb.user.prenom}"/><br />
+				Adresse :<h:outputText value="#{mbBankWeb.user.adresse}"/><br />
 				<form jsfc="h:form" id="Form1">
-					<!--<h:commandButton action="" value="afficher les  comptes" />-->
-					<h:dataTable value="#{user.comptes}" var="rowVar" border="1"
-						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty mbBankWeb.user.comptes}">						
+					<h:dataTable value="#{mbBankWeb.client.comptes}" var="rowVar" border="1"
+						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty mbBankWeb.client.comptes}">						
 					<h:column>
 						<f:facet name="header">
 							<f:verbatim>Nom</f:verbatim>
@@ -22,26 +21,27 @@
 							<f:facet name="header">
 								<f:verbatim></f:verbatim>
 							</f:facet>
-							<h:commandLink  action="#{mbBankWeb.chargerOperations}" value="Voir opérations">
-								<f:param value="#{rowVar}"></f:param>
-								<f:ajax event="click" render="tabOpWrapper"   />
+							<h:commandLink  action="#{mbBankWeb.chargerOperations(rowVar.numero)}">
+								<!--  <f:param name="" value="#{rowVar.numero}"></f:param>
+								<f:ajax render="tabOpWrapper" />-->
+								Voir opérations
 							</h:commandLink>
 					</h:column>	
 				</h:dataTable>
 				<h:panelGrid id="tabOpWrapper" columns="1">
-					<h:dataTable id="tabOp" value="#{listeOp}" var="rowVar" border="1"
-						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty listeOp}"> 
+					<h:dataTable id="tabOp" value="#{mbBankWeb.listeOp}" var="op" border="1"
+						headerClass="tab_heading" rowClasses="odd,even" > 
 						<h:column>
 							<f:facet name="header">
 								<f:verbatim>Label</f:verbatim>
 							</f:facet>
-							<h:outputText value="#{rowVar.label}"/>
+							<h:outputText value="#{op.libelle}"/>
 						</h:column>
 						<h:column>
 							<f:facet name="header">
 								<f:verbatim>Montant</f:verbatim>
 							</f:facet>
-							<h:outputText value="#{rowVar.montant}"/>
+							<h:outputText value="#{op.montant}"/>
 						</h:column>
 					</h:dataTable>
 				</h:panelGrid>

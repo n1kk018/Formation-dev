@@ -8,5 +8,5 @@ import fr.afcepf.al28.bank.entity.Utilisateur;
 
 public interface IBizClient {
 	public Utilisateur Login(Utilisateur u);
-	public List<Operation> getOperationsByCompte(Compte c);
+	public List<Operation> getOperationsByIdCompte(Integer id);
 }
