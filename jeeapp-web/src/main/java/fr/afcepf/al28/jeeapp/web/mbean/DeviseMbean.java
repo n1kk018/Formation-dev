@@ -1,8 +1,11 @@
 package fr.afcepf.al28.jeeapp.web.mbean;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +26,22 @@ public class DeviseMbean {
 	private Logger logger = LoggerFactory.getLogger(DeviseMbean.class);
 	private Marker fatal = MarkerFactory.getMarker("FATAL");
 	
+	@PostConstruct
+	protected void iniAfterInjection() {
+		/*InitialContext ic;
+		try {
+			ic = new InitialContext();
+			serviceDevise = (IServiceDevise)ic.lookup("java:global/jeeapp-ear/jeeapp-web/ServiceDeviseBean");
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //javax.naming(JNDI)
+		*/
+		logger.info("Hello world!"+serviceDevise);
+	}
 	public String doRechercheDevise() {
 		String suite=null;
-		logger.info("Hello world!");
+		
 		devise = serviceDevise.rechercherDevise(codeDevise);
 		return suite;
 	}
