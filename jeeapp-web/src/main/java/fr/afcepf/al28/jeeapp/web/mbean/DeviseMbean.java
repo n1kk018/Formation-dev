@@ -1,5 +1,7 @@
 package fr.afcepf.al28.jeeapp.web.mbean;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
@@ -40,9 +42,16 @@ public class DeviseMbean {
 		*/
 		logger.info("Hello world!"+serviceDevise);
 	}
+	private void test() {
+		List<Devise> list = serviceDevise.toutesDevises();
+		System.out.println("Voici la liste de toutes les devises disponibles.");
+		for (Devise devise : list) {
+			System.out.println("\n"+devise);
+		}
+	}
 	public String doRechercheDevise() {
 		String suite=null;
-		
+		test();
 		devise = serviceDevise.rechercherDevise(codeDevise);
 		return suite;
 	}

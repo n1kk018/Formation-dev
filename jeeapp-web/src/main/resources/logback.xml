@@ -23,6 +23,7 @@
 		<MaxFileSize>2MB</MaxFileSize>
 	</triggeringPolicy>
   </appender>
+  <logger name="org.hibernate" level="DEBUG" />
   <root level="INFO">
 	<appender-ref ref="FILE" />
 	<appender-ref ref="STDOUT" />

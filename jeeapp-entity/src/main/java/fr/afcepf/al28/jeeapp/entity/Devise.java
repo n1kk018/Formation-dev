@@ -1,11 +1,12 @@
 package fr.afcepf.al28.jeeapp.entity;
 
+import javax.ejb.Local;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Devise {
-	//@Id
+	@Id
 	private String codeDevise;// "EUR", "USD"
 	private String monnaie;//"euro"
 	private Double tauxChange;
@@ -36,6 +37,10 @@ public class Devise {
 	}
 	public void setTauxChange(Double tauxChange) {
 		this.tauxChange = tauxChange;
+	}
+	@Override
+	public String toString() {
+		return "Devise [codeDevise=" + codeDevise + ", monnaie=" + monnaie + ", tauxChange=" + tauxChange + "]";
 	}
 	
 	
