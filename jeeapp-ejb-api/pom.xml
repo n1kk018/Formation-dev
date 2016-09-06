@@ -15,12 +15,13 @@
 		<groupId>fr.afcepf.al28</groupId>
 		<artifactId>jeeapp-entity</artifactId>
 		<version>${jeeapp-entity.version}</version>
+		<scope>provided</scope><!-- fournit par les autres  ejb installées par l'ear -->
 	</dependency>
 	<dependency>
 		<groupId>javax</groupId>
 		<artifactId>javaee-api</artifactId>
 		<version>${javaee.version}</version>
-		<scope>provided</scope>
+		<scope>provided</scope><!-- fournit par les autres librairies de jboss -->
 	</dependency>
   </dependencies>
   <build>

@@ -11,7 +11,7 @@
   	<jcloverslf4j.version>1.7.21</jcloverslf4j.version>
   	<logback.version>1.1.7</logback.version>
   	<jeeapp-ejb-api.version>1.0</jeeapp-ejb-api.version>
-  	<jeeapp-ejb-impl.version>1.0</jeeapp-ejb-impl.version>
+  	<jeeapp-entity.version>1.0</jeeapp-entity.version>
   </properties>
   <dependencies>
   	<dependency>                                    
@@ -29,18 +29,19 @@
 		<groupId>javax</groupId>
 		<artifactId>javaee-api</artifactId>
 		<version>${javaee.version}</version>
-		<scope>provided</scope>
+		<scope>provided</scope><!-- fournit par les autres librairies de jboss -->
 	</dependency>
 	<dependency>
 		<groupId>fr.afcepf.al28</groupId>
 		<artifactId>jeeapp-ejb-api</artifactId>
 		<version>${jeeapp-ejb-api.version}</version>
+		<scope>provided</scope><!-- fournit par les autres  ejb installées par l'ear -->
 	</dependency>
 	<dependency>
 		<groupId>fr.afcepf.al28</groupId>
-		<artifactId>jeeapp-ejb-impl</artifactId>
-		<version>${jeeapp-ejb-impl.version}</version>
-		<scope>provided</scope>
+		<artifactId>jeeapp-entity</artifactId>
+		<version>${jeeapp-entity.version}</version>
+		<scope>provided</scope><!-- fournit par les autres  ejb installées par l'ear -->
 	</dependency>
   </dependencies>
   <build>
