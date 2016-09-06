@@ -28,6 +28,7 @@ public class DeviseMbean {
 	
 	@PostConstruct
 	protected void iniAfterInjection() {
+		//équivalent de l'annotation EJB
 		/*InitialContext ic;
 		try {
 			ic = new InitialContext();
