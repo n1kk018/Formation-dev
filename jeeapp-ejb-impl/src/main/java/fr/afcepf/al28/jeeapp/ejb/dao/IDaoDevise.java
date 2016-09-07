@@ -5,12 +5,23 @@ import java.util.List;
 import javax.ejb.Local;
 
 import fr.afcepf.al28.jeeapp.entity.Devise;
+import fr.afcepf.al28.jeeapp.entity.Pays;
 
 @Local
 public interface IDaoDevise {
 
-	Devise getDeviseByCode(String codeDevise);
+	void updateDevise(Devise d);
 
-	List<Devise> getAllDevise();
+	void deleteDevise(Devise d);
+
+	String createDevise(Devise d);
+
+	Devise getDeviseByCode(String code);
+
+	Devise getDeviseByName(String nom);
+
+	List<Devise> getAllDevises();
+
+	List<Pays> getListePaysPartageantDevise(String codeDevise);
 
 }

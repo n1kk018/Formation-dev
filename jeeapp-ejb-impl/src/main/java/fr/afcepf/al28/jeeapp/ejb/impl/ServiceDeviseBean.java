@@ -14,6 +14,7 @@ import javax.ejb.Stateless;
 import fr.afcepf.al28.jeeapp.ejb.api.IServiceDevise;
 import fr.afcepf.al28.jeeapp.ejb.dao.IDaoDevise;
 import fr.afcepf.al28.jeeapp.entity.Devise;
+import fr.afcepf.al28.jeeapp.entity.Pays;
 
 @Stateless
 public class ServiceDeviseBean implements IServiceDevise {
@@ -54,13 +55,19 @@ public class ServiceDeviseBean implements IServiceDevise {
 
 	@Override
 	public List<Devise> toutesDevises() {
-		return dao.getAllDevise();
+		return dao.getAllDevises();
 	}
 
 	@Override
 	public Double convertir(Double montant, String devSource, String devCible) {
-		// TODO Auto-generated method stub
-		return null;
+		Devise rootD = dao.getDeviseByCode(devSource);
+		Devise targetD = dao.getDeviseByCode(devCible);
+		return montant*rootD.getTauxChange()-targetD.getTauxChange();
+	}
+
+	@Override
+	public List<Pays> listePaysPartageantDevise(String devise) {
+		return dao.getListePaysPartageantDevise(devise);
 	}
 
 }

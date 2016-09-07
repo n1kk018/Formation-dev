@@ -1,15 +1,24 @@
 package fr.afcepf.al28.jeeapp.entity;
 
-import javax.ejb.Local;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
+@NamedQuery(name="devise.findAll",query="SELECT d FROM Devise d")
 public class Devise {
 	@Id
 	private String codeDevise;// "EUR", "USD"
 	private String monnaie;//"euro"
 	private Double tauxChange;
+	
+	@OneToMany(mappedBy="devise")
+	private List<Pays> pays;
+	
 	public Devise() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -41,6 +50,12 @@ public class Devise {
 	@Override
 	public String toString() {
 		return "Devise [codeDevise=" + codeDevise + ", monnaie=" + monnaie + ", tauxChange=" + tauxChange + "]";
+	}
+	public List<Pays> getPays() {
+		return pays;
+	}
+	public void setPays(List<Pays> pays) {
+		this.pays = pays;
 	}
 	
 	

@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
@@ -16,6 +17,7 @@ import org.slf4j.MarkerFactory;
 
 import fr.afcepf.al28.jeeapp.ejb.api.IServiceDevise;
 import fr.afcepf.al28.jeeapp.entity.Devise;
+import fr.afcepf.al28.jeeapp.entity.Pays;
 
 @ManagedBean
 @RequestScoped //JSF = sous partie de JEE, deja "provided" par jboss
@@ -42,16 +44,25 @@ public class DeviseMbean {
 		*/
 		logger.info("Hello world!"+serviceDevise);
 	}
-	private void test() {
-		List<Devise> list = serviceDevise.toutesDevises();
-		System.out.println("Voici la liste de toutes les devises disponibles.");
-		for (Devise devise : list) {
-			System.out.println("\n"+devise);
+	
+	private void TestTemporaires() {
+		List<Devise> listeDev = serviceDevise.toutesDevises();
+		for (Devise devise : listeDev) {
+			logger.info("\t"+devise);
+			System.out.println("\t"+devise);
 		}
+		System.out.println("Liste des pays zone euros");
+		List<Pays> liste = serviceDevise.listePaysPartageantDevise("EUR");
+		for (Pays pays : liste) {
+			System.out.println(pays + "\n");
+		}
+		Double sc = serviceDevise.convertir(50.0, "EUR", "USD");
+		System.out.println("50 EUR = "+ sc +" USD");
 	}
 	public String doRechercheDevise() {
 		String suite=null;
-		test();
+		logger.info("\t"+devise);
+		TestTemporaires();
 		devise = serviceDevise.rechercherDevise(codeDevise);
 		return suite;
 	}
