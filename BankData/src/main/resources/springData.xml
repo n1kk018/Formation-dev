@@ -14,7 +14,7 @@
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 			<property name="url" value="jdbc:mysql://127.0.0.1:3306/bank"/>
 			<property name="username" value="root"/>
-			<property name="password" value="afcepf"/>
+			<property name="password" value="c4p1b4r4"/>
 	</bean>
 	<bean id="maSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="maDataSource"/>

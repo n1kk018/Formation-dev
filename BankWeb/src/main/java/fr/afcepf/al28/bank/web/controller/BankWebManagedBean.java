@@ -25,7 +25,7 @@ public class BankWebManagedBean {
 	private IBizClient bizClient;
 	private Utilisateur user=new Utilisateur();
 	private Client client=new Client();
-	private List<Operation> listeOp=new ArrayList<Operation>();
+	private List<Operation> listeOp;
 	private Logger logger = LoggerFactory.getLogger(BankWebManagedBean.class);
 	private Marker fatal = MarkerFactory.getMarker("FATAL");
 	
@@ -45,10 +45,10 @@ public class BankWebManagedBean {
 		return null;
 	}
 	
-	public String chargerOperations(String numCpt){
-		listeOp= bizClient.getOperationsByIdCompte(Integer.parseInt(numCpt));
-		logger.debug(listeOp.toString());
-		return null;
+	public void chargerOperations(String numCpt){
+		listeOp= new ArrayList<Operation>();
+		listeOp=bizClient.getOperationsByIdCompte(Integer.parseInt(numCpt));
+		logger.info(listeOp.toString());
 	}
 	
 	public Utilisateur getUser() {

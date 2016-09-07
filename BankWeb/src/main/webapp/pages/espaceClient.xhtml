@@ -22,15 +22,14 @@
 								<f:verbatim></f:verbatim>
 							</f:facet>
 							<h:commandLink  action="#{mbBankWeb.chargerOperations(rowVar.numero)}">
-								<!--  <f:param name="" value="#{rowVar.numero}"></f:param>
-								<f:ajax render="tabOpWrapper" />-->
+								<f:ajax render="tabOpWrapper" />
 								Voir opérations
 							</h:commandLink>
 					</h:column>	
 				</h:dataTable>
 				<h:panelGrid id="tabOpWrapper" columns="1">
 					<h:dataTable id="tabOp" value="#{mbBankWeb.listeOp}" var="op" border="1"
-						headerClass="tab_heading" rowClasses="odd,even" > 
+						headerClass="tab_heading" rowClasses="odd,even" rendered="#{not empty mbBankWeb.listeOp}"> 
 						<h:column>
 							<f:facet name="header">
 								<f:verbatim>Label</f:verbatim>

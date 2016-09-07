@@ -20,6 +20,10 @@ public class BizClient implements IBizClient {
 	public void setDao(IDaoUtilisateur dao){
 		this.dao = dao;
 	}
+	@Autowired
+	public void setDaoCpt(IDaoCompte dao){
+		this.daoCpt = dao;
+	}
 	@Override
 	public Utilisateur Login(Utilisateur u) {
 		return this.dao.getByLoginAndMdp(u.getEmail(),u.getMdp());
