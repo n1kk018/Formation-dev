@@ -4,4 +4,9 @@ import fr.afcepf.al28.pizzeria.Pate;
 
 public class PateCheesy extends Pate {
 
+	@Override
+	public String toString() {
+		return "PateCheesy";
+	}
+	
 }
