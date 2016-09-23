@@ -31,11 +31,11 @@ public class Preparateur implements Serializable {
      */
     private String mdp;
     /**
-     * listes des {@link Commande} préparées .
+     * listes des {@link Commande} preparees .
      */
     private List<Commande> commandesPreparees;
     /**
-     * liste des {@link Livraison] créées.
+     * liste des {@link Livraison} creees.
      */
     private List<Livraison> livraisonCreees;
     /**

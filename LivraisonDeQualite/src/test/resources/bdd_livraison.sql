@@ -13,11 +13,11 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-SET foreign_key_checks = 0;
+
 --
 -- Create schema livraison_qualite_test
 --
-DROP DATABASE livraison_qualite_test;
+
 CREATE DATABASE IF NOT EXISTS livraison_qualite_test;
 USE livraison_qualite_test;
 
@@ -34,7 +34,7 @@ CREATE TABLE `commande` (
   PRIMARY KEY (`id_commande`),
   KEY `FK_commande_preparateur` (`id_preparateur_commande`),
   CONSTRAINT `FK_commande_preparateur` FOREIGN KEY (`id_preparateur_commande`) REFERENCES `preparateur` (`id_preparateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `commande`
@@ -46,7 +46,8 @@ INSERT INTO `commande` (`id_commande`,`etat_commande`,`date_commande`,`id_prepar
  (2,'livree','2016-09-21 00:00:00',1),
  (3,'preparee','2016-09-21 00:00:00',2),
  (4,'preparee','2016-09-21 00:00:00',1),
- (5,'preparee','2016-09-21 00:00:00',1);
+ (5,'preparee','2016-09-21 00:00:00',1),
+ (6,'preparee','2016-09-21 00:00:00',2);
 /*!40000 ALTER TABLE `commande` ENABLE KEYS */;
 
 
@@ -65,7 +66,7 @@ CREATE TABLE `ligne_commande` (
   KEY `FK_ligne_commande_commande` (`commande_ligne_commande`),
   CONSTRAINT `FK_ligne_commande_produit` FOREIGN KEY (`produit_ligne_commande`) REFERENCES `produit` (`id_produit`),
   CONSTRAINT `FK_ligne_commande_commande` FOREIGN KEY (`commande_ligne_commande`) REFERENCES `commande` (`id_commande`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ligne_commande`
@@ -80,7 +81,9 @@ INSERT INTO `ligne_commande` (`id_ligne_commande`,`quantite_ligne_commande`,`pro
  (5,10,2,4),
  (6,21,1,3),
  (7,20,2,5),
- (8,25,1,5);
+ (8,25,1,5),
+ (9,12,1,6),
+ (10,13,2,6);
 /*!40000 ALTER TABLE `ligne_commande` ENABLE KEYS */;
 
 
@@ -103,7 +106,7 @@ CREATE TABLE `livraison` (
   CONSTRAINT `FK_livraison_commande` FOREIGN KEY (`commande_livraison`) REFERENCES `commande` (`id_commande`),
   CONSTRAINT `FK_livraison_livreur` FOREIGN KEY (`livreur_livraison`) REFERENCES `livreur` (`id_livreur`),
   CONSTRAINT `FK_livraison_preparateur` FOREIGN KEY (`preparateur_livraison`) REFERENCES `preparateur` (`id_preparateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `livraison`
@@ -112,9 +115,10 @@ CREATE TABLE `livraison` (
 /*!40000 ALTER TABLE `livraison` DISABLE KEYS */;
 INSERT INTO `livraison` (`id_livraison`,`date_depart_livraison`,`date_arrivee_livraison`,`preparateur_livraison`,`livreur_livraison`,`commande_livraison`) VALUES 
  (1,'2016-09-21 09:12:00','2016-09-21 09:21:00',1,1,2),
- (2,'2016-09-22 09:00:00',NULL,1,1,3),
+ (2,'2016-09-22 09:00:00','2016-09-22 09:40:00',1,1,3),
  (3,'2016-09-22 09:12:00',NULL,1,2,4),
- (4,'2016-09-22 09:00:00','2016-09-22 09:21:00',1,3,5);
+ (4,'2016-09-22 09:00:00','2016-09-22 09:21:00',1,3,5),
+ (5,'2016-09-22 09:25:00',NULL,1,3,1);
 /*!40000 ALTER TABLE `livraison` ENABLE KEYS */;
 
 
@@ -191,7 +195,7 @@ INSERT INTO `produit` (`id_produit`,`nom_produit`,`prix_produit`) VALUES
 /*!40000 ALTER TABLE `produit` ENABLE KEYS */;
 
 
-SET foreign_key_checks = 1;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

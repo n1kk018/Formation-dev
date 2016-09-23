@@ -1,6 +1,6 @@
 package fr.afcepf.al28.livraison.data.api;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import fr.afcepf.al28.livraison.entities.Livraison;
@@ -28,5 +28,5 @@ public interface IDaoLivreur {
      *  <li>erreur de dev</li>
      * </ul>
      */
-    List<Livraison> rechercher(Date date) throws QualitException;
+    List<Livreur> rechercher(Date date) throws QualitException;
 }

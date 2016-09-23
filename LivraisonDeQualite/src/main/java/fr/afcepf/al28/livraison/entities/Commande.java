@@ -56,6 +56,19 @@ public class Commande implements Serializable {
         lignes = paramLignes;
     }
     /**
+     * @param paramId id.
+     * @param paramEtat etat.
+     * @param paramDateCmd date.
+     * @param paramPreparateur preparateur.
+     */
+    public Commande(Integer paramId, String paramEtat, Date paramDateCmd, Preparateur paramPreparateur) {
+        super();
+        id = paramId;
+        etat = paramEtat;
+        dateCmd = paramDateCmd;
+        preparateur = paramPreparateur;
+    }
+    /**
      * constructeur par défaut.
      */
     public Commande() {
