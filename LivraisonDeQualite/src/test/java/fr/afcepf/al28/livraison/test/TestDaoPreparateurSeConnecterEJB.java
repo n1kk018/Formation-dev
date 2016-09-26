@@ -2,13 +2,28 @@ package fr.afcepf.al28.livraison.test;
 
 import java.io.IOException;
 
+import javax.ejb.EJB;
+
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.core.api.annotation.Inject;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.shrinkwrap.api.ArchivePaths;
+import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
+import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import fr.afcepf.al28.livraison.data.api.IDaoPreparateur;
-import fr.afcepf.al28.livraison.data.impl.DaoPreparateur;
+import fr.afcepf.al28.livraison.data.impl.DaoPreparateurEJB;
+import fr.afcepf.al28.livraison.entities.Commande;
+import fr.afcepf.al28.livraison.entities.LigneCommande;
+import fr.afcepf.al28.livraison.entities.Livraison;
+import fr.afcepf.al28.livraison.entities.Livreur;
 import fr.afcepf.al28.livraison.entities.Preparateur;
+import fr.afcepf.al28.livraison.entities.Produit;
 import fr.afcepf.al28.livraison.exceptions.QualitEnum;
 import fr.afcepf.al28.livraison.exceptions.QualitException;
 
@@ -17,7 +32,31 @@ import fr.afcepf.al28.livraison.exceptions.QualitException;
  * @author stagiaire
  *
  */
-public class TestDaoPreparateurSeConnecter {
+@RunWith(Arquillian.class)
+public class TestDaoPreparateurSeConnecterEJB {
+    @Deployment
+    public static JavaArchive createDeploy() {
+        JavaArchive jar = ShrinkWrap.create(
+                JavaArchive.class, "test.jar");
+        jar.addClass(Preparateur.class);
+        jar.addClass(Commande.class);
+        jar.addClass(QualitEnum.class);
+        jar.addClass(LigneCommande.class);
+        jar.addClass(Produit.class);
+        jar.addClass(Livreur.class);
+        jar.addClass(Livraison.class);
+        jar.addClass(IDaoPreparateur.class);
+        jar.addClass(DaoPreparateurEJB.class);
+        jar.addClass(QualitException.class);
+        jar.addAsManifestResource("test-persistence.xml", ArchivePaths.create("persistence.xml"));
+        jar.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+        return jar;
+    }
+    /**
+     * la definition du service à tester.
+     */
+    @EJB
+    private IDaoPreparateur dao;
     /**
      * un login valide dans la base de test.
      */
@@ -35,10 +74,6 @@ public class TestDaoPreparateurSeConnecter {
      */
     private Preparateur preparateurExpected =
             new Preparateur(1, "preparateur test1", loginValide, mdpValide);
-    /**
-     * la definition du service à tester.
-     */
-    private IDaoPreparateur dao = new DaoPreparateur();
     /**
      * Test du cas Nominal, avec un bon login et mdp.
      * @throws QualitException ne doit pas passer ici.

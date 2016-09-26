@@ -3,11 +3,20 @@ package fr.afcepf.al28.livraison.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Entité représentant le préparateur de commandes.
  * @author stagiaire
  *
  */
+@Entity
 public class Preparateur implements Serializable {
 
     /**
@@ -17,26 +26,34 @@ public class Preparateur implements Serializable {
     /**
      * id unique.
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_preparateur")
     private Integer id;
     /**
      * nom.
      */
+    @Column(name = "nom_preparateur", nullable = false, length = 45)
     private String nom;
     /**
      * login.
      */
+    @Column(name = "login_preparateur", nullable = false, length = 45)
     private String login;
     /**
      * mdp.
      */
+    @Column(name = "password_preparateur", nullable = false, length = 45)
     private String mdp;
     /**
      * listes des {@link Commande} preparees .
      */
+    @Transient
     private List<Commande> commandesPreparees;
     /**
      * liste des {@link Livraison} creees.
      */
+    @Transient
     private List<Livraison> livraisonCreees;
     /**
      * @param paramId id.
