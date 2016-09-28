@@ -2,13 +2,13 @@ package fr.afcepf.al28.jeeapp.ejb.api;
 
 import java.util.List;
 
-import javax.ejb.Local;
+import javax.ejb.Remote;
 
 import fr.afcepf.al28.jeeapp.entity.Devise;
 import fr.afcepf.al28.jeeapp.entity.Pays;
 
-@Local
-//@Remote
+//@Local
+@Remote
 //@WebService
 public interface IServiceDevise 
 {

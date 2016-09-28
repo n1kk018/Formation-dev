@@ -1,5 +1,6 @@
 package fr.afcepf.al28.jeeapp.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -10,8 +11,12 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQuery(name="devise.findAll",query="SELECT d FROM Devise d")
-public class Devise {
-	@Id
+public class Devise implements Serializable{
+	/**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    @Id
 	private String codeDevise;// "EUR", "USD"
 	private String monnaie;//"euro"
 	private Double tauxChange;

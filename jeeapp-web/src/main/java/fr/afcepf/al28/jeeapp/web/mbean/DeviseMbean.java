@@ -9,12 +9,6 @@ import javax.faces.bean.ManagedBean;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
-
 import fr.afcepf.al28.jeeapp.ejb.api.IServiceDevise;
 import fr.afcepf.al28.jeeapp.entity.Devise;
 import fr.afcepf.al28.jeeapp.entity.Pays;
@@ -27,8 +21,6 @@ public class DeviseMbean {
 	
 	private String codeDevise;
 	private Devise devise;
-	private Logger logger = LoggerFactory.getLogger(DeviseMbean.class);
-	private Marker fatal = MarkerFactory.getMarker("FATAL");
 	
 	@PostConstruct
 	protected void iniAfterInjection() {
@@ -42,13 +34,11 @@ public class DeviseMbean {
 			e.printStackTrace();
 		} //javax.naming(JNDI)
 		*/
-		logger.info("Hello world!"+serviceDevise);
 	}
 	
 	private void TestTemporaires() {
 		List<Devise> listeDev = serviceDevise.toutesDevises();
 		for (Devise devise : listeDev) {
-			logger.info("\t"+devise);
 			System.out.println("\t"+devise);
 		}
 		System.out.println("Liste des pays zone euros");
@@ -61,7 +51,6 @@ public class DeviseMbean {
 	}
 	public String doRechercheDevise() {
 		String suite=null;
-		logger.info("\t"+devise);
 		TestTemporaires();
 		devise = serviceDevise.rechercherDevise(codeDevise);
 		return suite;
