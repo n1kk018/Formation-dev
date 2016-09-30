@@ -6,12 +6,10 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 
 import fr.afcepf.al28.jeeapp.ejb.api.IServiceDevise;
-import fr.afcepf.al28.jeeapp.entity.Devise;
-import fr.afcepf.al28.jeeapp.entity.Pays;
+import fr.afcepf.al28.jeeapp.ejb.dto.DeviseDTO;
+import fr.afcepf.al28.jeeapp.ejb.dto.PaysDTO;
 
 @ManagedBean
 @RequestScoped //JSF = sous partie de JEE, deja "provided" par jboss
@@ -20,7 +18,7 @@ public class DeviseMbean {
 	private IServiceDevise serviceDevise;
 	
 	private String codeDevise;
-	private Devise devise;
+	private DeviseDTO devise;
 	
 	@PostConstruct
 	protected void iniAfterInjection() {
@@ -37,13 +35,13 @@ public class DeviseMbean {
 	}
 	
 	private void TestTemporaires() {
-		List<Devise> listeDev = serviceDevise.toutesDevises();
-		for (Devise devise : listeDev) {
+		List<DeviseDTO> listeDev = serviceDevise.toutesDevises();
+		for (DeviseDTO devise : listeDev) {
 			System.out.println("\t"+devise);
 		}
 		System.out.println("Liste des pays zone euros");
-		List<Pays> liste = serviceDevise.listePaysPartageantDevise("EUR");
-		for (Pays pays : liste) {
+		List<PaysDTO> liste = serviceDevise.listePaysPartageantDevise("EUR");
+		for (PaysDTO pays : liste) {
 			System.out.println(pays + "\n");
 		}
 		Double sc = serviceDevise.convertir(50.0, "EUR", "USD");
@@ -61,12 +59,7 @@ public class DeviseMbean {
 	public void setCodeDevise(String codeDevise) {
 		this.codeDevise = codeDevise;
 	}
-	public Devise getDevise() {
+	public DeviseDTO getDevise() {
 		return devise;
 	}
-	public void setDevise(Devise devise) {
-		this.devise = devise;
-	}
-	
-	
 }

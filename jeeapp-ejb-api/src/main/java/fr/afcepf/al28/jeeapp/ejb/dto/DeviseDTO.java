@@ -1,35 +1,28 @@
-package fr.afcepf.al28.jeeapp.entity;
+package fr.afcepf.al28.jeeapp.ejb.dto;
 
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-
-@Entity
-@NamedQuery(name="devise.findAll",query="SELECT d FROM Devise d")
-public class Devise implements Serializable{
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+@XmlType(namespace="http://dto.data.jeeapp.al28.afcepf.fr/")
+@XmlRootElement(name="deviseDTO")
+public class DeviseDTO implements Serializable{
 	/**
      * 
      */
     private static final long serialVersionUID = 1L;
-    @Id
 	private String codeDevise;// "EUR", "USD"
 	private String monnaie;//"euro"
 	private Double tauxChange;
 	
-	@OneToMany(mappedBy="devise"/*,cascade=CascadeType.DETACH*/)
-	private List<Pays> pays;
+	private List<PaysDTO> pays;
 	
-	public Devise() {
+	public DeviseDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Devise(String codeDevise, String monnaie, Double tauxChange) {
+	public DeviseDTO(String codeDevise, String monnaie, Double tauxChange) {
 		super();
 		this.codeDevise = codeDevise;
 		this.monnaie = monnaie;
@@ -53,14 +46,13 @@ public class Devise implements Serializable{
 	public void setTauxChange(Double tauxChange) {
 		this.tauxChange = tauxChange;
 	}
-	@Override
 	public String toString() {
-		return "Devise [codeDevise=" + codeDevise + ", monnaie=" + monnaie + ", tauxChange=" + tauxChange + "]";
+		return "DeviseDTO [codeDevise=" + codeDevise + ", monnaie=" + monnaie + ", tauxChange=" + tauxChange + "]";
 	}
-	public List<Pays> getPays() {
+	public List<PaysDTO> getPays() {
 		return pays;
 	}
-	public void setPays(List<Pays> pays) {
+	public void setPays(List<PaysDTO> pays) {
 		this.pays = pays;
 	}
 	

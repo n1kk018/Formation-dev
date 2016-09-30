@@ -1,32 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.afcepf.al28</groupId>
-  <artifactId>cliRmiEjb</artifactId>
-  <version>1.0</version>
-  <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>     
-  </properties>
-  <dependencies>
-     <dependency>
-     	<groupId>fr.afcepf.al28</groupId>
-     	<artifactId>jeeapp-ejb-api</artifactId>
-        <version>1.0</version>  
-     </dependency>
-     <dependency>
-		<groupId>fr.afcepf.al28</groupId>
-		<artifactId>jeeapp-entity</artifactId>
-		<version>1.0</version>
-	</dependency>
-       <dependency>
-           <groupId>org.jboss.as</groupId>
-           <artifactId>jboss-as-ejb-client-bom</artifactId>
-           <type>pom</type>
-           <version>7.2.0.Final</version>
-       </dependency>
-  </dependencies>
-   <build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.afcepf.al28</groupId>
+	<artifactId>cliRmiEjb</artifactId>
+	<version>1.0</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>fr.afcepf.al28</groupId>
+			<artifactId>jeeapp-ejb-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.as</groupId>
+			<artifactId>jboss-as-ejb-client-bom</artifactId>
+			<type>pom</type>
+			<version>7.2.0.Final</version>
+		</dependency>
+	</dependencies>
+	<build>
 		<plugins>
-		   <!-- configuration (enventuellement heritee) pour compilation en java 7 ou 8 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -34,6 +29,39 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.12</version>
+				<executions>
+					<execution>
+						<id>wsimport-from-jdk</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- using wsdl from an url -->
+					<wsdlUrls>
+						<wsdlUrl>
+							http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl
+						</wsdlUrl>
+					</wsdlUrls>
+					<!-- or using wsdls file directory -->
+					<!-- <wsdlDirectory>src/wsdl</wsdlDirectory> -->
+					<!-- which wsdl file -->
+					<!-- <wsdlFiles> -->
+					<!-- <wsdlFile>myWSDL.wsdl</wsdlFile> -->
+					<!--</wsdlFiles> -->
+					<!-- Keep generated files -->
+					<keep>true</keep>
+					<!-- Package name -->
+					<packageName>com.organization.name</packageName>
+					<!-- generated source files destination -->
+					<sourceDestDir>target/generatedclasses</sourceDestDir>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />	
+	
+	
+	<!-- 
+	Ce fichier (extension pour les services WEB) sera utilise par la technologie 
+	CXF au sein du projet xxx-web .
+	 -->
+	 
+
+   <jaxws:endpoint id="tvaServiceEndPoint"
+		implementor="#tvaServiceImpl" address="/tvaService">
+		<!-- <jaxws:inInterceptors>
+			<ref bean="securityInterceptor" />
+		</jaxws:inInterceptors> -->
+	</jaxws:endpoint>
+
+	
+	<!-- nb : par defaut , CXF 2.5 utilise la techno "Jettison" pour le lien entre JAXB et JAXRS/Json
+     cette techno génère des résultats "json" incompatible avec angular-js .
+     il faut utiliser la technologie alternative "jackson" pour obtenir une compatibilité 
+     avec angular-js -->
+
+<bean id='jacksonJsonProvider' class='com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider' />
+
+
+
+
+<!-- <bean id="corsFilter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />       --> 
+    
+
+<!-- url complete de type "http://localhost:8080/tpWebCxf/services/rest/myservice/xxx"
+avec "services" associe à l'url-pattern de CxfServlet dans web.xml
+et myservices/xxx associe aux valeurs de @Path() de la classe java et des methodes-->
+
+
+<jaxrs:server id="myRestServices"  address="/rest">
+	 <jaxrs:providers>
+		<ref bean='jacksonJsonProvider' />
+		<!-- <ref bean='corsFilter' /> -->
+	</jaxrs:providers> 
+	
+	<jaxrs:serviceBeans>
+		<ref bean="tvaServiceRestAdapter" />
+	</jaxrs:serviceBeans>
+	<jaxrs:extensionMappings>
+		<entry key="xml" value="application/xml" /> 
+		<entry key="json" value="application/json" />
+	</jaxrs:extensionMappings>	
+</jaxrs:server>
+
+
+</beans>

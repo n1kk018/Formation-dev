@@ -55,7 +55,9 @@ public class DaoDeviseJpa implements IDaoDevise {
 	 */
 	@Override
 	public Devise getDeviseByCode(String code) {
-		return em.find(Devise.class, code);
+	    Devise d = em.find(Devise.class, code);
+	    //em.detach(d);
+		return d;
 	}
 	
 	/* (non-Javadoc)

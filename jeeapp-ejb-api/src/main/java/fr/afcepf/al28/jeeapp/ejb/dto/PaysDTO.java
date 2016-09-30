@@ -1,33 +1,24 @@
-package fr.afcepf.al28.jeeapp.entity;
+package fr.afcepf.al28.jeeapp.ejb.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-
-@Entity
-public class Pays implements Serializable{
+@XmlType(namespace="http://dto.data.jeeapp.al28.afcepf.fr/")
+@XmlRootElement(name="paysDTO")
+public class PaysDTO implements Serializable{
 	/**
      * 
      */
     private static final long serialVersionUID = 1L;
-    @Id
 	private String codePays;
 	private String nom;
 	private String capitale;
 	
-	@ManyToOne()
-	@JoinColumn(name ="refDevise")
-	private Devise devise;
+	private DeviseDTO devise;
 	
-	/**
-     * 
-     */
-    public Pays() {
+	public PaysDTO() {
         super();
     }
 
@@ -36,14 +27,14 @@ public class Pays implements Serializable{
      * @param paramNom
      * @param paramCapitale
      */
-    public Pays(String paramCodePays, String paramNom, String paramCapitale) {
+    public PaysDTO(String paramCodePays, String paramNom, String paramCapitale) {
         super();
         codePays = paramCodePays;
         nom = paramNom;
         capitale = paramCapitale;
     }
 
-    public String getCodePays() {
+	public String getCodePays() {
 		return codePays;
 	}
 
@@ -67,17 +58,16 @@ public class Pays implements Serializable{
 		this.capitale = capitale;
 	}
 
-	public Devise getDevise() {
+	public DeviseDTO getDevise() {
 		return devise;
 	}
 
-	public void setDevise(Devise devise) {
+	public void setDevise(DeviseDTO devise) {
 		this.devise = devise;
 	}
 
-	@Override
 	public String toString() {
-		return "Pays [codePays=" + codePays + ", nom=" + nom + ", capitale=" + capitale + "]";
+		return "PaysDTO [codePays=" + codePays + ", nom=" + nom + ", capitale=" + capitale + "]";
 	}
 	
 }
