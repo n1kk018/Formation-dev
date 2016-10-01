@@ -1,24 +1,28 @@
 package fr.afcepf.al28.livraison.data.impl;
 
-import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 
 import fr.afcepf.al28.livraison.data.api.IDaoPreparateur;
 import fr.afcepf.al28.livraison.entities.Preparateur;
 import fr.afcepf.al28.livraison.exceptions.QualitEnum;
 import fr.afcepf.al28.livraison.exceptions.QualitException;
-
+/**
+ * Implementation sous forme d'ejb3.
+ * @author stagiaire
+ *
+ */
 @Remote(IDaoPreparateur.class)
 @Stateless
 public class DaoPreparateurEJB implements IDaoPreparateur {
+    /**
+     * definition de l'entityManager injecté par le container.
+     */
     @PersistenceContext(unitName="livraison_unit")
     private EntityManager em;
-    
     @Override
     public Preparateur seConnecter(String paramLogin, String paramMdp) throws QualitException {
         Preparateur prepa = null;
@@ -35,5 +39,4 @@ public class DaoPreparateurEJB implements IDaoPreparateur {
         }
         return prepa;
     }
-
 }

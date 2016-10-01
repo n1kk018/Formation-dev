@@ -82,11 +82,11 @@ public class TestDaoPreparateurSeConnecter {
      */
     @Before
     public void setUp() {
-        String path = Thread.currentThread()
+        /*String path = Thread.currentThread()
                 .getContextClassLoader()
-                .getResource("crebase.bat").getPath();
+                .getResource("crebase.bat").getPath();*/
         try {
-            Process proc = Runtime.getRuntime().exec(path);
+            Process proc = Runtime.getRuntime().exec("/usr/bin/mysql -uroot -pc4p1b4r4 < bdd_livraison.sql");
             proc.waitFor();
         } catch (IOException paramE) {
             paramE.printStackTrace();
