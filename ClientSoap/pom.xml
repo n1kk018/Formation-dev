@@ -3,6 +3,18 @@
   <groupId>fr.afcepf.al28</groupId>
   <artifactId>ClientSoap</artifactId>
   <version>1.0</version>
+  <dependencies>
+  	<dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId><!-- indirectly httpcore -->
+		<version>4.2.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20160810</version>
+	</dependency>
+  </dependencies>
    <build>
 		<plugins>
 		   <!-- configuration (enventuellement heritee) pour compilation en java 7 ou 8 -->

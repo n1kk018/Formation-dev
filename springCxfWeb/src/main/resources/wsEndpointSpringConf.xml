@@ -35,7 +35,7 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 
 
 
-<!-- <bean id="corsFilter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />       --> 
+<bean id="corsFilter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
     
 
 <!-- url complete de type "http://localhost:8080/tpWebCxf/services/rest/myservice/xxx"
@@ -46,7 +46,7 @@ et myservices/xxx associe aux valeurs de @Path() de la classe java et des method
 <jaxrs:server id="myRestServices"  address="/rest">
 	 <jaxrs:providers>
 		<ref bean='jacksonJsonProvider' />
-		<!-- <ref bean='corsFilter' /> -->
+		<ref bean='corsFilter' />
 	</jaxrs:providers> 
 	
 	<jaxrs:serviceBeans>
@@ -57,6 +57,4 @@ et myservices/xxx associe aux valeurs de @Path() de la classe java et des method
 		<entry key="json" value="application/json" />
 	</jaxrs:extensionMappings>	
 </jaxrs:server>
-
-
 </beans>

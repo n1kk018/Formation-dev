@@ -1,0 +1,38 @@
+   <html >
+    <head>
+	<script src="jquery-2.2.1.js"></script>
+	<script>
+      $(function() {
+	 	  $('#btnCalcul').on('click',function(){
+				 $.ajax({
+			           type: "GET",
+			           //url: "services/rest/tva/calcul",
+			           url:"http://192.168.102.67:8080/springCxfWeb/services/rest/tva/calcul",
+			           dataType: "json",
+			           data:{ht:$("#txtHt").val(),tauxPct:$("#txtTaux").val()},
+			           success: function (updatedData) {
+			               if (updatedData) {
+			                  $("#ttcPrice").html(updatedData.ttc);
+			                  $("#spanMsg").html("updated data (server side):" + JSON.stringify(updatedData));
+			               } else {
+			                   $("#spanMsg").html("Cannot GET updated data");
+			               }
+			           },
+			           error: function(xhr, status, error){
+			        	   $("#spanMsg").html( "status:" + status + " error : " + error ) ;
+			           }
+				   });
+			});
+      }); 
+   </script>
+   </head>
+     <body>
+      Prix ttc : <input id="txtHt" type='text' /><br/>
+	  Taux TVA : <input id="txtTaux" type='text' /><br/>
+	  Prix ttc : <span id="ttcPrice" ></span><br/>
+	  <input type='button' value="Calculer TVA" id="btnCalcul"/> <br/>
+	  <span id="spanMsg"></span> <br/>
+	  <hr/>
+	  <a href="index.html">retour vers index.html</a>
+	  </body>
+     </html>

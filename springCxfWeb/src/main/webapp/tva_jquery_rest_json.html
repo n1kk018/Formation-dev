@@ -1,0 +1,69 @@
+   <html >
+    <head>
+	<script src="jquery-2.2.1.js"></script>
+	<script>
+      $(function() {
+	 	  $('#btnCalcul').on('click',function(){
+				 $.ajax({
+			           type: "GET",
+			           //url: "http://jsonplaceholder.typicode.com/posts/1",
+			           url: "services/rest/tva/calcul",
+			           dataType: "json",
+			           data:{ht:$("#txtHt").val(),tauxPct:$("#txtTaux").val()},
+			           success: function (updatedData) {
+			               if (updatedData) {
+			                  $("#ttcPrice").html(updatedData.ttc);
+			                  $("#spanMsg").html("updated data (server side):" + JSON.stringify(updatedData));
+			               } else {
+			                   $("#spanMsg").html("Cannot GET updated data");
+			               }
+			           },
+			           error: function(xhr, status, error){
+			        	   $("#spanMsg").html( "status:" + status + " error : " + error ) ;
+			           }
+				   });
+			});
+      }); 
+      $(function() {
+	 	  $('#btnNewTx').on('click',function(){
+	 		 	 var tauxTvaObj={id: "", nom: "?", taux: 0.0 };
+	 		 	 tauxTvaObj.nom = $("#txtNomTaux").val();
+	 		 	 tauxTvaObj.taux = $("#txtValTaux").val();
+				 $.ajax({
+			           type: "POST",
+			           //url: "http://jsonplaceholder.typicode.com/posts/1",
+			           url: "services/rest/tva/taux/"+tauxTvaObj.id,
+			           dataType: "json",
+			           contentType: "application/json; charset=utf-8",
+			           data: JSON.stringify(tauxTvaObj),
+			           //data:{ht:$("#txtNomTaux").val(),tauxPct:$("#txtValTaux").val()},
+			           success: function (datatoto) {
+			               if (datatoto) {
+			                  //$("#ttcPrice").html(updatedData.ttc);
+			                  $("#spanMsg2").html("updated data (server side):" + JSON.stringify(datatoto));
+			               } else {
+			                   $("#spanMsg2").html("Cannot GET updated data");
+			               }
+			           },
+			           error: function(xhr, status, error){
+			        	   $("#spanMsg2").html( "status:" + status + " error : " + error ) ;
+			           }
+				   });
+			});
+      }); 
+   </script>
+   </head>
+     <body>
+      Prix ttc : <input id="txtHt" type='text' /><br/>
+	  Taux TVA : <input id="txtTaux" type='text' /><br/>
+	  Prix ttc : <span id="ttcPrice" ></span><br/>
+	  <input type='button' value="Calculer TVA" id="btnCalcul"/> <br/>
+	  <hr />
+	  nom TVA : <input id="txtNomTaux" type='text' /><br/>
+	  Taux TVA : <input id="txtValTaux" type='text' /><br/>
+	  <input type='button' value="Nouveau taux" id="btnNewTx"/> <br/>
+	  <span id="spanMsg2"></span> <br/>
+	  <hr/>
+	  <a href="index.html">retour vers index.html</a>
+	  </body>
+     </html>
