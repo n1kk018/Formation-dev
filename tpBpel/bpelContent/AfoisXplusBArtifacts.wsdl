@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<definitions name="AfoisXplusB"
+        targetNamespace="http://bpel.al28.afcepf.fr/"
+        xmlns:tns="http://bpel.al28.afcepf.fr/"
+        xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        >
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TYPE DEFINITION - List of types participating in this BPEL process 
+     The BPEL Designer will generate default request and response types
+     but you can define or import any XML Schema type and use them as part 
+     of the message types.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <types>
+        <schema attributeFormDefault="unqualified" elementFormDefault="qualified" 
+                targetNamespace="http://bpel.al28.afcepf.fr/" 
+                xmlns="http://www.w3.org/2001/XMLSchema">
+
+            <element name="AfoisXplusBRequest">
+                <complexType>
+                    <sequence>
+                        <!-- <element name="input" type="string"/> -->
+                        <element name="a" type="double"/>
+                        <element name="x" type="double"/>
+                        <element name="b" type="double"/>
+                        <!-- <element name="personne" type="PersonneType"/> -->
+                    </sequence>
+                </complexType>
+            </element>
+
+            <element name="AfoisXplusBResponse">
+                <complexType>
+                    <sequence>
+                       <!-- <element name="result" type="string"/> -->
+                       <element name="result" type="double"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     MESSAGE TYPE DEFINITION - Definition of the message types used as 
+     part of the port type defintions
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <message name="AfoisXplusBRequestMessage">
+        <part name="payload" element="tns:AfoisXplusBRequest"/>
+    </message>
+    <message name="AfoisXplusBResponseMessage">
+        <part name="payload" element="tns:AfoisXplusBResponse"/>
+    </message>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PORT TYPE DEFINITION - A port type groups a set of operations into
+     a logical service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <!-- portType implemented by the AfoisXplusB BPEL process -->
+    <portType name="AfoisXplusB">
+        <operation name="process">
+            <input  message="tns:AfoisXplusBRequestMessage" />
+            <output message="tns:AfoisXplusBResponseMessage"/>
+        </operation>
+    </portType>   
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     PARTNER LINK TYPE DEFINITION
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+    <plnk:partnerLinkType name="AfoisXplusB">
+        <plnk:role name="AfoisXplusBProvider" portType="tns:AfoisXplusB"/>
+    </plnk:partnerLinkType>
+    
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     BINDING DEFINITION - Defines the message format and protocol details
+     for a web service.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <binding name="AfoisXplusBBinding" type="tns:AfoisXplusB">
+    	<soap:binding style="document"
+    		transport="http://schemas.xmlsoap.org/soap/http" />
+    	<operation name="process">
+    		<soap:operation
+    			soapAction="http://bpel.al28.afcepf.fr/process" />
+    		<input>
+    			<soap:body use="literal" />
+    		</input>
+    		<output>
+    			<soap:body use="literal" />
+    		</output>
+    	</operation>
+    </binding>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <service name="AfoisXplusBService">
+    	<port name="AfoisXplusBPort" binding="tns:AfoisXplusBBinding">
+    		<soap:address location="http://localhost:9090/ode/processes/AfoisXplusB" />
+    	</port>
+    </service>
+</definitions>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="46baf308-48f5-4046-9ce0-f3da8decfeff" activeEnvironment="Default" name="Test AfoisXplusB" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9b83667f-4fda-4788-8146-94fac00e7f72" wsaVersion="NONE" name="AfoisXplusBBinding" type="wsdl" bindingName="{http://bpel.al28.afcepf.fr/}AfoisXplusBBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9090/ode/processes/AfoisXplusB?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9090/ode/processes/AfoisXplusB?wsdl"><con:part><con:url>http://localhost:9090/ode/processes/AfoisXplusB?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://bpel.al28.afcepf.fr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bpel.al28.afcepf.fr/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bpel.al28.afcepf.fr/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="AfoisXplusBRequest">
+        <complexType>
+          <sequence>
+            <element name="a" type="double"/>
+            <element name="x" type="double"/>
+            <element name="b" type="double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AfoisXplusBResponse">
+        <complexType>
+          <sequence>
+            <element name="result" type="double"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="AfoisXplusBRequestMessage">
+    <wsdl:part name="payload" element="tns:AfoisXplusBRequest"/>
+  </wsdl:message>
+  <wsdl:message name="AfoisXplusBResponseMessage">
+    <wsdl:part name="payload" element="tns:AfoisXplusBResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="AfoisXplusBPortType">
+    <wsdl:operation name="process">
+      <wsdl:input message="tns:AfoisXplusBRequestMessage" wsaw:Action="http://bpel.al28.afcepf.fr/process"/>
+      <wsdl:output message="tns:AfoisXplusBResponseMessage" wsaw:Action="http://bpel.al28.afcepf.fr/AfoisXplusB/processResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AfoisXplusBBinding" type="tns:AfoisXplusBPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="process">
+      <soap:operation soapAction="http://bpel.al28.afcepf.fr/process" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AfoisXplusB">
+    <wsdl:port name="AfoisXplusBPort" binding="tns:AfoisXplusBBinding">
+      <soap:address location="http://localhost:9090/ode/processes/AfoisXplusB.AfoisXplusBPort/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9090/ode/processes/AfoisXplusB.AfoisXplusBPort/</con:endpoint></con:endpoints><con:operation id="3d15f73b-a7ad-4e0d-9bff-f59bb08f3640" isOneWay="false" action="http://bpel.al28.afcepf.fr/process" name="process" bindingOperationName="process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="197002bb-fa8a-4f4a-9955-17e475a0e502" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/ode/processes/AfoisXplusB.AfoisXplusBPort/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bpel="http://bpel.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bpel:AfoisXplusBRequest>\r
+         <bpel:a>?</bpel:a>\r
+         <bpel:x>?</bpel:x>\r
+         <bpel:b>?</bpel:b>\r
+      </bpel:AfoisXplusBRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bpel.al28.afcepf.fr/process"/></con:call></con:operation></con:interface><con:testSuite id="a017d8fa-8c5f-4c0b-9759-aa55f24bb614" name="AfoisXplusBBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="8068c6f7-aa1c-4745-88e9-1749e01c65d1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="process TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="34b66dfa-49c5-477d-8822-37dd74b130f6" name="process"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AfoisXplusBBinding</con:interface><con:operation>process</con:operation><con:request name="process" id="2cdf2e91-e8f5-4686-b33f-f74abbb39f71"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/ode/processes/AfoisXplusB.AfoisXplusBPort/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bpel="http://bpel.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <bpel:AfoisXplusBRequest>\r
+         <bpel:a>2</bpel:a>\r
+         <bpel:x>4</bpel:x>\r
+         <bpel:b>1</bpel:b>\r
+      </bpel:AfoisXplusBRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://bpel.al28.afcepf.fr/process" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

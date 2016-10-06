@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ab9ffe63-4f37-447f-a5dc-38a126c34a73" activeEnvironment="Default" name="springcxfws" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d690a74c-342e-4b77-9ad8-ed96f39ff5b0" wsaVersion="NONE" name="TvaServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://service.al28.afcepf.fr/}TvaServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/springCxfWeb/services/tvaService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/springCxfWeb/services/tvaService?wsdl"><con:part><con:url>http://localhost:8080/springCxfWeb/services/tvaService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="TvaServiceImplService" targetNamespace="http://service.al28.afcepf.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.al28.afcepf.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://service.al28.afcepf.fr/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAuteur" type="tns:getAuteur"/>
+      <xs:element name="getAuteurResponse" type="tns:getAuteurResponse"/>
+      <xs:element name="ttc" type="tns:ttc"/>
+      <xs:element name="ttcResponse" type="tns:ttcResponse"/>
+      <xs:element name="tva" type="tns:tva"/>
+      <xs:element name="tvaResponse" type="tns:tvaResponse"/>
+      <xs:complexType name="getAuteur">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getAuteurResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tva">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ht" type="xs:double"/>
+          <xs:element minOccurs="0" name="tauxPct" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tvaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ttc">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ht" type="xs:double"/>
+          <xs:element minOccurs="0" name="tauxPct" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ttcResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAuteur">
+    <wsdl:part element="tns:getAuteur" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="tva">
+    <wsdl:part element="tns:tva" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="tvaResponse">
+    <wsdl:part element="tns:tvaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ttcResponse">
+    <wsdl:part element="tns:ttcResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuteurResponse">
+    <wsdl:part element="tns:getAuteurResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ttc">
+    <wsdl:part element="tns:ttc" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TvaService">
+    <wsdl:operation name="getAuteur">
+      <wsdl:input message="tns:getAuteur" name="getAuteur"></wsdl:input>
+      <wsdl:output message="tns:getAuteurResponse" name="getAuteurResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tva">
+      <wsdl:input message="tns:tva" name="tva"></wsdl:input>
+      <wsdl:output message="tns:tvaResponse" name="tvaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ttc">
+      <wsdl:input message="tns:ttc" name="ttc"></wsdl:input>
+      <wsdl:output message="tns:ttcResponse" name="ttcResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TvaServiceImplServiceSoapBinding" type="tns:TvaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAuteur">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAuteur">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAuteurResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tva">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="tva">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="tvaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ttc">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ttc">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ttcResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TvaServiceImplService">
+    <wsdl:port binding="tns:TvaServiceImplServiceSoapBinding" name="TvaServiceImplPort">
+      <soap:address location="http://localhost:8080/springCxfWeb/services/tvaService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/springCxfWeb/services/tvaService</con:endpoint></con:endpoints><con:operation id="87c09cd9-460e-4764-9af1-a0bce344c1a6" isOneWay="false" action="" name="getAuteur" bindingOperationName="getAuteur" type="Request-Response" outputName="getAuteurResponse" inputName="getAuteur" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4085d85f-ed87-4b56-a081-f732eea4020a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springCxfWeb/services/tvaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAuteur/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.al28.afcepf.fr/TvaService/getAuteur"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1cd4e1a0-1c28-45eb-a873-6cc0320a6b8d" isOneWay="false" action="" name="ttc" bindingOperationName="ttc" type="Request-Response" outputName="ttcResponse" inputName="ttc" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="124c41b3-2012-4d40-9181-de07727447ee" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springCxfWeb/services/tvaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ttc>\r
+         <!--Optional:-->\r
+         <ht>120</ht>\r
+         <!--Optional:-->\r
+         <tauxPct>25</tauxPct>\r
+      </ser:ttc>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.al28.afcepf.fr/TvaService/ttc"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9ad1e735-bf05-4cbe-8070-70fd600beea5" isOneWay="false" action="" name="tva" bindingOperationName="tva" type="Request-Response" outputName="tvaResponse" inputName="tva" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e0a4ac08-3eab-497f-bba6-b01b93d3d715" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springCxfWeb/services/tvaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:tva>\r
+         <!--Optional:-->\r
+         <ht>120</ht>\r
+         <!--Optional:-->\r
+         <tauxPct>5</tauxPct>\r
+      </ser:tva>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service.al28.afcepf.fr/TvaService/tva"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

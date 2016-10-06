@@ -24,20 +24,20 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 		</jaxws:inInterceptors> -->
 	</jaxws:endpoint>
 
-	
+	<jaxws:endpoint id="calcServiceEndPoint"
+		implementor="#calculateurImpl" address="/calculateur">
+		<!-- <jaxws:inInterceptors>
+			<ref bean="securityInterceptor" />
+		</jaxws:inInterceptors> -->
+	</jaxws:endpoint>
 	<!-- nb : par defaut , CXF 2.5 utilise la techno "Jettison" pour le lien entre JAXB et JAXRS/Json
      cette techno génère des résultats "json" incompatible avec angular-js .
      il faut utiliser la technologie alternative "jackson" pour obtenir une compatibilité 
      avec angular-js -->
 
 <bean id='jacksonJsonProvider' class='com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider' />
-
-
-
-
 <bean id="corsFilter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter" />
     
-
 <!-- url complete de type "http://localhost:8080/tpWebCxf/services/rest/myservice/xxx"
 avec "services" associe à l'url-pattern de CxfServlet dans web.xml
 et myservices/xxx associe aux valeurs de @Path() de la classe java et des methodes-->

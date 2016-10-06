@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bd68e9ea-cca9-4e2d-842e-d6012c04c52b" activeEnvironment="Default" name="jee-app-ws" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="620cbf05-882b-47fc-bdcb-d79278152c68" wsaVersion="NONE" name="ServiceDeviseBeanServiceSoapBinding" type="wsdl" bindingName="{http://impl.ejb.jeeapp.al28.afcepf.fr/}ServiceDeviseBeanServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl"><con:part><con:url>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServiceDeviseBeanService" targetNamespace="http://impl.ejb.jeeapp.al28.afcepf.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.ejb.jeeapp.al28.afcepf.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://api.ejb.jeeapp.al28.afcepf.fr/">
+  <wsdl:import location="http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl=IServiceDevise.wsdl" namespace="http://api.ejb.jeeapp.al28.afcepf.fr/"></wsdl:import>
+  <wsdl:binding name="ServiceDeviseBeanServiceSoapBinding" type="ns1:IServiceDevise">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="rechercherDevise">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rechercherDevise">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rechercherDeviseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="convertir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="convertirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listePaysPartageantDevise">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listePaysPartageantDevise">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listePaysPartageantDeviseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toutesDevises">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="toutesDevises">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="toutesDevisesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceDeviseBeanService">
+    <wsdl:port binding="tns:ServiceDeviseBeanServiceSoapBinding" name="ServiceDeviseBeanPort">
+      <soap:address location="http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean?wsdl=IServiceDevise.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IServiceDevise" targetNamespace="http://api.ejb.jeeapp.al28.afcepf.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://api.ejb.jeeapp.al28.afcepf.fr/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://api.ejb.jeeapp.al28.afcepf.fr/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://api.ejb.jeeapp.al28.afcepf.fr/">
+      <xs:element name="convertir" type="tns:convertir"/>
+      <xs:element name="convertirResponse" type="tns:convertirResponse"/>
+      <xs:element name="listePaysPartageantDevise" type="tns:listePaysPartageantDevise"/>
+      <xs:element name="listePaysPartageantDeviseResponse" type="tns:listePaysPartageantDeviseResponse"/>
+      <xs:element name="rechercherDevise" type="tns:rechercherDevise"/>
+      <xs:element name="rechercherDeviseResponse" type="tns:rechercherDeviseResponse"/>
+      <xs:element name="toutesDevises" type="tns:toutesDevises"/>
+      <xs:element name="toutesDevisesResponse" type="tns:toutesDevisesResponse"/>
+      <xs:complexType name="rechercherDevise">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeDevise" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="rechercherDeviseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:deviseDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deviseDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codeDevise" type="xs:string"/>
+          <xs:element minOccurs="0" name="monnaie" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="pays" nillable="true" type="tns:paysDTO"/>
+          <xs:element minOccurs="0" name="tauxChange" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="paysDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="capitale" type="xs:string"/>
+          <xs:element minOccurs="0" name="codePays" type="xs:string"/>
+          <xs:element minOccurs="0" name="devise" type="tns:deviseDTO"/>
+          <xs:element minOccurs="0" name="nom" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="convertir">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="montant" type="xs:double"/>
+          <xs:element minOccurs="0" name="devSource" type="xs:string"/>
+          <xs:element minOccurs="0" name="devCible" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="convertirResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listePaysPartageantDevise">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="devise" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listePaysPartageantDeviseResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:paysDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="toutesDevises">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="toutesDevisesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:deviseDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="rechercherDevise">
+    <wsdl:part element="ns1:rechercherDevise" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toutesDevisesResponse">
+    <wsdl:part element="ns1:toutesDevisesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="convertir">
+    <wsdl:part element="ns1:convertir" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listePaysPartageantDeviseResponse">
+    <wsdl:part element="ns1:listePaysPartageantDeviseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listePaysPartageantDevise">
+    <wsdl:part element="ns1:listePaysPartageantDevise" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toutesDevises">
+    <wsdl:part element="ns1:toutesDevises" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherDeviseResponse">
+    <wsdl:part element="ns1:rechercherDeviseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="convertirResponse">
+    <wsdl:part element="ns1:convertirResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IServiceDevise">
+    <wsdl:operation name="rechercherDevise">
+      <wsdl:input message="ns1:rechercherDevise" name="rechercherDevise"></wsdl:input>
+      <wsdl:output message="ns1:rechercherDeviseResponse" name="rechercherDeviseResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertir">
+      <wsdl:input message="ns1:convertir" name="convertir"></wsdl:input>
+      <wsdl:output message="ns1:convertirResponse" name="convertirResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listePaysPartageantDevise">
+      <wsdl:input message="ns1:listePaysPartageantDevise" name="listePaysPartageantDevise"></wsdl:input>
+      <wsdl:output message="ns1:listePaysPartageantDeviseResponse" name="listePaysPartageantDeviseResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toutesDevises">
+      <wsdl:input message="ns1:toutesDevises" name="toutesDevises"></wsdl:input>
+      <wsdl:output message="ns1:toutesDevisesResponse" name="toutesDevisesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint></con:endpoints><con:operation id="9827ac8f-7823-46a7-8dcd-8d805bd303bc" isOneWay="false" action="" name="convertir" bindingOperationName="convertir" type="Request-Response" outputName="convertirResponse" inputName="convertir" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64dd083c-0f1d-4909-870f-30462efc2346" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:convertir>\r
+         <!--Optional:-->\r
+         <montant>?</montant>\r
+         <!--Optional:-->\r
+         <devSource>?</devSource>\r
+         <!--Optional:-->\r
+         <devCible>?</devCible>\r
+      </api:convertir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/convertir"/></con:call></con:operation><con:operation id="a28c00e1-2340-4aac-b5c4-c28acd9a3860" isOneWay="false" action="" name="listePaysPartageantDevise" bindingOperationName="listePaysPartageantDevise" type="Request-Response" outputName="listePaysPartageantDeviseResponse" inputName="listePaysPartageantDevise" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b1df1ec4-27f2-44e3-83eb-fac350123278" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:listePaysPartageantDevise>\r
+         <!--Optional:-->\r
+         <devise>?</devise>\r
+      </api:listePaysPartageantDevise>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/listePaysPartageantDevise"/></con:call></con:operation><con:operation id="79adbae2-d9cd-46ae-a1f8-1d00c3b1ebe2" isOneWay="false" action="" name="rechercherDevise" bindingOperationName="rechercherDevise" type="Request-Response" outputName="rechercherDeviseResponse" inputName="rechercherDevise" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b7a9cd3-e7e7-49bc-8d52-c4e2353ca297" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:rechercherDevise>\r
+         <!--Optional:-->\r
+         <codeDevise>?</codeDevise>\r
+      </api:rechercherDevise>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/rechercherDevise"/></con:call></con:operation><con:operation id="a0736745-4a80-40aa-9653-caefc27fd618" isOneWay="false" action="" name="toutesDevises" bindingOperationName="toutesDevises" type="Request-Response" outputName="toutesDevisesResponse" inputName="toutesDevises" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3c4485b-49c3-454a-9cc9-8ac2444ca8a2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:toutesDevises/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/toutesDevises"/></con:call></con:operation></con:interface><con:testSuite id="a0c686ae-3bf0-4527-ab4d-836f4b0982fe" name="ServiceDeviseBeanServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d63db50b-9fbb-46fe-a171-3d8359d5cd5e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="convertir TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="a243f235-006e-4abb-8b49-f0058745b1ae" name="convertir"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceDeviseBeanServiceSoapBinding</con:interface><con:operation>convertir</con:operation><con:request name="convertir" id="0721cdf0-aca0-4d74-b0cb-c536e944f719"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:convertir>\r
+         <!--Optional:-->\r
+         <montant>20</montant>\r
+         <!--Optional:-->\r
+         <devSource>EUR</devSource>\r
+         <!--Optional:-->\r
+         <devCible>GBP</devCible>\r
+      </api:convertir>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/convertir" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="57af7425-ae1b-46c7-84bb-e659b4d03ef0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="listePaysPartageantDevise TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="45411f6a-e7e9-4744-be8f-5065a093e4ae" name="listePaysPartageantDevise"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceDeviseBeanServiceSoapBinding</con:interface><con:operation>listePaysPartageantDevise</con:operation><con:request name="listePaysPartageantDevise" id="df805a30-01ef-4ca7-94f0-02cec60b5ea4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:listePaysPartageantDevise>\r
+         <!--Optional:-->\r
+         <devise>?</devise>\r
+      </api:listePaysPartageantDevise>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/listePaysPartageantDevise"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b27de0f4-723d-48de-833f-f0414efa1f6e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="rechercherDevise TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="2f7e039d-5b09-4c73-bf38-9efcf9a52727" name="rechercherDevise"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceDeviseBeanServiceSoapBinding</con:interface><con:operation>rechercherDevise</con:operation><con:request name="rechercherDevise" id="8c8ae8d6-7a0f-425e-9529-24bfddbfd93b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:rechercherDevise>\r
+         <!--Optional:-->\r
+         <codeDevise>?</codeDevise>\r
+      </api:rechercherDevise>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/rechercherDevise"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d74d786f-5116-47ed-b2f1-4aa6a0af6922" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="toutesDevises TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="3bb96568-d53d-41fa-949a-9069518461f3" name="toutesDevises"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceDeviseBeanServiceSoapBinding</con:interface><con:operation>toutesDevises</con:operation><con:request name="toutesDevises" id="7d88998e-2b6b-4c7e-8e46-7de63886da3a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jeeapp-ejb-impl/ServiceDeviseBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.ejb.jeeapp.al28.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:toutesDevises/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://impl.ejb.jeeapp.al28.afcepf.fr/IServiceDevise/toutesDevises"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
