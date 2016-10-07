@@ -107,10 +107,8 @@
             </bpel:copy>
         </bpel:assign>
         <bpel:invoke name="InvokeMultiplication" partnerLink="calculateur" operation="multiplication" portType="tns2:ICalculateur" inputVariable="multiplicationInput" outputVariable="multiplicationOutput"></bpel:invoke>
-        <bpel:if name="if_b_different_0">
-            <bpel:condition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[$input.payload/tns:b!=0]]></bpel:condition>
-            <bpel:sequence>
-                <bpel:assign validate="no" name="AssignPrepaAddition"><bpel:copy>
+        <bpel:assign validate="no" name="AssignPrepaAddition">
+            <bpel:copy>
                 <bpel:from><bpel:literal><tns:addition xmlns:tns="http://service.al28.afcepf.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <v1>0.0</v1>
   <v2>0.0</v2>
@@ -134,10 +132,11 @@
                     <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[v2]]></bpel:query>
                 </bpel:to>
             </bpel:copy>
+        </bpel:assign>
+        <bpel:invoke name="InvokeAddition" partnerLink="calculateur" operation="addition" portType="tns2:ICalculateur" inputVariable="additionInput" outputVariable="additionOutput"></bpel:invoke>
         
-            </bpel:assign>
-                <bpel:invoke name="InvokeAddition" partnerLink="calculateur" operation="addition" portType="tns2:ICalculateur" inputVariable="additionInput" outputVariable="additionOutput"></bpel:invoke>
-                <bpel:assign validate="no" name="AssignPrepaReply"><bpel:copy>
+        <bpel:assign validate="no" name="AssignPrepaReply">
+            <bpel:copy>
                 <bpel:from><bpel:literal><tns:AfoisXplusBResponse xmlns:tns="http://bpel.al28.afcepf.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <tns:result>0.0</tns:result>
 </tns:AfoisXplusBResponse>
@@ -152,33 +151,7 @@
                     <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
                 </bpel:to>
             </bpel:copy>
-        
-                </bpel:assign>
-            </bpel:sequence>
-            <bpel:else>
-                <bpel:assign validate="no" name="AssignDirect">
-                    <bpel:copy>
-                        <bpel:from><bpel:literal><tns:AfoisXplusBResponse xmlns:tns="http://bpel.al28.afcepf.fr/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <tns:result>0.0</tns:result>
-</tns:AfoisXplusBResponse>
-</bpel:literal></bpel:from>
-                        <bpel:to variable="output" part="payload"></bpel:to>
-                    </bpel:copy>
-                    <bpel:copy>
-                        <bpel:from part="parameters" variable="multiplicationOutput">
-                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[return]]></bpel:query>
-                        </bpel:from>
-                        <bpel:to part="payload" variable="output">
-                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
-                        </bpel:to>
-                    </bpel:copy>
-                </bpel:assign>
-            </bpel:else>
-        </bpel:if>
-        
-        
-        
-        
+        </bpel:assign>
         <bpel:reply name="replyOutput" 
                partnerLink="client"
                portType="tns:AfoisXplusB"
