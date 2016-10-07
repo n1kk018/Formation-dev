@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="tvaProcess" name="tva process" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <scriptTask id="scripttask1" name="init commande" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>commande = new tp.activiti.data.Commande();
+commande.prixTotalHt=80;
+execution.setVariable("commande",commande);</script>
+    </scriptTask>
+    <scriptTask id="scripttask2" name="calculer prix ttc" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>tvaDelegate.doTvaAction(execution);</script>
+    </scriptTask>
+    <scriptTask id="scripttask3" name="afficher prix" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>out. println("prix total ttc = " + commande.prixTotalTtc);</script>
+    </scriptTask>
+    <scriptTask id="scripttask4" name="cher" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>out. println("cher");</script>
+    </scriptTask>
+    <scriptTask id="scripttask5" name="pas cher" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>out. println("pas cher");</script>
+    </scriptTask>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow2" sourceRef="startevent1" targetRef="scripttask1"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="scripttask1" targetRef="scripttask2"></sequenceFlow>
+    <sequenceFlow id="flow4" sourceRef="scripttask2" targetRef="scripttask3"></sequenceFlow>
+    <sequenceFlow id="flow5" sourceRef="scripttask3" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="flow6" sourceRef="exclusivegateway1" targetRef="scripttask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${commande.prixTotalTtc > 150}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow7" sourceRef="exclusivegateway1" targetRef="scripttask5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${commande.prixTotalTtc < 150}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow8" sourceRef="scripttask4" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow9" sourceRef="scripttask5" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_tvaProcess">
+    <bpmndi:BPMNPlane bpmnElement="tvaProcess" id="BPMNPlane_tvaProcess">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="140.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="280.0" y="130.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask2" id="BPMNShape_scripttask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="300.0" y="270.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask3" id="BPMNShape_scripttask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="370.0" y="400.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask4" id="BPMNShape_scripttask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="730.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask5" id="BPMNShape_scripttask5">
+        <omgdc:Bounds height="55.0" width="105.0" x="730.0" y="320.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="570.0" y="250.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="930.0" y="248.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="175.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="280.0" y="157.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="332.0" y="185.0"></omgdi:waypoint>
+        <omgdi:waypoint x="352.0" y="270.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="352.0" y="325.0"></omgdi:waypoint>
+        <omgdi:waypoint x="422.0" y="400.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="422.0" y="400.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="353.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="290.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="590.0" y="250.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="177.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="177.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="590.0" y="290.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="347.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="782.0" y="205.0"></omgdi:waypoint>
+        <omgdi:waypoint x="947.0" y="248.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="782.0" y="320.0"></omgdi:waypoint>
+        <omgdi:waypoint x="947.0" y="283.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

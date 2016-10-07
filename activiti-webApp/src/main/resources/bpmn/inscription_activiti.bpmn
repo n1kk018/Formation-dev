@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <message id="emailChecked" name="emailChecked"></message>
+  <message id="inscriptionRequestMsg" name="inscriptionRequestMsg"></message>
+  <process id="processInscription" name="processInscription" isExecutable="true">
+    <endEvent id="endevent1" name="End"></endEvent>
+    <scriptTask id="javascriptTask" name="notifierInscriptionOK" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>out.println("inscription_OK");</script>
+    </scriptTask>
+    <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow16" sourceRef="exclusivegateway2" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow17" sourceRef="messagestartevent1" targetRef="sendVerifEmail"></sequenceFlow>
+    <scriptTask id="scripttask1" name="annulerInscription" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>out.println("inscription anulee (e-mail pas vérifié)");</script>
+    </scriptTask>
+    <sequenceFlow id="flow21" sourceRef="javascriptTask" targetRef="exclusivegateway2"></sequenceFlow>
+    <sequenceFlow id="flow22" sourceRef="scripttask1" targetRef="exclusivegateway2"></sequenceFlow>
+    <intermediateCatchEvent id="messageintermediatecatchevent1" name="MessageCatchEvent">
+      <messageEventDefinition messageRef="emailChecked"></messageEventDefinition>
+    </intermediateCatchEvent>
+    <scriptTask id="sendVerifEmail" name="sendVerifEmail" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>if(execution.getVariable("inscription")==null) 
+   execution.setVariable("inscription" , new  tp.inscription.data.Inscription());
+
+inscriptionCtx.doVerifEmail(execution);</script>
+    </scriptTask>
+    <eventBasedGateway id="eventgateway1" name="Event Gateway"></eventBasedGateway>
+    <intermediateCatchEvent id="timerintermediatecatchevent1" name="TimerCatchEvent">
+      <timerEventDefinition>
+        <timeDuration>PT1M</timeDuration>
+      </timerEventDefinition>
+    </intermediateCatchEvent>
+    <sequenceFlow id="flow23" sourceRef="sendVerifEmail" targetRef="eventgateway1"></sequenceFlow>
+    <sequenceFlow id="flow24" sourceRef="eventgateway1" targetRef="messageintermediatecatchevent1"></sequenceFlow>
+    <sequenceFlow id="flow25" sourceRef="eventgateway1" targetRef="timerintermediatecatchevent1"></sequenceFlow>
+    <sequenceFlow id="flow26" sourceRef="messageintermediatecatchevent1" targetRef="javascriptTask"></sequenceFlow>
+    <sequenceFlow id="flow27" sourceRef="timerintermediatecatchevent1" targetRef="scripttask1"></sequenceFlow>
+    <startEvent id="messagestartevent1" name="Message start">
+      <messageEventDefinition messageRef="inscriptionRequestMsg"></messageEventDefinition>
+    </startEvent>
+    <textAnnotation id="textannotation1">
+      <text>emailChecked (via hypertext  &amp; rest)</text>
+    </textAnnotation>
+    <textAnnotation id="textannotation2">
+      <text>Timer (timeDuration=PT1M pour 1 minute en TP)</text>
+    </textAnnotation>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_processInscription">
+    <bpmndi:BPMNPlane bpmnElement="processInscription" id="BPMNPlane_processInscription">
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="740.0" y="199.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="javascriptTask" id="BPMNShape_javascriptTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="460.0" y="129.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway2" id="BPMNShape_exclusivegateway2">
+        <omgdc:Bounds height="40.0" width="40.0" x="630.0" y="196.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="460.0" y="230.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="messageintermediatecatchevent1" id="BPMNShape_messageintermediatecatchevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="310.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sendVerifEmail" id="BPMNShape_sendVerifEmail">
+        <omgdc:Bounds height="55.0" width="105.0" x="33.0" y="203.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eventgateway1" id="BPMNShape_eventgateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="220.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="timerintermediatecatchevent1" id="BPMNShape_timerintermediatecatchevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="310.0" y="240.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="messagestartevent1" id="BPMNShape_messagestartevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="68.0" y="91.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
+        <omgdc:Bounds height="50.0" width="110.0" x="235.0" y="91.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="textannotation2" id="BPMNShape_textannotation2">
+        <omgdc:Bounds height="50.0" width="130.0" x="270.0" y="274.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow16" id="BPMNEdge_flow16">
+        <omgdi:waypoint x="670.0" y="216.0"></omgdi:waypoint>
+        <omgdi:waypoint x="740.0" y="216.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow17" id="BPMNEdge_flow17">
+        <omgdi:waypoint x="85.0" y="126.0"></omgdi:waypoint>
+        <omgdi:waypoint x="85.0" y="203.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow21" id="BPMNEdge_flow21">
+        <omgdi:waypoint x="565.0" y="156.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="156.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow22" id="BPMNEdge_flow22">
+        <omgdi:waypoint x="565.0" y="257.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="258.0"></omgdi:waypoint>
+        <omgdi:waypoint x="650.0" y="236.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow23" id="BPMNEdge_flow23">
+        <omgdi:waypoint x="138.0" y="230.0"></omgdi:waypoint>
+        <omgdi:waypoint x="220.0" y="230.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow24" id="BPMNEdge_flow24">
+        <omgdi:waypoint x="240.0" y="210.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="157.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="157.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow25" id="BPMNEdge_flow25">
+        <omgdi:waypoint x="240.0" y="250.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="257.0"></omgdi:waypoint>
+        <omgdi:waypoint x="310.0" y="257.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow26" id="BPMNEdge_flow26">
+        <omgdi:waypoint x="345.0" y="157.0"></omgdi:waypoint>
+        <omgdi:waypoint x="460.0" y="156.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow27" id="BPMNEdge_flow27">
+        <omgdi:waypoint x="345.0" y="257.0"></omgdi:waypoint>
+        <omgdi:waypoint x="460.0" y="257.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

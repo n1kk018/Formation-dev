@@ -1,0 +1,10 @@
+2015-11-03 15:10:16,823 INFO Thread-3 org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2015-11-03 15:10:17,051 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2015-11-03 15:10:17,141 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/activiti_incr_pers_age_via_ws.bpmn
+2015-11-03 15:10:22,420 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/activiti_incr_pers_age_via_ws.bpmnis deployed with deploymentId=1
+2015-11-03 15:10:45,754 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of incrementAgeWithWsCalculateuris started with processInstanceId=5
+2015-11-03 15:10:47,943 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2015-11-03 15:10:47,944 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@3e4790: startup date [Tue Nov 03 15:10:05 CET 2015]; root of context hierarchy
+2015-11-03 15:10:47,945 INFO main org.activiti.engine.impl.jobexecutor.JobExecutor - Shutting down the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2015-11-03 15:10:47,945 INFO Thread-3 org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] stopped job acquisition
+2015-11-03 15:10:47,951 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped

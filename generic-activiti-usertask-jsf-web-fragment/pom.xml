@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>tp</groupId>
+  <artifactId>generic-activiti-usertask-jsf-web-fragment</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <description>fragment web (jsf) pour generic-activiti-usertask</description>
+  
+   <properties>
+   		<org.springframework.version>4.1.1.RELEASE</org.springframework.version>  		
+   		<activiti.version>5.18.0</activiti.version>  
+   		<!-- <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version>  -->
+   		 	 	        	      	   
+	</properties>
+  
+  <dependencies>
+  
+   <dependency>
+  <groupId>org.activiti</groupId>
+  <artifactId>activiti-engine</artifactId>
+  <version>${activiti.version}</version>
+</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+  
+  </dependencies>
+  
+  <build>
+     <plugins>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+		</plugin>
+	 </plugins>
+	<!--  <finalName>generic-activiti-usertask-jsf-web-fragment</finalName> -->
+  </build>
+</project>

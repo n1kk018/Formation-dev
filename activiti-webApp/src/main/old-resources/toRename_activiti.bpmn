@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="processToRename" name="processToRename" isExecutable="true">
+    <extensionElements>
+      <activiti:executionListener event="end" class="generic.process.exec.activiti.ActivitiEndProcessListener"></activiti:executionListener>
+      <activiti:executionListener event="start" class="generic.process.exec.activiti.ActivitiStartProcessListener"></activiti:executionListener>
+    </extensionElements>
+    <startEvent id="startevent1" name="Start" activiti:initiator="ctx"></startEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="endevent1"></sequenceFlow>
+    <textAnnotation id="textannotation1">
+      <text>point de depart (avec listener dèjà configuré)
+-------------------
+syntaxe pour scriptTask :  aCtx.doAction("actionName",execution)
+-------------------
+syntaxe pour expression de ServiceTask :   #{aCtx.doAction("actionName",execution)}
+------------------
+syntaxe pour condition :    #{aCtx.eval("conditionName",execution)}</text>
+    </textAnnotation>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_processToRename">
+    <bpmndi:BPMNPlane bpmnElement="processToRename" id="BPMNPlane_processToRename">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="67.0" y="70.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="680.0" y="70.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
+        <omgdc:Bounds height="131.0" width="481.0" x="140.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="102.0" y="87.0"></omgdi:waypoint>
+        <omgdi:waypoint x="680.0" y="87.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

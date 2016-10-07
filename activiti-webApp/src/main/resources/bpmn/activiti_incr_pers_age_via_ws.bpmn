@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="incrementAgeWithWsCalculateur" name="incrementAgeWithWsCalculateur" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <scriptTask id="scripttask2" name="afficher valeur incrementee" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>genericActions.diplayMessageWithArgs("apres incrementation",pers)</script>
+    </scriptTask>
+    <scriptTask id="scripttask3" name="majeur" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>out.println("majeur");</script>
+    </scriptTask>
+    <scriptTask id="scripttask4" name="mineur" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>out.println("mineur");</script>
+    </scriptTask>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <exclusiveGateway id="exclusivegateway2" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow3" name="moins_18ans" sourceRef="exclusivegateway1" targetRef="scripttask4">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${ pers.age < 18 }]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow4" name="plus_18ans" sourceRef="exclusivegateway1" targetRef="scripttask3">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${ pers.age >= 18 }]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow5" sourceRef="scripttask4" targetRef="exclusivegateway2"></sequenceFlow>
+    <sequenceFlow id="flow6" sourceRef="scripttask3" targetRef="exclusivegateway2"></sequenceFlow>
+    <sequenceFlow id="flow7" sourceRef="exclusivegateway2" targetRef="endevent1"></sequenceFlow>
+    <scriptTask id="scripttask5" name="increment_age_by_wsCalculator" scriptFormat="groovy" activiti:autoStoreVariables="true">
+      <script>pers.ageD=dynSoapClient.dynSoapCall("http://localhost:8080/wsCalculateur/services/calculateur","tp.service.Calculateur","addition",pers.ageD,1.0D)</script>
+    </scriptTask>
+    <sequenceFlow id="flow8" sourceRef="startevent1" targetRef="scripttask6"></sequenceFlow>
+    <sequenceFlow id="flow10" sourceRef="scripttask2" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="flow11" sourceRef="scripttask5" targetRef="exclusivegateway4"></sequenceFlow>
+    <scriptTask id="scripttask6" name="afficher valeurs initiales" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>genericActions.diplayMessageWithArgs("valeur initiale de l'age (à priori)",pers)</script>
+    </scriptTask>
+    <scriptTask id="scripttask7" name="afficher valeur saisie" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>genericActions.diplayMessageWithArgs("valeur saisie",pers)</script>
+    </scriptTask>
+    <scriptTask id="scripttask8" name="saisirAge" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>genericActions.inputVariable(execution,"ageAsString" , "quel était votre age l'an passe?");
+pers.age=Long.parseLong(ageAsString);</script>
+    </scriptTask>
+    <sequenceFlow id="flow12" sourceRef="scripttask6" targetRef="scripttask8"></sequenceFlow>
+    <sequenceFlow id="flow13" sourceRef="scripttask8" targetRef="scripttask7"></sequenceFlow>
+    <scriptTask id="scripttask9" name="demander type d'incrementation" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>genericActions.inputVariable(execution,"typeIncr" , "quel type d'incrementation (avecWS , sansWS)  ?");</script>
+    </scriptTask>
+    <exclusiveGateway id="exclusivegateway3" name="Exclusive Gateway"></exclusiveGateway>
+    <exclusiveGateway id="exclusivegateway4" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow14" sourceRef="exclusivegateway4" targetRef="scripttask2"></sequenceFlow>
+    <sequenceFlow id="flow15" sourceRef="scripttask7" targetRef="scripttask9"></sequenceFlow>
+    <sequenceFlow id="flow16" sourceRef="scripttask9" targetRef="exclusivegateway3"></sequenceFlow>
+    <sequenceFlow id="flow17" name="avec WS" sourceRef="exclusivegateway3" targetRef="scripttask5">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${typeIncr == "avecWS" }]]></conditionExpression>
+    </sequenceFlow>
+    <scriptTask id="scripttask10" name="incrementation directe (sans ws)" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>pers.age = pers.age + 1;</script>
+    </scriptTask>
+    <sequenceFlow id="flow18" name="sans WS" sourceRef="exclusivegateway3" targetRef="scripttask10">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${typeIncr != "avecWS" }]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow19" sourceRef="scripttask10" targetRef="exclusivegateway4"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_incrementAgeWithWsCalculateur">
+    <bpmndi:BPMNPlane bpmnElement="incrementAgeWithWsCalculateur" id="BPMNPlane_incrementAgeWithWsCalculateur">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="30.0" y="76.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="790.0" y="279.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask2" id="BPMNShape_scripttask2">
+        <omgdc:Bounds height="66.0" width="121.0" x="530.0" y="40.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask3" id="BPMNShape_scripttask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="672.0" y="194.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask4" id="BPMNShape_scripttask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="485.0" y="194.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="589.0" y="141.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway2" id="BPMNShape_exclusivegateway2">
+        <omgdc:Bounds height="40.0" width="40.0" x="660.0" y="276.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask5" id="BPMNShape_scripttask5">
+        <omgdc:Bounds height="64.0" width="105.0" x="308.0" y="51.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask6" id="BPMNShape_scripttask6">
+        <omgdc:Bounds height="61.0" width="105.0" x="110.0" y="60.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask7" id="BPMNShape_scripttask7">
+        <omgdc:Bounds height="55.0" width="105.0" x="87.0" y="259.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask8" id="BPMNShape_scripttask8">
+        <omgdc:Bounds height="55.0" width="105.0" x="90.0" y="157.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask9" id="BPMNShape_scripttask9">
+        <omgdc:Bounds height="61.0" width="105.0" x="228.0" y="256.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway3" id="BPMNShape_exclusivegateway3">
+        <omgdc:Bounds height="40.0" width="40.0" x="260.0" y="129.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway4" id="BPMNShape_exclusivegateway4">
+        <omgdc:Bounds height="40.0" width="40.0" x="434.0" y="114.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask10" id="BPMNShape_scripttask10">
+        <omgdc:Bounds height="64.0" width="115.0" x="320.0" y="179.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="589.0" y="161.0"></omgdi:waypoint>
+        <omgdi:waypoint x="537.0" y="161.0"></omgdi:waypoint>
+        <omgdi:waypoint x="537.0" y="194.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="63.0" x="521.0" y="141.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="629.0" y="161.0"></omgdi:waypoint>
+        <omgdi:waypoint x="724.0" y="160.0"></omgdi:waypoint>
+        <omgdi:waypoint x="724.0" y="194.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="54.0" x="659.0" y="142.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="537.0" y="249.0"></omgdi:waypoint>
+        <omgdi:waypoint x="537.0" y="295.0"></omgdi:waypoint>
+        <omgdi:waypoint x="660.0" y="296.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="724.0" y="249.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="264.0"></omgdi:waypoint>
+        <omgdi:waypoint x="680.0" y="276.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="700.0" y="296.0"></omgdi:waypoint>
+        <omgdi:waypoint x="790.0" y="296.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="65.0" y="93.0"></omgdi:waypoint>
+        <omgdi:waypoint x="110.0" y="90.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="590.0" y="106.0"></omgdi:waypoint>
+        <omgdi:waypoint x="609.0" y="141.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="413.0" y="83.0"></omgdi:waypoint>
+        <omgdi:waypoint x="453.0" y="79.0"></omgdi:waypoint>
+        <omgdi:waypoint x="454.0" y="114.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="162.0" y="121.0"></omgdi:waypoint>
+        <omgdi:waypoint x="142.0" y="157.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
+        <omgdi:waypoint x="142.0" y="212.0"></omgdi:waypoint>
+        <omgdi:waypoint x="139.0" y="259.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow14" id="BPMNEdge_flow14">
+        <omgdi:waypoint x="474.0" y="134.0"></omgdi:waypoint>
+        <omgdi:waypoint x="590.0" y="106.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow15" id="BPMNEdge_flow15">
+        <omgdi:waypoint x="192.0" y="286.0"></omgdi:waypoint>
+        <omgdi:waypoint x="228.0" y="286.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow16" id="BPMNEdge_flow16">
+        <omgdi:waypoint x="280.0" y="256.0"></omgdi:waypoint>
+        <omgdi:waypoint x="280.0" y="169.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow17" id="BPMNEdge_flow17">
+        <omgdi:waypoint x="280.0" y="129.0"></omgdi:waypoint>
+        <omgdi:waypoint x="280.0" y="90.0"></omgdi:waypoint>
+        <omgdi:waypoint x="308.0" y="83.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="42.0" x="260.0" y="73.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow18" id="BPMNEdge_flow18">
+        <omgdi:waypoint x="300.0" y="149.0"></omgdi:waypoint>
+        <omgdi:waypoint x="337.0" y="149.0"></omgdi:waypoint>
+        <omgdi:waypoint x="377.0" y="179.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="42.0" x="331.0" y="140.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow19" id="BPMNEdge_flow19">
+        <omgdi:waypoint x="435.0" y="211.0"></omgdi:waypoint>
+        <omgdi:waypoint x="454.0" y="197.0"></omgdi:waypoint>
+        <omgdi:waypoint x="454.0" y="154.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

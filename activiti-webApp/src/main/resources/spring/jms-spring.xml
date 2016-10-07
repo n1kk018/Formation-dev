@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="jmsConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+         <property name="brokerURL" value="tcp://localhost:61616" />    
+  </bean>
+	
+	
+	<bean id="javaJmsClient" class="generic.async.jms.util.GenericJavaJmsClient" >
+        <property name="queueConnectionFactory" ref="jmsConnectionFactory" />
+ </bean>
+ 
+<bean id="bpmJmsListener" class="generic.bpm.util.activiti.GenericBpmJmsJavaEventListener" >
+    <property name="myActivitiProcessManager" ref="myActivitiProcessManager" />
+    <property name="processName" value="myAsyncProcess"/>
+    <property name="className" value="tp.async.jms.data.AcceptationOuRefus"/>
+    <property name="eventName" value="reponseConges"/>
+    <property name="objectName" value="reponseConges"/> 
+</bean>
+
+	 <bean id="jmsDestination-reponseConges" class="org.apache.activemq.command.ActiveMQQueue">
+    	<property name="physicalName" value="queue.reponseConges" />
+  	</bean>	
+
+
+<bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+<property name="connectionFactory" ref="jmsConnectionFactory"/>
+<property name="destination" ref="jmsDestination-reponseConges"/>
+<property name="messageListener" ref="bpmJmsListener" />
+</bean>	
+
+</beans>

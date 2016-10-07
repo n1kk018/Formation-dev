@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/frag-templates/common.xhtml">
+<ui:define name="pageTitle">performTask (to fill/complete)</ui:define>
+<ui:define name="pageHeader">performTask (to fill/complete)</ui:define>
+<ui:define name="body">
+   <h3><h:outputText value="#{userTaskMBean.currentTask.name}" /></h3>
+   <hr/> 
+    <h:outputText value="#{userTaskMBean.currentTask.description}" /> 
+    <hr/>     
+   <h:form> 
+   <h:messages/>
+  <h:dataTable border="0" var="prop" value="#{userTaskMBean.formProperties}">
+			<h:column>	<f:facet name="header">name</f:facet>
+		        <h:outputText value="#{prop.name}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">value</f:facet>
+		        <h:inputText value="#{prop.value}" rendered="#{prop.writable}" required="#{prop.required}"/>
+		        <h:outputText value="#{prop.value}" rendered="#{!prop.writable}" />
+		    </h:column>
+  </h:dataTable>
+  <h:commandButton action="#{userTaskMBean.completeFormTask}" value="complete">
+				
+			</h:commandButton >
+</h:form>
+</ui:define>
+</ui:composition>
+</html>

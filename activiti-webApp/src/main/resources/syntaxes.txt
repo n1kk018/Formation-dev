@@ -1,0 +1,37 @@
+pour:
+
+params.put("username","toto");	
+params.put("age",new Integer(12));
+
+--------------
+scriptTask (javascript): 
+aCtx.doAction(execution,"debut " +  username  + "  fin");
+-------------
+flow condition : ${ age < 18 }
+
+--------------------------
+
+=======================
+
+pour :
+	params.put("pers", new Personne("toto",44));
+	
+--------------
+scriptTask (javascript): 
+aCtx.doAction(execution,"debut " +  pers.username  + "  fin");
+-------------
+flow condition : ${ pers.age < 18 }	
+
+---------------
+scriptTask :
+aCtx.doActionWithArgs(execution,"debut " +  pers.username  + "  fin",new  tp.test.activiti.Client(pers.username,pers.age));
+
+ok en groovy (mais pas en javascript) pour la partie    new  tp.test.activiti.Client()
+ok également pour un appel de méthode à nombre d'arguments variable
+ex: public void doActionWithArgs(DelegateExecution execution,String actionName,Object ... objs)
+---------------
+exemple de condition:
+<![CDATA[${order.price > 100 && order.price < 250}]]>
+ <![CDATA[${order.isStandardOrder()}]]>
+
+	

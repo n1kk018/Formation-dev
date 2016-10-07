@@ -1,35 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <!-- 
+  <parent>
+    <groupId>tp</groupId>
+    <artifactId>org-parent</artifactId>
+    <version>1.0-RELEASE</version>
+  </parent>
+  -->
   <groupId>tp</groupId>
-  <artifactId>activiti-standaloneApp</artifactId>
+  <artifactId>activiti-webApp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   
-  <properties>
+  
+  
+   <properties>
+ 
    		<org.springframework.version>4.1.1.RELEASE</org.springframework.version>
-   		<org.apache.cxf.version>3.0.2</org.apache.cxf.version> 
-   		<activiti.version>5.18.0</activiti.version>  		 	        	      	   
-
-    <org.glassfish.jersey.version>2.22.1</org.glassfish.jersey.version>
-  </properties>
-  
-  <dependencies>
-    <dependency>
-  		<groupId>org.glassfish.jersey.core</groupId>
- 		 <artifactId>jersey-client</artifactId>
-  		<version>${org.glassfish.jersey.version}</version>
-	</dependency>
+   		 <org.springframework.security.version>3.2.5.RELEASE</org.springframework.security.version>
+   		 <org.apache.myfaces.version>2.2.5</org.apache.myfaces.version> <!-- 2.1.5 , 2.2.5 -->
+   		 <org.apache.cxf.version>3.0.2</org.apache.cxf.version>
+   		 <activiti.version>5.18.0</activiti.version>	        	      	    
+	</properties>
 	
-	<dependency>
-    <groupId>org.glassfish.jersey.media</groupId>
-    <artifactId>jersey-media-json-jackson</artifactId>
-    <version>${org.glassfish.jersey.version}</version>
-</dependency>
-
-<dependency>
-    <groupId>org.glassfish.jersey.ext</groupId>
-    <artifactId>jersey-proxy-client</artifactId>
-    <version>${org.glassfish.jersey.version}</version>
-</dependency>
+	<dependencies>
 	
 	 <dependency>
     <groupId>tp</groupId>
@@ -37,7 +31,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </dependency>
   
-  <!-- 
+   <dependency>
+    <groupId>tp</groupId>
+    <artifactId>generic-activiti-usertask-jsf-web-fragment</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
   <dependency>
   <groupId>tp</groupId>
   <artifactId>generic-util-services-abstract</artifactId>
@@ -55,7 +54,7 @@
   <artifactId>generic-async-util</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   </dependency>
-  -->
+  
   
   
    <dependency>
@@ -82,16 +81,30 @@
 	<version>1.3.170</version>
 </dependency>
 
-<!-- 
 <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.30</version>
 			<scope>runtime</scope>
 		</dependency>
--->	
 	
 	
+	<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<!-- servlet-api 2.5 for tc6 et javax.servlet-api 3.0.1 for tc7 -->
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>		
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.2.1</version>
+			<!-- jsp-api 2.1 for tc6 et servlet.jsp-api 2.2.1 for tc7 -->
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -120,7 +133,37 @@
         	<scope>runtime</scope>
     	</dependency>
 		
-	
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>${org.apache.myfaces.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<version>${org.apache.myfaces.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		
+		<!-- 
+		<dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>   
+            <version>1.1.0.Final</version>
+             <scope>compile</scope>                     
+        </dependency>
+		
+		<dependency>
+     		<groupId>org.hibernate</groupId>
+     		<artifactId>hibernate-validator</artifactId>
+     		<version>5.1.2.Final</version>  
+     		 <scope>runtime</scope> 
+	   </dependency>
+-->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -149,13 +192,13 @@
 			<scope>compile</scope>
 		</dependency>
 		
-		<!-- <dependency>
+		
+			<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jms</artifactId>
 			<version>${org.springframework.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		-->
   
 		<dependency>  
              <groupId>javax.inject</groupId>  
@@ -179,7 +222,12 @@
        </dependency>
        -->
 		
-		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
 
 <!--
 		<dependency>
@@ -190,9 +238,14 @@
 		</dependency>
 		-->
 
-		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version> <!-- old: 1.1.2 not for jsf2 -->
+			<scope>compile</scope>
+		</dependency>
 
-      <!-- 
+      
 		
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -230,7 +283,7 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${org.apache.cxf.version}</version>
 		</dependency>
-		-->		
+				
 	
 	</dependencies>
 	
@@ -246,8 +299,7 @@
 				</configuration>
 		</plugin>
 		</plugins>
-	   <finalName>activiti-standaloneApp</finalName>
+	   <finalName>activiti-webApp</finalName>
 	</build>
  
-  
 </project>

@@ -1,0 +1,68 @@
+package tp.test.activiti.pers;
+
+import java.io.Serializable;
+
+/*
+ * juste pour tester syntaxe groovy:
+ * aCtx.doActionWithArgs(execution,"debut " +  pers.username  + "  fin",new  tp.test.activiti.Client(pers.username,pers.age),pers)
+ * plus necessaire
+ */
+
+
+public class Client implements Serializable{
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private String username;
+	private Long age;
+	
+	
+	public Client() {
+		super();
+	}
+	
+	
+	
+	
+	public Client(String nom, Long age) {
+		super();
+		this.username = nom;
+		this.age = age;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Client [username=" + username + ", age=" + age + "]";
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String nom) {
+		this.username = nom;
+	}
+
+
+
+
+	public Long getAge() {
+		return age;
+	}
+
+
+
+
+	public void setAge(Long age) {
+		this.age = age;
+	}
+	
+	
+	
+
+}

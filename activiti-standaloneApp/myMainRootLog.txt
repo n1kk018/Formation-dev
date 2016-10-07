@@ -61,3 +61,709 @@
 2016-10-07 12:46:21,826 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
 2016-10-07 12:46:21,826 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
 2016-10-07 12:46:21,828 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 15:39:14,438 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:39:14 CEST 2016]; root of context hierarchy
+2016-10-07 15:39:14,546 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:39:21,400 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:39:21,633 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:39:21,648 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:39:21,680 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:39:21,682 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:39:21,684 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:39:21,759 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:39:21,875 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:39:21,875 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:39:22,488 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:39:22,698 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:39:27,863 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:39:27,892 ERROR main generic.bpm.util.activiti.MyActivitiProcessManager - startProcessInstance fail
+org.activiti.engine.ActivitiObjectNotFoundException: no processes deployed with key 'basicSyncAxbProcess'
+	at org.activiti.engine.impl.persistence.deploy.DeploymentManager.findDeployedLatestProcessDefinitionByKey(DeploymentManager.java:124)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:79)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:24)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:57)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:31)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:40)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:35)
+	at org.activiti.engine.impl.RuntimeServiceImpl.startProcessInstanceByKey(RuntimeServiceImpl.java:77)
+	at generic.bpm.util.activiti.MyActivitiProcessManager.startProcessInstance(MyActivitiProcessManager.java:55)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:43)
+2016-10-07 15:39:31,658 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:39:31 CEST 2016]; root of context hierarchy
+2016-10-07 15:39:31,737 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:39:34,376 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:39:34,566 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:39:34,585 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:39:34,594 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:39:34,599 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:39:34,602 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:39:34,603 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:39:34,619 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:39:34,654 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:39:34,708 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:39:34,729 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:39:35,743 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:39:35,750 ERROR main generic.bpm.util.activiti.MyActivitiProcessManager - startProcessInstance fail
+org.activiti.engine.ActivitiObjectNotFoundException: no processes deployed with key 'basicSyncAxbProcess'
+	at org.activiti.engine.impl.persistence.deploy.DeploymentManager.findDeployedLatestProcessDefinitionByKey(DeploymentManager.java:124)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:79)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:24)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:57)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:31)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:40)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:35)
+	at org.activiti.engine.impl.RuntimeServiceImpl.startProcessInstanceByKey(RuntimeServiceImpl.java:77)
+	at generic.bpm.util.activiti.MyActivitiProcessManager.startProcessInstance(MyActivitiProcessManager.java:55)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:43)
+2016-10-07 15:40:15,312 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:40:15 CEST 2016]; root of context hierarchy
+2016-10-07 15:40:15,389 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:40:18,404 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:40:18,486 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:40:18,501 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:40:18,510 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:40:18,512 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:40:18,514 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:40:18,515 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:40:18,518 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:40:18,521 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:40:18,558 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:40:18,578 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:40:19,577 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:40:20,617 WARN main org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior - Exception while executing scripttask1 : problem evaluating script: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+2016-10-07 15:40:20,628 ERROR main generic.bpm.util.activiti.MyActivitiProcessManager - startProcessInstance fail
+org.activiti.engine.ActivitiException: problem evaluating script: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:89)
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:73)
+	at org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior.execute(ScriptTaskActivityBehavior.java:62)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.execute(FlowNodeActivityBehavior.java:36)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStartInitial.eventNotificationsCompleted(AtomicOperationProcessStartInitial.java:45)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStart.eventNotificationsCompleted(AtomicOperationProcessStart.java:64)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.start(ExecutionEntity.java:380)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:110)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:24)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:57)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:31)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:40)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:35)
+	at org.activiti.engine.impl.RuntimeServiceImpl.startProcessInstanceByKey(RuntimeServiceImpl.java:77)
+	at generic.bpm.util.activiti.MyActivitiProcessManager.startProcessInstance(MyActivitiProcessManager.java:55)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:43)
+Caused by: javax.script.ScriptException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:152)
+	at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:233)
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:87)
+	... 70 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:927)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:574)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:523)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:279)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:258)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:244)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:202)
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.getScriptClass(GroovyScriptEngineImpl.java:368)
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:144)
+	... 72 more
+2016-10-07 15:42:12,799 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:42:12 CEST 2016]; root of context hierarchy
+2016-10-07 15:42:12,866 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:42:16,092 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:42:16,167 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:42:16,181 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:42:16,190 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:42:16,193 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:42:16,196 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:42:16,197 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:42:16,201 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:42:16,204 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:42:16,236 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:42:16,257 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:42:17,169 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:42:17,539 WARN main org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior - Exception while executing scripttask1 : problem evaluating script: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+2016-10-07 15:42:17,543 ERROR main generic.bpm.util.activiti.MyActivitiProcessManager - startProcessInstance fail
+org.activiti.engine.ActivitiException: problem evaluating script: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:89)
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:73)
+	at org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior.execute(ScriptTaskActivityBehavior.java:62)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.execute(FlowNodeActivityBehavior.java:36)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStartInitial.eventNotificationsCompleted(AtomicOperationProcessStartInitial.java:45)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStart.eventNotificationsCompleted(AtomicOperationProcessStart.java:64)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.start(ExecutionEntity.java:380)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:110)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:24)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:57)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:31)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:40)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:35)
+	at org.activiti.engine.impl.RuntimeServiceImpl.startProcessInstanceByKey(RuntimeServiceImpl.java:77)
+	at generic.bpm.util.activiti.MyActivitiProcessManager.startProcessInstance(MyActivitiProcessManager.java:55)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:43)
+Caused by: javax.script.ScriptException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:152)
+	at javax.script.AbstractScriptEngine.eval(AbstractScriptEngine.java:233)
+	at org.activiti.engine.impl.scripting.ScriptingEngines.evaluate(ScriptingEngines.java:87)
+	... 70 more
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 10.
+   Commande commande = new Commande();
+            ^
+
+Script1.groovy: 1: unable to resolve class Commande 
+ @ line 1, column 21.
+   Commande commande = new Commande();
+                       ^
+
+2 errors
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:927)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:574)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:523)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:279)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:258)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:244)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:202)
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.getScriptClass(GroovyScriptEngineImpl.java:368)
+	at org.codehaus.groovy.jsr223.GroovyScriptEngineImpl.eval(GroovyScriptEngineImpl.java:144)
+	... 72 more
+2016-10-07 15:42:32,494 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:42:32 CEST 2016]; root of context hierarchy
+2016-10-07 15:42:32,579 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:42:35,447 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:42:35,522 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:42:35,536 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:42:35,552 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:42:35,555 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:42:35,558 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:42:35,559 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:42:35,566 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:42:35,581 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:42:35,611 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:42:35,631 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:42:36,584 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:42:38,171 ERROR main generic.bpm.util.activiti.MyActivitiProcessManager - startProcessInstance fail
+org.activiti.engine.ActivitiException: condition expression returns non-Boolean: $(commande.prixTotalTtc > 150) (java.lang.String)
+	at org.activiti.engine.impl.el.UelExpressionCondition.evaluate(UelExpressionCondition.java:43)
+	at org.activiti.engine.impl.bpmn.behavior.ExclusiveGatewayActivityBehavior.leave(ExclusiveGatewayActivityBehavior.java:69)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.execute(FlowNodeActivityBehavior.java:36)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.AbstractBpmnActivityBehavior.leave(AbstractBpmnActivityBehavior.java:47)
+	at org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior.execute(ScriptTaskActivityBehavior.java:81)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.AbstractBpmnActivityBehavior.leave(AbstractBpmnActivityBehavior.java:47)
+	at org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior.execute(ScriptTaskActivityBehavior.java:81)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.AbstractBpmnActivityBehavior.leave(AbstractBpmnActivityBehavior.java:47)
+	at org.activiti.engine.impl.bpmn.behavior.ScriptTaskActivityBehavior.execute(ScriptTaskActivityBehavior.java:81)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerStart.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerStart.java:52)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionCreateScope.execute(AtomicOperationTransitionCreateScope.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerTake.execute(AtomicOperationTransitionNotifyListenerTake.java:80)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionDestroyScope.execute(AtomicOperationTransitionDestroyScope.java:116)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationTransitionNotifyListenerEnd.eventNotificationsCompleted(AtomicOperationTransitionNotifyListenerEnd.java:35)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:49)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:452)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.take(ExecutionEntity.java:430)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performOutgoingBehavior(BpmnActivityBehavior.java:140)
+	at org.activiti.engine.impl.bpmn.behavior.BpmnActivityBehavior.performDefaultOutgoingBehavior(BpmnActivityBehavior.java:66)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.leave(FlowNodeActivityBehavior.java:44)
+	at org.activiti.engine.impl.bpmn.behavior.FlowNodeActivityBehavior.execute(FlowNodeActivityBehavior.java:36)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationActivityExecute.execute(AtomicOperationActivityExecute.java:60)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStartInitial.eventNotificationsCompleted(AtomicOperationProcessStartInitial.java:45)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.pvm.runtime.AtomicOperationProcessStart.eventNotificationsCompleted(AtomicOperationProcessStart.java:64)
+	at org.activiti.engine.impl.pvm.runtime.AbstractEventAtomicOperation.execute(AbstractEventAtomicOperation.java:56)
+	at org.activiti.engine.impl.interceptor.CommandContext.performOperation(CommandContext.java:96)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperationSync(ExecutionEntity.java:633)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.performOperation(ExecutionEntity.java:628)
+	at org.activiti.engine.impl.persistence.entity.ExecutionEntity.start(ExecutionEntity.java:380)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:110)
+	at org.activiti.engine.impl.cmd.StartProcessInstanceCmd.execute(StartProcessInstanceCmd.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:24)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:57)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:133)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:31)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:40)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:35)
+	at org.activiti.engine.impl.RuntimeServiceImpl.startProcessInstanceByKey(RuntimeServiceImpl.java:77)
+	at generic.bpm.util.activiti.MyActivitiProcessManager.startProcessInstance(MyActivitiProcessManager.java:55)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:43)
+2016-10-07 15:43:45,581 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:43:45 CEST 2016]; root of context hierarchy
+2016-10-07 15:43:45,656 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:43:48,634 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:43:48,701 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:43:48,716 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:43:48,725 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:43:48,728 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:43:48,731 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:43:48,732 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:43:48,756 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:43:48,758 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:43:48,768 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:43:48,804 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:43:50,144 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:43:51,646 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of tvaProcessis started with processInstanceId=5
+2016-10-07 15:43:51,816 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 15:43:51,817 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:43:45 CEST 2016]; root of context hierarchy
+2016-10-07 15:43:51,886 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:43:51,886 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 15:43:51,886 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 15:43:51,888 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 15:46:27,544 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:46:27 CEST 2016]; root of context hierarchy
+2016-10-07 15:46:27,622 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 15:46:30,643 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 15:46:30,718 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 15:46:30,731 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 15:46:30,740 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 15:46:30,742 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:46:30,745 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 15:46:30,746 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 15:46:30,750 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 15:46:30,765 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 15:46:30,785 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 15:46:30,809 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 15:46:31,831 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 15:46:32,984 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of tvaProcessis started with processInstanceId=5
+2016-10-07 15:46:33,099 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 15:46:33,099 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 15:46:27 CEST 2016]; root of context hierarchy
+2016-10-07 15:46:33,101 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 15:46:33,101 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 15:46:33,104 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 15:46:33,106 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 16:45:05,213 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 16:45:05 CEST 2016]; root of context hierarchy
+2016-10-07 16:45:05,284 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 16:45:09,299 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 16:45:09,498 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 16:45:09,511 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 16:45:09,519 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 16:45:09,522 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 16:45:09,524 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 16:45:09,535 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 16:45:09,538 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 16:45:09,541 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 16:45:09,620 WARN main org.springframework.context.support.ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [tp.activiti.action.tvaDelegate] for bean with name 'tvaDelegate' defined in class path resource [spring/service-activiti-spring.xml]: problem with class file or dependent class; nested exception is java.lang.NoClassDefFoundError: tp/activiti/action/tvaDelegate (wrong name: tp/activiti/action/TvaDelegate)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1328)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:623)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1394)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at generic.bpm.util.activiti.MySpringActivitiHelper.loadSpringActivitiConfig(MySpringActivitiHelper.java:31)
+	at tp.activiti.test.app.TvaBpmnTestUn.main(TvaBpmnTestUn.java:29)
+Caused by: java.lang.NoClassDefFoundError: tp/activiti/action/tvaDelegate (wrong name: tp/activiti/action/TvaDelegate)
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:246)
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:395)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1317)
+	... 11 more
+2016-10-07 16:45:09,626 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 16:45:09,627 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 16:45:09,628 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 16:46:02,531 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 16:46:02 CEST 2016]; root of context hierarchy
+2016-10-07 16:46:02,596 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 16:46:05,363 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 16:46:05,424 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 16:46:05,438 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 16:46:05,446 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 16:46:05,449 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 16:46:05,452 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 16:46:05,453 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 16:46:05,457 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 16:46:05,457 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 16:46:05,501 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 16:46:05,570 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 16:46:06,994 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 16:46:08,829 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of tvaProcessis started with processInstanceId=5
+2016-10-07 16:46:08,956 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 16:46:08,956 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 16:46:02 CEST 2016]; root of context hierarchy
+2016-10-07 16:46:08,958 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 16:46:08,958 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 16:46:08,958 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 16:46:08,960 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 17:09:12,965 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5d22bbb7: startup date [Fri Oct 07 17:09:12 CEST 2016]; root of context hierarchy
+2016-10-07 17:09:13,092 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 17:09:16,734 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 17:09:16,889 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 17:09:16,903 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 17:09:16,911 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 17:09:16,913 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 17:09:16,919 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 17:09:16,931 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 17:09:16,948 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 17:09:16,950 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 17:09:16,984 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 17:09:17,013 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/tva.bpmn
+2016-10-07 17:09:22,247 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/tva.bpmnis deployed with deploymentId=1
+2016-10-07 17:09:25,551 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of tvaProcessis started with processInstanceId=5
+2016-10-07 17:09:25,610 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 17:09:25,610 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@5d22bbb7: startup date [Fri Oct 07 17:09:12 CEST 2016]; root of context hierarchy
+2016-10-07 17:09:25,611 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 17:09:25,611 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 17:09:25,611 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 17:09:25,614 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped

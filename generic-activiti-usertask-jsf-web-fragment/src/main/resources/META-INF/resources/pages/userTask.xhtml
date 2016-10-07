@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/frag-templates/common.xhtml">
+<ui:define name="pageTitle">UserTask list</ui:define>
+<ui:define name="pageHeader">UserTask list</ui:define>
+<ui:define name="body">    
+   <h:form> 
+	<h5>assigned UserTask / to complete</h5>
+	<h:dataTable border="2" var="assignedTask" value="#{userTaskMBean.assignedTasks}">
+			<h:column>	<f:facet name="header">Name</f:facet>
+		        <h:outputText value="#{assignedTask.name}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">Description</f:facet>
+		        <h:outputText value="#{assignedTask.description}" />
+		    </h:column>		  
+		     <h:column>	<f:facet name="header">Action</f:facet>
+			<h:commandButton action="#{userTaskMBean.performTask}" value="perform">
+				<f:setPropertyActionListener value="#{assignedTask.id}"
+						target="#{userTaskMBean.taskIdToComplete}" />
+			</h:commandButton >
+			</h:column>
+	</h:dataTable>
+	
+	
+	<h5>available UserTask / to claim</h5>
+	<h:dataTable border="2" var="availableTask" value="#{userTaskMBean.availableTasks}">
+			<h:column>	<f:facet name="header">Name</f:facet>
+		        <h:outputText value="#{availableTask.name}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">Description</f:facet>
+		        <h:outputText value="#{availableTask.description}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">Action</f:facet>
+			<h:commandButton action="#{userTaskMBean.claimTask}" value="claim">
+				<f:setPropertyActionListener value="#{availableTask.id}"
+						target="#{userTaskMBean.taskIdToClaim}" />
+			</h:commandButton >
+			</h:column>
+	</h:dataTable>
+   </h:form>
+</ui:define>
+</ui:composition>
+</html>

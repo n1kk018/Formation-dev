@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />	
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	
+	<!-- 
+	Ce fichier (extension pour les services WEB) sera utilise par la technologie 
+	CXF au sein du projet xxx-web .
+	 -->
+	 <!-- 
+	 <bean id="securityInterceptor" class="tp.util.BasicAuthAuthorizationInterceptor">
+		<property name="users">
+			<map>
+			<entry key="user1" value="pwd1"/> 
+			<entry key="user2" value="pwd2"/>
+			</map>
+		</property>
+	</bean>
+	-->
+	
+   <jaxws:endpoint id="serviceIncription_soap_endPoint"
+		implementor="#serviceIncriptionBean" address="/serviceInscription">	
+		<jaxws:inInterceptors>
+			 <!-- <ref bean="securityInterceptor"/> --> 
+		</jaxws:inInterceptors>	
+	</jaxws:endpoint>
+	
+	
+<!-- ***** partie  WEB Services REST (JAX-RS) ********* -->
+
+
+
+<bean id="emailCheckedCallbackRest" class="tp.inscription.service.rest.EmailCheckedCallbackRest" >
+	   <property name="myActivitiProcessManager" ref="myActivitiProcessManager" /> 
+</bean>
+
+
+<!-- url complete de type "http://localhost:8080/mywebapp/services/rest/myservice/xxx"
+avec "services" associe à l'url-pattern de CxfServlet dans web.xml
+et myservices/xxx associe aux valeurs de @Path() de la classe java et des méthodes
+-->
+<jaxrs:server id="myRestServices" address="/rest">
+	<jaxrs:serviceBeans>
+		<ref bean="emailCheckedCallbackRest" />
+	</jaxrs:serviceBeans>
+	<jaxrs:extensionMappings>
+	<entry key="xml" value="application/xml" /> 
+	<entry key="json" value="application/json" />
+	</jaxrs:extensionMappings>
+	
+	<!-- a faire : trouver le paramétrage cxf 2.6 ou 2.7 compatible JSon
+	     et pour l'instant se limiter à la version 2.5.5 de cxf qui fonctionne avec JSON  -->
+		
+</jaxrs:server>
+
+
+
+</beans>

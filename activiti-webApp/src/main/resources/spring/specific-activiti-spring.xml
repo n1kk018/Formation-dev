@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- NB : ce fichier est un complement pour service-activiti-spring.xml  -->
+
+
+
+<bean id="autoBpmLoader" class="generic.bpm.util.activiti.AutoBpmnLoaderHelper" init-method="loadBpmnDefinitions">
+		<property name="processManager" ref="myActivitiProcessManager"/>
+		<property name="bpmnFileNameList">
+			<list>
+			   <value>bpmn/inscription_activiti.bpmn</value>
+			   <value>bpmn/pers_activiti_user_task.bpmn</value>
+			</list>
+		</property>
+</bean>
+	
+	
+	<bean name="inscriptionCtx"  class="tp.inscription.bpm.delegate.InscriptionBpmContext" />
+	
+	
+	<!-- autres beans accessibles depuis le procesus (.bpmn): -->
+	
+	<!--  <bean name="dynSoapClient" class="generic.ws.util.client.DynReflectSoapClient" />
+	dans service-activiti-spring.xml
+	-->
+	<!-- utilisation: dynSoapClient.dynSoapCall(wsUrl, serviceInterfaceName, methodName, soapArgs); -->
+	
+	<!-- et aussi
+	<bean id="javaJmsClient" class="generic.async.jms.util.GenericJavaJmsClient" >
+	  de jms-spring.xml -->
+</beans>

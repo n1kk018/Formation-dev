@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/frag-templates/common.xhtml">
+<ui:define name="pageTitle">process</ui:define>
+<ui:define name="pageHeader">liste des processus</ui:define>
+<ui:define name="body">     
+	<h:form>
+	<h:dataTable border="2" var="processDef" value="#{processListMBean.processDefinitionList}">
+			<h:column>	<f:facet name="header">Key</f:facet>
+		        <h:outputText value="#{processDef.key}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">Name</f:facet>
+		        <h:outputText value="#{processDef.name}" />
+		    </h:column>
+		    <h:column>	<f:facet name="header">Action</f:facet>
+			<h:commandButton action="#{processListMBean.startProcessByKey}" value="start (without data)">
+				<f:setPropertyActionListener value="#{processDef.key}"
+						target="#{processListMBean.processDefinitionKey}" />
+			</h:commandButton >
+			</h:column>
+	</h:dataTable>
+   </h:form>
+   <h4>certains processus ne démarrent correctement qu'avec des données préalablement initialiséees</h4>
+</ui:define>
+</ui:composition>
+</html>
