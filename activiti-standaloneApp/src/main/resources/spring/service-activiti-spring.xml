@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="activitiDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+    <property name="driverClass" value="org.h2.Driver" />
+    <property name="url" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000" />
+    <property name="username" value="sa" />
+    <property name="password" value="" />
+  </bean>
+
+  <bean id="activitiTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="activitiDataSource" />
+  </bean>
+    <!-- toute la config qui precede est un equivalent spring de activiti.cfg.xml -->
+
+    <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+	   <property name="dataSource" ref="activitiDataSource" />
+	    <property name="transactionManager" ref="activitiTransactionManager" />
+	    <property name="databaseSchemaUpdate" value="true" />
+	    <!-- <property name="jobExecutorActivate" value="true" />  --> 
+	        <!-- default to "false" in old activi versions, must be set to "true" for timerEvent -->
+	        
+	    <!-- since v5.17 of activiti , asyncExecutor is better than jobExecutor -->   
+	    <property name="jobExecutorActivate" value="false" /> 
+	    <property name="asyncExecutorEnabled" value="true" />
+        <property name="asyncExecutorActivate" value="true" />
+        
+        <!-- activiti event listener (for trace/debug/....) -->
+        <property name="eventListeners">
+      		<list>
+         		<bean class="tp.activiti.listener.MyActivitiEventListener" />
+      		</list>
+   		 </property>
+	    
+	</bean>
+  
+<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+  <property name="processEngineConfiguration" ref="processEngineConfiguration" />
+</bean>
+
+<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
+  <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
+  <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
+  <bean id="formService" factory-bean="processEngine" factory-method="getFormService" />
+  <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService" />
+  <bean id="managementService" factory-bean="processEngine" factory-method="getManagementService" />
+
+ <!-- NB: le très gros intéret de la configuration de activiti au sein de spring tient dans le fait
+     que tout autre composant spring poura être utilisé dans un prosessus (via ServiceTask ou scriptTask)  -->   
+	
+  <bean id="genericActions" class="generic.bpm.activiti.delegate.GenericActions" />	
+</beans>

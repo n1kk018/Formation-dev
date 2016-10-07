@@ -1,0 +1,93 @@
+2015-11-03 12:40:52,101 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CREATED
+2015-11-03 12:40:52,254 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:DeploymentEntity[id=1, name=null]
+2015-11-03 12:40:56,621 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessDefinitionEntity[myFirstProcess:1:4]
+2015-11-03 12:40:56,670 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessDefinitionEntity[myFirstProcess:1:4]
+2015-11-03 12:40:56,672 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:DeploymentEntity[id=1, name=null]
+2015-11-03 12:40:57,021 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessInstance[5]
+2015-11-03 12:40:57,083 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessInstance[5]
+2015-11-03 12:40:57,084 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_STARTED
+2015-11-03 12:40:57,087 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:Start
+2015-11-03 12:40:57,096 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:Start
+2015-11-03 12:40:57,096 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from Start[id=startevent1] to Hello world[id=scripttask1]
+2015-11-03 12:40:57,097 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:Hello world
+2015-11-03 12:41:00,416 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:Hello world
+2015-11-03 12:41:00,416 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from Hello world[id=scripttask1] to End[id=endevent1]
+2015-11-03 12:41:00,417 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:End
+2015-11-03 12:41:00,417 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:End
+2015-11-03 12:41:00,417 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_COMPLETED
+2015-11-03 12:41:00,419 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessInstance[5]
+2015-11-03 12:41:02,507 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessDefinitionEntity[myFirstProcess:1:4]
+2015-11-03 12:41:02,588 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:DeploymentEntity[id=1, name=null]
+2015-11-03 12:41:02,621 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CLOSED
+2016-10-07 12:00:32,217 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CREATED
+2016-10-07 12:00:32,316 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:00:34,556 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:00:34,573 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:00:34,573 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:00:34,728 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessInstance[5]
+2016-10-07 12:00:34,766 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:result
+2016-10-07 12:00:34,767 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:a
+2016-10-07 12:00:34,767 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:b
+2016-10-07 12:00:34,767 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:x
+2016-10-07 12:00:34,787 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessInstance[5]
+2016-10-07 12:00:34,787 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_STARTED
+2016-10-07 12:00:34,789 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:Start
+2016-10-07 12:00:34,800 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:Start
+2016-10-07 12:00:34,802 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from Start[id=startevent1] to invoke_multiplication_ax[id=scripttask1]
+2016-10-07 12:00:34,802 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:invoke_multiplication_ax
+2016-10-07 12:00:36,271 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:ax
+2016-10-07 12:00:36,309 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:invoke_multiplication_ax
+2016-10-07 12:00:36,309 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from invoke_multiplication_ax[id=scripttask1] to invoke_addition_plus_b[id=scripttask2]
+2016-10-07 12:00:36,311 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:invoke_addition_plus_b
+2016-10-07 12:00:36,348 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:res
+2016-10-07 12:00:36,349 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:invoke_addition_plus_b
+2016-10-07 12:00:36,349 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from invoke_addition_plus_b[id=scripttask2] to End[id=endevent1]
+2016-10-07 12:00:36,349 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:End
+2016-10-07 12:00:36,349 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:End
+2016-10-07 12:00:36,349 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_COMPLETED
+2016-10-07 12:00:36,354 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessInstance[5]
+2016-10-07 12:00:36,396 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:result
+2016-10-07 12:00:36,396 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:a
+2016-10-07 12:00:36,396 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:res
+2016-10-07 12:00:36,396 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:b
+2016-10-07 12:00:36,397 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:ax
+2016-10-07 12:00:36,397 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:x
+2016-10-07 12:00:36,429 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:00:36,534 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:00:36,562 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CLOSED
+2016-10-07 12:46:18,558 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CREATED
+2016-10-07 12:46:18,634 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:46:20,353 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:46:20,391 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:46:20,391 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:46:20,457 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_CREATED:ProcessInstance[5]
+2016-10-07 12:46:20,483 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:result
+2016-10-07 12:46:20,483 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:a
+2016-10-07 12:46:20,483 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:b
+2016-10-07 12:46:20,484 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:x
+2016-10-07 12:46:20,492 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_INITIALIZED:ProcessInstance[5]
+2016-10-07 12:46:20,492 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_STARTED
+2016-10-07 12:46:20,493 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:Start
+2016-10-07 12:46:20,494 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:Start
+2016-10-07 12:46:20,494 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from Start[id=startevent1] to invoke_multiplication_ax[id=scripttask1]
+2016-10-07 12:46:20,494 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:invoke_multiplication_ax
+2016-10-07 12:46:21,645 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:ax
+2016-10-07 12:46:21,666 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:invoke_multiplication_ax
+2016-10-07 12:46:21,667 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from invoke_multiplication_ax[id=scripttask1] to invoke_addition_plus_b[id=scripttask2]
+2016-10-07 12:46:21,667 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:invoke_addition_plus_b
+2016-10-07 12:46:21,703 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_CREATED:res
+2016-10-07 12:46:21,703 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:invoke_addition_plus_b
+2016-10-07 12:46:21,704 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: SEQUENCEFLOW_TAKEN from invoke_addition_plus_b[id=scripttask2] to End[id=endevent1]
+2016-10-07 12:46:21,704 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_STARTED:End
+2016-10-07 12:46:21,704 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ACTIVITY_COMPLETED:End
+2016-10-07 12:46:21,704 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: PROCESS_COMPLETED
+2016-10-07 12:46:21,709 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessInstance[5]
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:result
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:a
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:res
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:b
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:ax
+2016-10-07 12:46:21,731 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: VARIABLE_DELETED:x
+2016-10-07 12:46:21,759 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:ProcessDefinitionEntity[basicSyncAxbProcess:1:4]
+2016-10-07 12:46:21,814 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENTITY_DELETED:DeploymentEntity[id=1, name=null]
+2016-10-07 12:46:21,827 DEBUG main tp.activiti.listener.MyActivitiEventListener - Event received: ENGINE_CLOSED

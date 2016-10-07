@@ -1,0 +1,40 @@
+package generic.jms.util;
+
+
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
+
+public class JmsQueueResponseSenderWithSpring {
+	
+	private JmsTemplate jmsTemplate;
+	
+
+	public void setJmsTemplate(JmsTemplate jmsTemplate) {
+		this.jmsTemplate = jmsTemplate;
+	}
+
+	public void sendMessage(final String messageText,AsyncContext asyncContext) {
+	  final AsyncContext finalAsyncContext = asyncContext;
+	 if(finalAsyncContext.getReplyDestinationName()!=null){
+		 jmsTemplate.setDefaultDestination(null);
+		 jmsTemplate.setPubSubDomain(false);//Queue (P2P) , no Topic
+		 jmsTemplate.setDefaultDestinationName(finalAsyncContext.getReplyDestinationName());
+	 }
+	  this.jmsTemplate.send( /*in default destination/queue,*/ new MessageCreator() {
+			public Message createMessage(Session session) throws JMSException {
+				TextMessage jmsTextMessage = session.createTextMessage(messageText);
+				
+				if(finalAsyncContext!=null){
+					jmsTextMessage.setJMSCorrelationID(finalAsyncContext.getCorrelationId());
+				}
+				return jmsTextMessage; 
+			}
+		});
+	}
+
+}

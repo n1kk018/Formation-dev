@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <message id="receiveAxbRequest" name="receiveAxbRequest"></message>
+  <process id="speudoSyncAxbProcessWithEvent" name="speudoSyncAxbProcessWithEvent" isExecutable="true">
+    <documentation>basic bpmn process calculating a*x+b
+             with call "multiplication" and "addition" on wsCalculator</documentation>
+    <scriptTask id="scripttask1" name="invoke_multiplication_ax" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>ax=a*x;
+execution.setVariable("ax",ax);
+genericActions.sleep(2000);</script>
+    </scriptTask>
+    <scriptTask id="scripttask2" name="invoke_addition_plus_b" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script>res=ax+b;
+result.res=res;
+execution.setVariable("res",res);
+out.println("res="+res);</script>
+    </scriptTask>
+    <sequenceFlow id="flow2" sourceRef="scripttask1" targetRef="scripttask2"></sequenceFlow>
+    <endEvent id="endevent1" name="End">
+      <extensionElements>
+        <activiti:executionListener event="end" class="tp.activiti.listener.MyActivitiEndListener"></activiti:executionListener>
+      </extensionElements>
+    </endEvent>
+    <sequenceFlow id="flow3" sourceRef="scripttask2" targetRef="endevent1"></sequenceFlow>
+    <startEvent id="messagestartevent1" name="Message start">
+      <documentation>receiveAxbRequest</documentation>
+      <messageEventDefinition messageRef="receiveAxbRequest"></messageEventDefinition>
+    </startEvent>
+    <sequenceFlow id="flow4" sourceRef="messagestartevent1" targetRef="scripttask3"></sequenceFlow>
+    <scriptTask id="scripttask3" name="async mode log (non blocking start)" activiti:async="true" scriptFormat="javascript" activiti:autoStoreVariables="false">
+      <script>genericActions.logInfo("asynchronous mode , non blocking start");</script>
+    </scriptTask>
+    <sequenceFlow id="flow5" sourceRef="scripttask3" targetRef="scripttask1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_speudoSyncAxbProcessWithEvent">
+    <bpmndi:BPMNPlane bpmnElement="speudoSyncAxbProcessWithEvent" id="BPMNPlane_speudoSyncAxbProcessWithEvent">
+      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
+        <omgdc:Bounds height="61.0" width="151.0" x="250.0" y="70.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask2" id="BPMNShape_scripttask2">
+        <omgdc:Bounds height="55.0" width="125.0" x="370.0" y="210.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="520.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="messagestartevent1" id="BPMNShape_messagestartevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="90.0" y="51.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="scripttask3" id="BPMNShape_scripttask3">
+        <omgdc:Bounds height="65.0" width="115.0" x="72.0" y="156.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="325.0" y="131.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="210.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="432.0" y="210.0"></omgdi:waypoint>
+        <omgdi:waypoint x="537.0" y="145.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="107.0" y="86.0"></omgdi:waypoint>
+        <omgdi:waypoint x="129.0" y="156.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="129.0" y="156.0"></omgdi:waypoint>
+        <omgdi:waypoint x="325.0" y="131.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,63 @@
+2015-11-03 12:40:40,669 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@104e3b2: startup date [Tue Nov 03 12:40:40 CET 2015]; root of context hierarchy
+2015-11-03 12:40:41,067 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2015-11-03 12:40:51,784 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2015-11-03 12:40:51,899 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2015-11-03 12:40:51,911 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2015-11-03 12:40:51,922 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2015-11-03 12:40:51,951 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2015-11-03 12:40:51,970 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2015-11-03 12:40:51,971 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2015-11-03 12:40:51,983 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2015-11-03 12:40:51,982 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2015-11-03 12:40:52,178 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2015-11-03 12:40:52,255 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/MyFirstProcess.bpmn
+2015-11-03 12:40:56,998 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/MyFirstProcess.bpmnis deployed with deploymentId=1
+2015-11-03 12:41:00,433 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of myFirstProcessis started with processInstanceId=5
+2015-11-03 12:41:02,615 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2015-11-03 12:41:02,615 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@104e3b2: startup date [Tue Nov 03 12:40:40 CET 2015]; root of context hierarchy
+2015-11-03 12:41:02,616 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2015-11-03 12:41:02,617 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2015-11-03 12:41:02,617 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2015-11-03 12:41:02,621 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 12:00:26,583 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 12:00:26 CEST 2016]; root of context hierarchy
+2016-10-07 12:00:26,820 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 12:00:32,078 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 12:00:32,147 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 12:00:32,164 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 12:00:32,173 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 12:00:32,176 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 12:00:32,179 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 12:00:32,181 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 12:00:32,187 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 12:00:32,190 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 12:00:32,237 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 12:00:32,316 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/basicSyncAxbProcess.bpmn
+2016-10-07 12:00:34,689 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/basicSyncAxbProcess.bpmnis deployed with deploymentId=1
+2016-10-07 12:00:36,398 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of basicSyncAxbProcessis started with processInstanceId=5
+2016-10-07 12:00:36,556 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 12:00:36,556 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 12:00:26 CEST 2016]; root of context hierarchy
+2016-10-07 12:00:36,560 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 12:00:36,560 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 12:00:36,560 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 12:00:36,563 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
+2016-10-07 12:46:14,862 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 12:46:14 CEST 2016]; root of context hierarchy
+2016-10-07 12:46:14,958 INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring/service-activiti-spring.xml]
+2016-10-07 12:46:18,223 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on engine with resource org/activiti/db/create/activiti.h2.create.engine.sql
+2016-10-07 12:46:18,403 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on history with resource org/activiti/db/create/activiti.h2.create.history.sql
+2016-10-07 12:46:18,420 INFO main org.activiti.engine.impl.db.DbSqlSession - performing create on identity with resource org/activiti/db/create/activiti.h2.create.identity.sql
+2016-10-07 12:46:18,430 INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+2016-10-07 12:46:18,433 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Starting up the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 12:46:18,436 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating thread pool queue of size 100
+2016-10-07 12:46:18,540 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Creating executor service with corePoolSize 2, maxPoolSize 10 and keepAliveTime 5000
+2016-10-07 12:46:18,545 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} starting to acquire async jobs due
+2016-10-07 12:46:18,545 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} starting to acquire async jobs due
+2016-10-07 12:46:18,607 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext loaded/started with activi services from config file:spring/service-activiti-spring.xml
+2016-10-07 12:46:18,635 INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource bpmn/basicSyncAxbProcess.bpmn
+2016-10-07 12:46:20,447 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - bpmn/basicSyncAxbProcess.bpmnis deployed with deploymentId=1
+2016-10-07 12:46:21,732 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - a new instance of basicSyncAxbProcessis started with processInstanceId=5
+2016-10-07 12:46:21,823 INFO main generic.bpm.util.activiti.MyActivitiProcessManager - undeployed activitiBpmnDeploymentId = 1
+2016-10-07 12:46:21,823 INFO main org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@368102c8: startup date [Fri Oct 07 12:46:14 CEST 2016]; root of context hierarchy
+2016-10-07 12:46:21,826 INFO main org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor - Shutting down the default async job executor [org.activiti.engine.impl.asyncexecutor.DefaultAsyncJobExecutor].
+2016-10-07 12:46:21,826 INFO Thread-3 org.activiti.engine.impl.asyncexecutor.AcquireTimerJobsRunnable - {} stopped async job due acquisition
+2016-10-07 12:46:21,826 INFO Thread-4 org.activiti.engine.impl.asyncexecutor.AcquireAsyncJobsDueRunnable - {} stopped async job due acquisition
+2016-10-07 12:46:21,828 INFO main generic.bpm.util.activiti.MySpringActivitiHelper - springApplicationContext closed/stopped
