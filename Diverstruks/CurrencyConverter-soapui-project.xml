@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="76114549-eaa0-4c37-96ca-dc3954be2384" activeEnvironment="Default" name="CurrencyConverter" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="577a0d92-d260-47f3-a450-da16928a50ca" wsaVersion="NONE" name="CurrencyConverterServiceSoapBinding" type="wsdl" bindingName="{http://impl.biz.currency.ws.atod.afcepf.fr/}CurrencyConverterServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter?wsdl"><con:part><con:url>http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CurrencyConverterService" targetNamespace="http://impl.biz.currency.ws.atod.afcepf.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.biz.currency.ws.atod.afcepf.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://api.biz.currency.ws.atod.afcepf.fr/">
+  <wsdl:import location="http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter?wsdl=ICurrencyConverter.wsdl" namespace="http://api.biz.currency.ws.atod.afcepf.fr/"></wsdl:import>
+  <wsdl:binding name="CurrencyConverterServiceSoapBinding" type="ns1:ICurrencyConverter">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAllCurrencies">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllCurrencies">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllCurrenciesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CurrenciesWSException">
+        <soap:fault name="CurrenciesWSException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CurrencyConverterService">
+    <wsdl:port binding="tns:CurrencyConverterServiceSoapBinding" name="CurrencyConverterPort">
+      <soap:address location="http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter?wsdl=ICurrencyConverter.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ICurrencyConverter" targetNamespace="http://api.biz.currency.ws.atod.afcepf.fr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://api.biz.currency.ws.atod.afcepf.fr/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://api.biz.currency.ws.atod.afcepf.fr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://api.biz.currency.ws.atod.afcepf.fr/">
+      <xs:element name="getAllCurrencies" type="tns:getAllCurrencies"/>
+      <xs:element name="getAllCurrenciesResponse" type="tns:getAllCurrenciesResponse"/>
+      <xs:complexType name="getAllCurrencies">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getAllCurrenciesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dtCurrency"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dtCurrency">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="rate" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="currenciesWSError">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CA_NE_FONCTIONNE_PAS"/>
+          <xs:enumeration value="RECHERCHE_NON_PRESENTE_EN_BASE"/>
+          <xs:enumeration value="IMPOSSIBLE_AJOUT_DANS_BASE"/>
+          <xs:enumeration value="IMPOSSIBLE_SUPPRESSION_DANS_BASE"/>
+          <xs:enumeration value="UPDATE_NON_EFFECTUE_EN_BASE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="CurrenciesWSException" type="tns:CurrenciesWSException"/>
+      <xs:complexType name="CurrenciesWSException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="wsError" type="tns:currenciesWSError"/>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getAllCurrenciesResponse">
+    <wsdl:part element="ns1:getAllCurrenciesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CurrenciesWSException">
+    <wsdl:part element="ns1:CurrenciesWSException" name="CurrenciesWSException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllCurrencies">
+    <wsdl:part element="ns1:getAllCurrencies" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ICurrencyConverter">
+    <wsdl:operation name="getAllCurrencies">
+      <wsdl:input message="ns1:getAllCurrencies" name="getAllCurrencies"></wsdl:input>
+      <wsdl:output message="ns1:getAllCurrenciesResponse" name="getAllCurrenciesResponse"></wsdl:output>
+      <wsdl:fault message="ns1:CurrenciesWSException" name="CurrenciesWSException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter</con:endpoint></con:endpoints><con:operation id="64bc9c97-330e-4687-ac11-3b2a6da808c6" isOneWay="false" action="" name="getAllCurrencies" bindingOperationName="getAllCurrencies" type="Request-Response" outputName="getAllCurrenciesResponse" inputName="getAllCurrencies" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="25332b96-fc03-41ac-a075-022d82bb40d3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/OnWine-CurrenciesWS-Biz/CurrencyConverter</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://api.biz.currency.ws.atod.afcepf.fr/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <api:getAllCurrencies/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.biz.currency.ws.atod.afcepf.fr/ICurrencyConverter/getAllCurrencies"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
