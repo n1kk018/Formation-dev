@@ -11,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import fr.afcepf.al28.jeeapp.entity.Devise;
 import fr.afcepf.al28.jeeapp.entity.Pays;
 
+
 @Stateless
 public class DaoDeviseJpa implements IDaoDevise {
 	@PersistenceContext(unitName="jeeapp-entity")

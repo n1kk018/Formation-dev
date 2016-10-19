@@ -10,13 +10,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import fr.afcepf.al28.soap.devise.DeviseDTO;
-import fr.afcepf.al28.soap.devise.IServiceDevise;
-import fr.afcepf.al28.soap.devise.ServiceDeviseBeanService;
 import fr.afcepf.atod.ws.currency.soap.CurrenciesWSException_Exception;
 import fr.afcepf.atod.ws.currency.soap.CurrencyConverterService;
-import fr.afcepf.atod.ws.currency.soap.DtCurrency;
 import fr.afcepf.atod.ws.currency.soap.ICurrencyConverter;
+
 
 /*import fr.afcepf.al28.service.TvaService;
 import fr.afcepf.al28.service.TvaServiceImplService;*/
