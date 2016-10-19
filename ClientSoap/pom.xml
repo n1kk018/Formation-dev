@@ -55,7 +55,7 @@
                     <!-- Keep generated files -->
                     <keep>true</keep>
                     <!-- Package name -->
-                    <packageName>fr.afcepf.al28.soap.currency</packageName>
+                    <packageName>fr.afcepf.atod.ws.currency.soap</packageName>
                     <!-- generated source files destination -->
                     <sourceDestDir>target/generatedclasses</sourceDestDir>
                 </configuration>

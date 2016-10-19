@@ -1,7 +1,8 @@
 package fr.afcepf.al28.client;
-import fr.afcepf.al28.soap.currency.CurrenciesWSException_Exception;
-import fr.afcepf.al28.soap.currency.CurrencyConverterService;
-import fr.afcepf.al28.soap.currency.ICurrencyConverter;
+
+import fr.afcepf.atod.ws.currency.soap.CurrenciesWSException_Exception;
+import fr.afcepf.atod.ws.currency.soap.CurrencyConverterService;
+import fr.afcepf.atod.ws.currency.soap.ICurrencyConverter;
 
 public class ClientCurrenciesWS {
     public static void main(String[] args) {
