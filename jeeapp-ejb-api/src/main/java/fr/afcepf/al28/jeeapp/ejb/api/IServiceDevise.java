@@ -8,7 +8,6 @@ import javax.jws.WebService;
 
 import fr.afcepf.al28.jeeapp.ejb.dto.DeviseDTO;
 import fr.afcepf.al28.jeeapp.ejb.dto.PaysDTO;
-import fr.afcepf.al28.jeeapp.entity.Devise;
 import fr.afcepf.al28.jeeapp.entity.Pays;
 
 //@Local

@@ -7,6 +7,7 @@ import javax.ejb.Local;
 import fr.afcepf.al28.jeeapp.entity.Devise;
 import fr.afcepf.al28.jeeapp.entity.Pays;
 
+
 @Local
 public interface IDaoDevise {
 

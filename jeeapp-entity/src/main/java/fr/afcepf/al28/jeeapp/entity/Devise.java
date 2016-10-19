@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import fr.afcepf.al28.jeeapp.entity.Pays;
+
 @Entity
 @NamedQuery(name="devise.findAll",query="SELECT d FROM Devise d")
 public class Devise implements Serializable{
