@@ -10,7 +10,7 @@
   </extensions>
   <extensions>
     <extendedObject href="AfoisXplusB.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1475829872346"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1476892210028"/>
   </extensions>
   <extensions>
     <extendedObject href="AfoisXplusB.bpel#//@variables/@children.2"/>
