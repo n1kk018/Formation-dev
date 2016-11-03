@@ -9,7 +9,7 @@ $(function() {
   	  drawChart5();
     });
     setInterval(drawChart2, 5000);
-    setInterval(drawChart3, 6000);
+    setInterval(drawChart3, 60000);
     setInterval(drawChart4, 7000);
     setInterval(drawChart5, 8000);
 });
@@ -24,6 +24,7 @@ function drawChart1() {
         var data = new google.visualization.DataTable(jsonData);
         var options = {'title':'Répartition des types de vin provisionnés',
         				is3D:true,
+                  slices:{0:{color: 'green'}, 1:{color: 'pink'}, 2:{color: 'yellow'}, 3:{color: 'red'}},
                        'width':600,
                        'height':300};
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -38,8 +39,7 @@ function drawChart2() {
          async: false 
      }).responseText;
    var data = new google.visualization.DataTable(jsonData);
-   var options = {'title':'Répartition des devises utilisées',
-   				is3D:true,
+   var options = {'title':'Répartition des commandes hors euros',
                   'width':600,
                   'height':300};
    var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
@@ -70,6 +70,7 @@ function drawChart4() {
     var data = new google.visualization.DataTable(jsonData);
     var options = {'title':'Répartition des types de vin commandés',
     				pieHole:0.4,
+            slices:{0:{color: 'green'}, 1:{color: 'pink'}, 2:{color: 'yellow'}, 3:{color: 'red'}},
                    'width':600,
                    'height':300};
     var chart = new google.visualization.PieChart(document.getElementById('chart_div4'));
@@ -84,14 +85,6 @@ function drawChart5() {
         async: false 
     }).responseText;
   var data = new google.visualization.DataTable(jsonData);
-  /*var view = new google.visualization.DataView(data);
-  view.setColumns([0, 1,
-                   { calc: "stringify",
-                     sourceColumn: 1,
-                     type: "string",
-                     role: "annotation" },
-                   2]);*/
-
   var options = {'title':'Top 10 des ventes',
   				is3D:true,
                  'width':600,
