@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Manipulation DOM</title>
+<script type="text/javascript"> 
+	function ready(){
+		var para = document.getElementById("para");
+		para.textContent = 'autre chose';
+		var paras = document.getElementsByTagName('p');
+		for(var x=0;x<paras.length;x++) {
+				paras[x].style.color="green";
+				var innerSpans = paras[x].getElementsByTagName("span");
+				for(var y=0; y < innerSpans; y++) {
+					innerSpans[y].style.fontWeight = "bold";
+				}
+			}
+		var spans = document.getElementsByTagName('span');
+		for(var x=0;x<spans.length;x++) {
+			spans[x].textContent=x;
+		}
+		var els = document.getElementsByClassName("LaClasse");
+		for(var x=0;x<els.length;x++){
+			els[x].style.fontSize="25px";
+		}
+	}
+</script>
+</head>
+<body onload="ready()">
+	<p id="para">le paragraphe</p>
+	<div><p>un paragraphe <span class="LaClasse">et un span</span></p></div>
+	<p class="LaClasse">paragraphe classé <span>et un span</span></p>
+	<span>un span dans rien</span>
+</body>
+</html>

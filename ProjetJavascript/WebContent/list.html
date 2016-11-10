@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var tablo = [];
+	function add2tablo(val){
+		if(val!="")
+			tablo.push(val);
+		updatHtml()
+	}
+	function del2tablo(key){
+		tablo.splice(key,1);;
+		updatHtml()
+	}
+	function uptablo(key,val){
+		tablo[key]=val;
+		updatHtml()
+	}
+	function toggleInput(el) {
+		var input = document.createElement('input');
+		var parent = el.parentElement;
+		input.type='text';
+		input.value=el.textContent;
+		input.onblur=function() {
+			uptablo(parent.id,this.value);
+		}
+		parent.innerHTML="";
+		parent.appendChild(input);
+		return false;
+	}
+	function updatHtml(){
+		document.getElementById('liste').innerHTML="";
+		tablo.forEach(function(val,key){
+			var li = document.createElement('li');
+			var span = document.createElement('span');
+			var button = document.createElement('input');
+			span.textContent=val;
+			li.setAttribute('id', key);
+			span.ondblclick=function(){toggleInput(span,li);}
+			li.appendChild(span);
+			button.type="button";
+			button.value="Supprimer";
+			button.onclick=function(){del2tablo(key)};
+			li.appendChild(button);
+			document.getElementById('liste').appendChild(li);
+		});
+	}
+</script>
+</head>
+<body>
+	<ul id="liste"></ul>
+	<input type="text" value="" id="toto"/>
+	<input type="button" value="ajouter à la liste" onclick="add2tablo(document.getElementById('toto').value)"/>
+</body>
+</html>

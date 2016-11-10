@@ -1,0 +1,6 @@
+{
+	"clef": "valeur",
+	"clef2": 10,
+	"clef3": true,
+	"clef4": ["item1", 5, true , "item4"]
+}

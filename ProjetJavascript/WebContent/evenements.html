@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var leNombre = 10;
+	var increment = 1;
+	function changeNumber(el){
+		if(el.value==="+")
+			leNombre+=increment;
+		if(el.value==="-")
+			leNombre-=increment;
+		updatHtml();
+	}
+	function clique(el) {
+		
+			alert(el.value);
+	}
+	function updatHtml(){
+		document.getElementById('counter').textContent = leNombre;
+		}
+</script>
+</head>
+<body onload="updatHtml()">
+	<input type="button" value="click!" onclick="clique(this)" />
+	<p><span id="counter">0</span></p>
+	<input type="button" value="+" onclick="changeNumber(this)" />
+	<input type="button" value="-" onclick="changeNumber(this)" />
+</body>
+</html>
