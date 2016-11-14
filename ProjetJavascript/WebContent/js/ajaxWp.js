@@ -1,3 +1,5 @@
+module.exports = doAjax;
+
 function doAjax(args) {
 	return new Promise(function(resolve, reject) {
 		var ajax = new XMLHttpRequest();
@@ -6,6 +8,7 @@ function doAjax(args) {
 			url: '',
 			args: '',
 			async: true,
+			datatype: 'text/plain',
 			callback: function(){}
 		};
 		assignerArguments(args,options);
@@ -19,6 +22,7 @@ function doAjax(args) {
 				}
 			}
 		};
+		ajax.setRequestHeader('Content-Type', options.datatype)
 		ajax.send(options.args);
 	});
 }

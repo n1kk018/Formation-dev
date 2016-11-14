@@ -1,0 +1,19 @@
+{
+  "name": "projet-angular",
+  "version": "1.0.0",
+  "description": "un projet angular pour les al28",
+  "main": "scripts/app.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bloup"
+  ],
+  "author": "AFCEPF",
+  "license": "ISC"
+}

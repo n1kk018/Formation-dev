@@ -6,10 +6,27 @@
 <script type="text/javascript" src="js/ajax.js" ></script>
 <script type="text/javascript">
 	doAjax({
-		url: 'data.json',
-		callback: function(reponse) {
-			console.log(reponse);
-		}
+		url: 'http://localhost:8180/ProjetRIARest/rest/premier/salut'
+	}).then(function(data){
+		console.log(data)
+	}).catch(function(err){
+		alert(err);
+	});
+	
+	function getChien() {
+		return doAjax({
+			url: 'http://localhost:8180/ProjetRIARest/rest/premier/chien',
+		}).then(function(reponse) {
+			var chien = JSON.parse(reponse);
+			chien.date_naissance=new Date(chien.date_naissance);
+			return chien;
+		});
+	}
+
+	getChien().then(function(data) {
+		console.log(data);
+	}).catch(function(err){
+		alert(err);
 	});
 </script>
 </head>
