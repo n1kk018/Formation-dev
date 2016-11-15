@@ -4,6 +4,7 @@ module.exports = {
 		obtenirChien:obtenirChien,
 		ajouterChien:ajouterChien};
 var urlWs = 'http://localhost:8180/ProjetRIARest/rest/chien/';
+
 function obtenirChiens() {
 	return doAjax({
 		url: urlWs+"all",

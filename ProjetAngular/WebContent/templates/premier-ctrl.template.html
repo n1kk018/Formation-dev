@@ -1,0 +1,19 @@
+{{machin}} {{2+2}}
+<p data-ng-bind="premiere"></p>
+<input type="text" data-ng-model="premiere" />
+<input type="number" data-ng-model="number1" />
+<input type="number" data-ng-model="number2" />
+<p data-ng-if="number1&&number2">{{number1}} + {{number2}} =
+	{{number1+number2}}</p>
+<input type="text" data-ng-model="machin" />
+<input type="button" value="click" data-ng-click="methodeCtrl()" />
+<p data-ng-repeat="item in machin track by $index">{{item}} jambon</p>
+
+<input type="text" data-ng-model="second" />
+<input type="button" value="click" data-ng-click="addList()" />
+<ul>
+	<li data-ng-repeat="(clef,item) in liste track by $index">{{clef}}
+		{{item}}<input type="button" value="delete"
+		data-ng-click="deleteItem(clef)">
+	</li>
+</ul>

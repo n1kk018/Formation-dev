@@ -26,7 +26,6 @@ public class DaoChienImpl implements IDaoChien {
     @Override
     public void addChien(PetitChien paramChien) {
         em.persist(paramChien);
-        
     }
     
 }

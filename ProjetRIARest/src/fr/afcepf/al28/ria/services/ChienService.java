@@ -39,7 +39,9 @@ public class ChienService {
     @Path("add")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void ajouterChien(PetitChien chien) {
+    @Produces(MediaType.TEXT_PLAIN)
+    public Boolean ajouterChien(PetitChien chien) {
         dao.addChien(chien);
+        return true;
     }
 }

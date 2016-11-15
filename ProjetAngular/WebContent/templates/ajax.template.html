@@ -1,0 +1,38 @@
+<h1 data-ng-bind="title">jambon</h1>
+<table id="dogList" data-ng-if="listOfDogs" border="1">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>nom</th>
+			<th>race</th>
+			<th>date naissance</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="item in listOfDogs">
+			<td>{{item.id}}</td>
+			<td><a data-ng-click="add2Ul(item)" href="javascript:void(0);">{{item.nom}}</a></td>
+			<td>{{item.race}}</td>
+			<td>{{item.date_naissance.toLocaleDateString()}}</td>
+		</tr>
+	</tbody>
+</table>
+<input type="button" value="ajouter un chien" data-ng-click="toggleForm('formChien')"/>
+<form name="formChien" id="formChien" method="post" data-ng-style="{'display': form_visibility}" data-ng-submit="addDog()">
+	<label for="nom">Nom : </label>
+	<input id="nom" data-ng-model="chien.nom" type="text"/><br />
+	<label for="race">Race : </label>
+	<input id="race" data-ng-model="chien.race" type="text"/><br />
+	<label for="dateNaissance">Date de naissance :</label>
+	<input id="dateNaissance" data-ng-model="chien.date_naissance" type="date"/><br />
+	<input type="submit" value="envoyer" id="button-1"/>
+</form>
+<article  data-ng-if="selected">
+	<h2>Chien selectionné</h2>
+	<ul>
+		<li>Id: {{selected.id}}</li>
+		<li>Nom: {{selected.nom}}</li>
+		<li>Race: {{selected.race}}</li>
+		<li>date de naissance: {{selected.date_naissance.toLocaleDateString()}}</li>
+	</ul>
+</article>
