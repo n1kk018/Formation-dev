@@ -13,4 +13,6 @@ angular.module('monApp', ['ngRoute'])
 		});
 	}])
 	.controller('premierCtrl', require('./premier-ctrl.controller.js'))
-	.controller('ajaxCtrl', require('./ajax.controller'));
+	.controller('ajaxCtrl', require('./ajax.controller'))
+	.factory('chienService', require('./chien.service'))
+	.directive('afcPremiere', require('./premiere.directive'));

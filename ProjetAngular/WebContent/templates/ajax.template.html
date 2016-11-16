@@ -1,4 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
 <h1 data-ng-bind="title">jambon</h1>
+<div data-afc-premiere="title"></div>
+<!-- <input type="text" data-ng-model="filtre.nom" />-->
+<div>
+	<label for="select-1">Choisir une race:</label>
+	<select data-ng-model="filtre.race">
+		<option value="">Toutes</option>
+   		<option data-ng-repeat="(breed, nb) in breeds" value="{{breed}}">{{breed}} ({{nb}})</option>
+	</select>
+</div>
 <table id="dogList" data-ng-if="listOfDogs" border="1">
 	<thead>
 		<tr>
@@ -6,25 +25,27 @@
 			<th>nom</th>
 			<th>race</th>
 			<th>date naissance</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-ng-repeat="item in listOfDogs">
+		<tr data-ng-repeat="item in listOfDogs | filter:filtre">
 			<td>{{item.id}}</td>
 			<td><a data-ng-click="add2Ul(item)" href="javascript:void(0);">{{item.nom}}</a></td>
 			<td>{{item.race}}</td>
-			<td>{{item.date_naissance.toLocaleDateString()}}</td>
+			<td>{{item.date_naissance | date:'dd-MM-yyyy'}}</td>
+			<td><input type="button" value="x" data-ng-click="delDog(item.id)" /><td>
 		</tr>
 	</tbody>
 </table>
-<input type="button" value="ajouter un chien" data-ng-click="toggleForm('formChien')"/>
+<input type="button" value="ajouter un chien" data-ng-click="toggleForm()"/>
 <form name="formChien" id="formChien" method="post" data-ng-style="{'display': form_visibility}" data-ng-submit="addDog()">
 	<label for="nom">Nom : </label>
 	<input id="nom" data-ng-model="chien.nom" type="text"/><br />
 	<label for="race">Race : </label>
 	<input id="race" data-ng-model="chien.race" type="text"/><br />
 	<label for="dateNaissance">Date de naissance :</label>
-	<input id="dateNaissance" data-ng-model="chien.date_naissance" type="date"/><br />
+	<input id="dateNaissance" data-ng-model="chien.date_naissance" type="text"/><br />
 	<input type="submit" value="envoyer" id="button-1"/>
 </form>
 <article  data-ng-if="selected">
@@ -33,6 +54,8 @@
 		<li>Id: {{selected.id}}</li>
 		<li>Nom: {{selected.nom}}</li>
 		<li>Race: {{selected.race}}</li>
-		<li>date de naissance: {{selected.date_naissance.toLocaleDateString()}}</li>
+		<li>date de naissance: {{selected.date_naissance | date:'dd-MM-yyyy'}}</li>
 	</ul>
 </article>
+</body>
+</html>

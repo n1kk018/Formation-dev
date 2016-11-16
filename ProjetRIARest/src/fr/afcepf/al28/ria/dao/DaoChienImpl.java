@@ -27,5 +27,10 @@ public class DaoChienImpl implements IDaoChien {
     public void addChien(PetitChien paramChien) {
         em.persist(paramChien);
     }
+
+    @Override
+    public void deleteChien(Integer paramId) {
+        em.remove(em.find(PetitChien.class, paramId));
+    }
     
 }

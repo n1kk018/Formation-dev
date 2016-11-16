@@ -1,19 +1,24 @@
 //angular.module('monApp')
 //.controller('ajaxCtrl', 
-module.exports = ['$scope', '$http', function($scope, $http){
+module.exports = ['$scope', 'chienService', function($scope, chienService){
 	$scope.title='Ajax view';
 	$scope.listOfDogs = false;
 	$scope.selected = '';
 	$scope.form_visibility='none';
+	$scope.breeds={};
 	function loadList() {
-		$http.get('http://localhost:8180/ProjetRIARest/rest/chien/all')
-		.then(function(response) {
-			$scope.listOfDogs = response.data;
-			if($scope.listOfDogs.length>0) {
-			$scope.listOfDogs.forEach(function(chien,index) {
-				chien.date_naissance=new Date(chien.date_naissance);
-			}) } else {
+		chienService.obtenirChiens().then(function(response) {
+			$scope.listOfDogs = response;
+			if($scope.listOfDogs.length<1) {
 				$scope.listOfDogs = false;
+			} else {
+				$scope.listOfDogs.forEach(function(chien,index){
+					if($scope.breeds.hasOwnProperty(chien.race)) {
+						$scope.breeds[chien.race]++;
+					} else {
+						$scope.breeds[chien.race]=1;
+					}
+				});
 			}
 		});
 	}
@@ -21,7 +26,7 @@ module.exports = ['$scope', '$http', function($scope, $http){
 	$scope.add2Ul = function(chien) {
 		$scope.selected = chien;
 	};
-	$scope.toggleForm = function(formId) {
+	$scope.toggleForm = function() {
 		if($scope.form_visibility=="none") {
 			$scope.form_visibility="block";
 		} else {
@@ -29,16 +34,23 @@ module.exports = ['$scope', '$http', function($scope, $http){
 		}
 	};
 	$scope.addDog = function() {
-		console.log($scope.chien);
 		$scope.chien.id=null;
-		console.log($scope.chien.date_naissance);
-		$http.post('http://localhost:8180/ProjetRIARest/rest/chien/add', JSON.stringify($scope.chien))
-		.then(function(response){
-			if(response.data=="true") {
-				loadList();
-			}
-		});
-		$scope.toggleForm('formChien');
+		chienService.ajouterChien($scope.chien)
+			.then(function(response){
+				if(response) {
+					loadList();
+					$scope.toggleForm();
+					$scope.chien=null;
+				}
+			});
 	};
+	$scope.delDog = function(id) {
+		chienService.supprimerChien(id)
+			.then(function(response){
+				if(response) {
+					loadList();
+				}
+			});
+	}
 }];
 //);

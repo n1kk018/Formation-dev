@@ -10,4 +10,5 @@ public interface IDaoChien {
     List<PetitChien> getAllChiens();
     PetitChien findById(Integer id);
     void addChien(PetitChien chien);
+    void deleteChien(Integer id);
 }
