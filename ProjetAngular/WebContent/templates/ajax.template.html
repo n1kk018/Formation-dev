@@ -14,8 +14,9 @@
 <div>
 	<label for="select-1">Choisir une race:</label>
 	<select data-ng-model="filtre.race">
-		<option value="">Toutes</option>
-   		<option data-ng-repeat="(breed, nb) in breeds" value="{{breed}}">{{breed}} ({{nb}})</option>
+		<option value="">Filtrer race</option>
+   		<option data-ng-repeat="(race, nb) in listOfDogs | afcGroup:'race'"
+   				 value="{{race}}">{{race}} ({{nb}})</option>
 	</select>
 </div>
 <table id="dogList" data-ng-if="listOfDogs" border="1">
