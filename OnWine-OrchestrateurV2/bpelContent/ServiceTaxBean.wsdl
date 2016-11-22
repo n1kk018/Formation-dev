@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://tax.afcepf.fr" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ServiceTaxBeanService" targetNamespace="http://tax.afcepf.fr">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tax.afcepf.fr" xmlns:ns1="http://dto.biz.tax.ws.al28.afcepf.fr" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://tax.afcepf.fr">
+  <xs:import namespace="http://dto.biz.tax.ws.al28.afcepf.fr"/>
+  <xs:element name="calculTax" type="tns:calculTax"/>
+  <xs:element name="calculTaxResponse" type="tns:calculTaxResponse"/>
+  <xs:element name="getAllCountryTax" type="tns:getAllCountryTax"/>
+  <xs:element name="getAllCountryTaxResponse" type="tns:getAllCountryTaxResponse"/>
+  <xs:element name="rechercherTax" type="tns:rechercherTax"/>
+  <xs:element name="rechercherTaxResponse" type="tns:rechercherTaxResponse"/>
+  <xs:element name="taxDto" type="ns1:taxDto"/>
+  <xs:complexType name="calculTax">
+    <xs:sequence>
+      <xs:element name="montant" type="xs:double"/>
+      <xs:element minOccurs="0" name="codePays" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calculTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllCountryTax">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getAllCountryTaxResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:taxDto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rechercherTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codePays" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rechercherTaxResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:taxDto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="taxWSError">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CA_NE_FONCTIONNE_PAS"/>
+      <xs:enumeration value="IMPOSSIBLE_AJOUT_DANS_BASE"/>
+      <xs:enumeration value="IMPOSSIBLE_SUPPRESSION_DANS_BASE"/>
+      <xs:enumeration value="RECHERCHE_NON_PRESENTE_EN_BASE"/>
+      <xs:enumeration value="UPDATE_NON_EFFECTUE_EN_BASE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaxWSException" type="tns:TaxWSException"/>
+  <xs:complexType name="TaxWSException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="erreur" type="tns:taxWSError"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dto.biz.tax.ws.al28.afcepf.fr" version="1.0">
+
+  <xs:complexType name="taxDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codePays" type="xs:string"/>
+      <xs:element minOccurs="0" name="nomPays" type="xs:string"/>
+      <xs:element minOccurs="0" name="tva" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="rechercherTaxResponse">
+    <wsdl:part element="tns:rechercherTaxResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllCountryTax">
+    <wsdl:part element="tns:getAllCountryTax" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllCountryTaxResponse">
+    <wsdl:part element="tns:getAllCountryTaxResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculTax">
+    <wsdl:part element="tns:calculTax" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculTaxResponse">
+    <wsdl:part element="tns:calculTaxResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TaxWSException">
+    <wsdl:part element="tns:TaxWSException" name="TaxWSException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechercherTax">
+    <wsdl:part element="tns:rechercherTax" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServiceTax">
+    <wsdl:operation name="calculTax">
+      <wsdl:input message="tns:calculTax" name="calculTax">
+    </wsdl:input>
+      <wsdl:output message="tns:calculTaxResponse" name="calculTaxResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:TaxWSException" name="TaxWSException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCountryTax">
+      <wsdl:input message="tns:getAllCountryTax" name="getAllCountryTax">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllCountryTaxResponse" name="getAllCountryTaxResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:TaxWSException" name="TaxWSException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherTax">
+      <wsdl:input message="tns:rechercherTax" name="rechercherTax">
+    </wsdl:input>
+      <wsdl:output message="tns:rechercherTaxResponse" name="rechercherTaxResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:TaxWSException" name="TaxWSException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceTaxBeanServiceSoapBinding" type="tns:ServiceTax">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculTax">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculTax">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculTaxResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TaxWSException">
+        <soap:fault name="TaxWSException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCountryTax">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllCountryTax">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllCountryTaxResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TaxWSException">
+        <soap:fault name="TaxWSException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="rechercherTax">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="rechercherTax">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rechercherTaxResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TaxWSException">
+        <soap:fault name="TaxWSException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceTaxBeanService">
+    <wsdl:port binding="tns:ServiceTaxBeanServiceSoapBinding" name="ServiceTaxBeanPort">
+      <soap:address location="http://GAIA:8180/OnWine-TaxWS-Biz/ServiceTaxBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

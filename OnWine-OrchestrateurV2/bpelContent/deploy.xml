@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:delivery.afcepf.fr="http://delivery.afcepf.fr" xmlns:orchestrateur.onwine.atod.afcepf.fr="http://orchestrateur.onwine.atod.afcepf.fr" xmlns:service.al28.afcepf.fr="http://service.al28.afcepf.fr/" xmlns:soap.currency.ws.atod.afcepf.fr="http://soap.currency.ws.atod.afcepf.fr/" xmlns:tax.afcepf.fr="http://tax.afcepf.fr">
+  <process name="orchestrateur.onwine.atod.afcepf.fr:OnWineServicesOrchestrator">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="orchestrateur.onwine.atod.afcepf.fr:OnWineServicesOrchestratorService" port="OnWineServicesOrchestratorPort"/>
+    </provide>
+    <invoke partnerLink="PartnerLinkCalculateur">
+      <service name="service.al28.afcepf.fr:CalculateurImplService" port="CalculateurImplPort"/>
+    </invoke>
+    <invoke partnerLink="PartnerLinkCurrency">
+      <service name="soap.currency.ws.atod.afcepf.fr:CurrencyConverterService" port="CurrencyConverterPort"/>
+    </invoke>
+    <invoke partnerLink="PartnerLinkDelivery">
+      <service name="delivery.afcepf.fr:DeliveryCalculatorService" port="DeliveryCalculatorPort"/>
+    </invoke>
+    <invoke partnerLink="PartnerLinkTax">
+      <service name="tax.afcepf.fr:ServiceTaxBeanService" port="ServiceTaxBeanPort"/>
+    </invoke>
+  </process>
+</deploy>
